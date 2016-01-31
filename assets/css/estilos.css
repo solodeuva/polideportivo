@@ -1,0 +1,264 @@
+header {
+    background: url('../img/fondo1.jpg') no-repeat;
+    color: #C59947;
+    height: 200px;
+    border: solid;
+    border-color: #4F2601;
+
+}
+header .contenedor {
+    padding-top: 40px;
+    position: relative;
+}
+header h1 {
+    text-align: left;
+    font-size: 50px;
+    margin: 0;
+    font-weight: 500;
+    margin-left: 10px;
+}
+header p {
+    text-align: left;
+    font-size: 30px;
+    margin: 0;
+    margin-left: 10px;
+}
+footer {
+    background: url('../img/fondo1.jpg') no-repeat;
+    clear: both;
+    color: #C59947;
+    padding: 20px 0;
+    font-size: 14px;
+    margin-top: 10px;
+}
+footer p{
+    text-align: center;
+}
+nav {
+    border: 10px;
+    background-color: #4F2601;
+    height: 49px;
+    margin-bottom: 30px;
+}
+body, html {
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+    background-color: #AE8A69;
+	
+}
+body,td,th {
+	
+	text-align: center;
+}
+.img-edit{
+    background: url("../img/eedit.png") no-repeat;
+}
+aside {
+    width: 280px;
+    float: left;
+    border: solid;
+    border-color: #4F2601;
+    border-width: 5px;
+    background-color: #AEADAA;
+    border-radius: 5px;
+    margin-right: 20px;
+    margin-left: 10px;
+}
+aside ul {
+    list-style: disc;
+    padding: 0;
+}
+aside ul li {
+    font-size: 13px;
+    line-height: 25px;
+}
+aside li:not(:first-of-type):hover {
+    background: hsl(264,33%,90%);
+}
+aside ul li:first-of-type {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: hsl(264,34%,36%);
+    padding-left: 30px;
+}
+aside ul li a {
+    color: hsl(260,7%,45%);
+    text-decoration: none;
+    display: block;
+    padding-left: 50px;
+}
+aside ul li a:hover {
+    text-decoration: none;
+}
+.contenido {
+    width: 75%;
+    height: 500px;
+    float: left;
+    background: hsl(264,33%,97%);
+    border: solid;
+    border-color: #4F2601;
+    border-width: 5px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.contenido h1{
+    font-size: 50px;
+    font-weight: bold;
+}
+.contenido article {
+    padding: 15px 30px;
+    text-align: justify;
+}
+.contenido article h2 {
+    margin-top: 0;
+}
+.DatoSoli {
+	font-size: 30px;
+	font-weight: bold;
+}
+
+
+}
+.tabla
+{
+	width: 80%; 
+	height: auto; 
+	border: 1;
+}
+.div
+{
+	padding: 15px;
+    position: relative;
+    text-align: left;
+
+}
+
+.content-botones
+{
+	padding: 25px;
+}
+.formulario
+{
+	width: 50%;
+    padding: 0 10%;
+
+}
+
+p
+{
+	text-align: left;
+    padding-left: 15px;
+    font-size: larger;
+
+}
+#motivo
+{
+	width: 250px;
+    height: 100px;
+    border-radius: 3px;
+}
+.label-motivo
+{
+	float: left;
+    margin-right: 20px;
+}
+.campo
+{
+	margin-left: 15px;
+	height: 20px;
+	border-radius: 3px;
+}
+
+label
+{
+	font-size: 17px;
+}
+.campo-option
+{
+	margin-left: 15px;
+	height: 20px;
+	    border-radius: 2px;
+}
+.btn
+{
+	height: 30px;
+    border-radius: 5px;
+    margin: 20px;
+    width: 100px;
+}
+
+.div-login
+{
+    width: 275px;
+    border: none;
+    text-align: left;
+    margin-left: 3px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+}
+.div-login h3
+{
+    font-family: helvetica;
+    text-align: center;
+}
+
+.div-login table tr td
+{
+    text-align: left;
+}
+.div-solicitudes
+{
+    margin-left: 20%;
+    width: 50%;
+    border: groove;
+    padding: 10px 50px;
+    position: relative;
+
+}
+
+.menucito
+{
+	width: 30%;
+    height: 50%;
+    position: relative;
+    font-family: helvetica;
+    font-size: 20px;
+    float: left;
+    bottom: 0;
+    top: -1px;
+    margin: 0;
+    padding: 0;
+    padding-top: 10px;
+    list-style: none;
+}
+.menucito li
+{
+	margin: 0 10px;
+    padding: 0;
+    list-style-type: none;
+    position: relative;
+    float: left;
+    width: 23%;
+    height: 100%;
+    border: solid;
+    border-radius: 5px;
+    background-color: #d2b05e;
+}
+.menucito li:hover
+{
+    margin: 0 10px;
+    padding: 0;
+    list-style-type: none;
+    position: relative;
+    float: left;
+    width: 23%;
+    height: 100%;
+    border: solid;
+    border-radius: 5px;
+    background-color: #41AFCE;
+}
+.mensaje-error{
+    color: red;
+}

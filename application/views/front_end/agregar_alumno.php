@@ -1,25 +1,26 @@
 <section class="contenido">
+	<h1>Datos del alumno</h1>
 	<?= form_open()?>
 		<table>
 			<tbody>
 				<tr>
-					<td>Nombre:</td>
+					<td>Nombre del alumno:</td>
 					<td><?= form_input('nombre')?></td>
 				</tr>
 				<tr>
-					<td>Apellidos:</td>
+					<td>Apellidos del alumno:</td>
 					<td><?= form_input('apellido')?></td>
 				</tr>
 				<tr>
-					<td>Fecha de nacimiento</td>
+					<td>Fecha de nacimiento:</td>
 					<td></td>
 				</tr>
 				<tr>
 					<td>Nivel:</td>
-					<td></td>
+					<td><select name="nivel" id=""></select></td>
 				</tr>
 				<tr>
-					<td>Dirección Personal:</td>
+					<td>Dirección de Residencia:</td>
 					<td><?= form_input('dir')?></td>
 				</tr>
 				<tr>
@@ -27,15 +28,7 @@
 					<td><?= form_input('tel')?></td>
 				</tr>
 				<tr>
-					<td>Padecimientos:</td>
-					<td><?= form_textarea('padecimiento')?></td>
-				</tr>
-				<tr>
-					<td>Medicinas:</td>
-					<td><?= form_textarea('medic')?></td>
-				</tr>
-				<tr>
-					<td>Madre de familia:</td>
+					<td>Nombre de la Madre:</td>
 					<td><?= form_input('madre')?></td>
 				</tr>
 				<tr>
@@ -43,7 +36,7 @@
 					<td><?= form_input('duim')?></td>
 				</tr>
 				<tr>
-					<td>Profesión:</td>
+					<td>Profesión de la madre:</td>
 					<td><?= form_input('profm')?></td>
 				</tr>
 				<tr>
@@ -51,11 +44,11 @@
 					<td><?= form_input('tbjm')?></td>
 				</tr>
 				<tr>
-					<td>Telefóno:</td>
+					<td>Telefóno de la madre:</td>
 					<td><?= form_input('telm')?></td>
 				</tr>
 				<tr>
-					<td>Padre de familia:</td>
+					<td>Nombre del Padre:</td>
 					<td><?= form_input('padre')?></td>
 				</tr>
 				<tr>
@@ -63,7 +56,7 @@
 					<td><?= form_input('duip')?></td>
 				</tr>
 				<tr>
-					<td>Profesión:</td>
+					<td>Profesión del padre:</td>
 					<td><?= form_input('profp')?></td>
 				</tr>
 				<tr>
@@ -71,8 +64,11 @@
 					<td><?= form_input('tbjp')?></td>
 				</tr>
 				<tr>
-					<td>Telefóno:</td>
+					<td>Telefóno del padre:</td>
 					<td><?= form_input('telp')?></td>
+				</tr>
+				<tr>
+					<h3>En caso de no contar con los padres:</h3>
 				</tr>
 				<tr>
 					<td>Responsable:</td>
@@ -85,6 +81,14 @@
 				<tr>
 					<td>Telefono del Responsable:</td>
 					<td><?= form_input('telr')?></td>
+				</tr>
+				<tr>
+					<td>Padecimientos del inscrito:</td>
+					<td><?= form_textarea('padecimiento')?></td>
+				</tr>
+				<tr>
+					<td>Medicinas:</td>
+					<td><?= form_textarea('medic')?></td>
 				</tr>
 			</tbody>
 		</table>

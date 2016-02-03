@@ -96,55 +96,37 @@ aside ul li a:hover {
     width: 75%;
     height: 500px;
     float: left;
-    background: hsl(264,33%,97%);
+    background-color: #AEADAA;
     border: solid;
     border-color: #4F2601;
     border-width: 5px;
     border-radius: 5px;
     margin-bottom: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space around;
+    text-align: center;
 }
 .contenido h1{
     font-size: 50px;
     font-weight: bold;
 }
-.contenido article {
-    padding: 15px 30px;
-    text-align: justify;
+.div-contenido {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space around;
+    text-align: center;
 }
-.contenido article h2 {
-    margin-top: 0;
+.div-contenido .block{
+    padding: 8px;
+    width: 100%;
+    background-color: #E0D597;
 }
-.DatoSoli {
-	font-size: 30px;
-	font-weight: bold;
-}
-
-
-}
-.tabla
-{
-	width: 80%; 
-	height: auto; 
-	border: 1;
-}
-.div
-{
-	padding: 15px;
-    position: relative;
-    text-align: left;
-
-}
-
 .content-botones
 {
 	padding: 25px;
 }
-.formulario
-{
-	width: 50%;
-    padding: 0 10%;
 
-}
 
 p
 {

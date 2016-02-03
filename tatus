@@ -1,0 +1,38 @@
+[33mcommit d9cdc71dd9f82c439298108ca69dd269f7a5b128[m
+Merge: efc7f67 2c3909f
+Author: keepercito <keepercito@users.noreply.github.com>
+Date:   Wed Feb 3 08:46:48 2016 -0600
+
+    Merge pull request #1 from keepercito/test
+    
+    esqueleto vista y controlador agregar alumnos
+
+[33mcommit 2c3909f5dc875c898eefc3c3ab203bbb24ecc795[m
+Author: keepercito <keepercito@gmail.com>
+Date:   Wed Feb 3 08:45:04 2016 -0600
+
+    esqueleto vista y controlador agregar alumnos
+
+[33mcommit efc7f674dd1bc5a4b35637f862598e1ff128337c[m
+Author: solodeuva <solodeuva@gmail.com>
+Date:   Wed Feb 3 08:25:21 2016 -0600
+
+    login funcional + sidebar personalizado para el tipo de usuario
+
+[33mcommit cc9a9a91a9e1e19423035930bf2857f74b9e5d75[m
+Author: solodeuva <solodeuva@gmail.com>
+Date:   Tue Feb 2 18:01:08 2016 -0600
+
+    login funcional
+
+[33mcommit 404cb894ddd300e00f370ca2e41617aad40ea640[m
+Author: solodeuva <solodeuva@gmail.com>
+Date:   Tue Feb 2 15:35:04 2016 -0600
+
+    agregamos controlador y modelo de usuario para el login
+
+[33mcommit 69f080b449175bbc04c6b0898efeca1195c5bfd4[m
+Author: solodeuva <solodeuva@gmail.com>
+Date:   Sun Jan 31 17:10:33 2016 -0600
+
+    proyecto+plantilla inicial, falta estilo de login y mejorar botones

@@ -46,7 +46,7 @@
         <?php endif; #Las opciones anteriores solo se mostraran al administrador
         ?>
         
-            <a href="<?= base_url('Usuarios/logout')?>"><div class="div-menu-sidebar">
+            <a href="<?= base_url('alumnos/gestionarAlumnos')?>"><div class="div-menu-sidebar">
                 <div class="div-menu-sidebar-in">
                     Gestionar Alumnos
                 </div>

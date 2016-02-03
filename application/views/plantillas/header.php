@@ -20,7 +20,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
   <nav>
     <ul class="menucito">
-       <li><a href="<?php echo base_url(); ?>">Inicio</a></li>
+       <a href="<?php echo base_url(); ?>"><li>Inicio</li></a>
        <li>Ayuda</li>   
     </ul>
   </nav>

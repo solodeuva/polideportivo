@@ -13,16 +13,23 @@ class Usuarios_model extends CI_Model {
     
   //--------------------------------    
         
-  function get_entradas(){    
-     return $this->em->getRepository('Entradas')->findAll();    
+  function validar_credenciales($usuario,$contrasena){    
+    $this->db->select('contrasena');
+    $this->db->from('usuario');
+    $this->db->where('user', $usuario);
+    $hash = $this->db->get()->row('contrasena');
+    if (md5($contrasena) == $hash) {
+      return TRUE;
+    }
+    else{
+      return FALSE;
+    }  
   }    
 
-  function set_entradas(){    
-     $ent = new Entradas;
-     $ent->setTitulo('prueba1');
-     $ent->setContenido('otro 7');   
-     $this->em->persist($ent);
-     $this->em->flush();
+  function getUser($usuario){    
+    $this->db->from('usuario');
+    $this->db->where('user', $usuario);
+    return $this->db->get()->row();
   }    
   //------------------------------
   

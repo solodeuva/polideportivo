@@ -29,7 +29,36 @@
     </div>
     <?php else : #si logged_in esta predefinido muestra el saludo
     ?>
-    <p>Bienvenid@:<br><?php echo $this->session->userdata('nombre');?></p>
-    <a href="<?= base_url()?>Usuarios/logout">Cerrar Sesion</a>
+    <h4>Bienvenid@: <?php echo $this->session->userdata('nombre');?></h4>
+
+        <?php if ($_SESSION['user_id'] == 1) : #si logged_in no esta predefinido mostrara el formulario de login
+        ?> 
+            <div class="div-menu-sidebar">
+                <div class="div-menu-sidebar-in">
+                    Gestionar Usuarios
+                </div>
+            </div>
+            <a href="<?= base_url('Usuarios/logout')?>"><div class="div-menu-sidebar">
+                <div class="div-menu-sidebar-in">
+                    Gestionar Niveles
+                </div>
+            </div></a>
+        <?php endif; #Las opciones anteriores solo se mostraran al administrador
+        ?>
+            <a href="<?= base_url('Usuarios/logout')?>"><div class="div-menu-sidebar">
+                <div class="div-menu-sidebar-in">
+                    Gestionar Alumnos
+                </div>
+            </div></a>
+            <a href="<?= base_url('Usuarios/logout')?>"><div class="div-menu-sidebar">
+                <div class="div-menu-sidebar-in">
+                    Ver Estadísticas
+                </div>
+            </div></a>
+            <a href="<?= base_url('Usuarios/logout')?>"><div class="div-menu-sidebar">
+                <div class="div-menu-sidebar-in">
+                    Cerrar Sesion
+                </div>
+            </div></a>
     <?php endif; ?>
 </aside>

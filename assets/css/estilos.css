@@ -217,7 +217,42 @@ label
     position: relative;
 
 }
-
+.div-menu-sidebar
+{
+    margin-top: 3px;
+    width: 280px;
+    border: 1px;
+    height: 30px;
+    text-align: center;
+    display: table;
+}
+.div-menu-sidebar-in
+{
+    display: table-cell;
+    vertical-align: middle;
+    font-family: verdana;
+    font-weight: bold;
+    text-align: center;
+    color: black;
+}
+.div-menu-sidebar:hover
+{
+    margin-top: 3px;
+    width: 280px;
+    border: 1px;
+    background-color: #537E9F;
+    height: 30px;
+    text-align: center;
+    display: table;
+}
+.div-menu-sidebar-in:hover
+{
+    display: table-cell;
+    vertical-align: middle;
+    font-family: verdana;
+    font-weight: bold;
+    text-align: center;
+}
 .menucito
 {
 	width: 30%;
@@ -262,3 +297,8 @@ label
 .mensaje-error{
     color: red;
 }
+a:link   
+{   
+ text-decoration:none;
+ color: black;
+} 

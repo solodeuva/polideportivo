@@ -94,7 +94,6 @@ aside ul li a:hover {
 }
 .contenido {
     width: 75%;
-    height: 500px;
     float: left;
     background-color: #AEADAA;
     border: solid;
@@ -102,25 +101,11 @@ aside ul li a:hover {
     border-width: 5px;
     border-radius: 5px;
     margin-bottom: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space around;
     text-align: center;
 }
 .contenido h1{
     font-size: 50px;
     font-weight: bold;
-}
-.div-contenido {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space around;
-    text-align: center;
-}
-.div-contenido .block{
-    padding: 8px;
-    width: 100%;
-    background-color: #E0D597;
 }
 .content-botones
 {
@@ -134,23 +119,6 @@ p
     padding-left: 15px;
     font-size: larger;
 
-}
-#motivo
-{
-	width: 250px;
-    height: 100px;
-    border-radius: 3px;
-}
-.label-motivo
-{
-	float: left;
-    margin-right: 20px;
-}
-.campo
-{
-	margin-left: 15px;
-	height: 20px;
-	border-radius: 3px;
 }
 
 label
@@ -284,3 +252,13 @@ a:link
  text-decoration:none;
  color: black;
 } 
+.tabla
+{
+    width: 80%;
+    margin-left: 10%;
+    position: relative;
+}
+.tabla tr td
+{
+    text-align: left;
+}

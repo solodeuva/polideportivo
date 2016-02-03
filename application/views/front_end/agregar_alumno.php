@@ -1,22 +1,22 @@
 <section class="contenido">
 	<h1>Datos del alumno</h1>
 	<?= form_open()?>
-		<table>
+		<table class="tabla">
 			<tbody>
 				<tr>
 					<td>Nombre del alumno:</td>
+					<td>Apellidos del alumno:</td>
+				</tr>
+				<tr>
+					<td><?= form_input('apellido')?></td>
 					<td><?= form_input('nombre')?></td>
 				</tr>
 				<tr>
-					<td>Apellidos del alumno:</td>
-					<td><?= form_input('apellido')?></td>
-				</tr>
-				<tr>
 					<td>Fecha de nacimiento:</td>
-					<td></td>
+					<td>Nivel:</td>
 				</tr>
 				<tr>
-					<td>Nivel:</td>
+					<td><?= form_input('fnacimiento')?></td>					
 					<td><select name="nivel" id=""></select></td>
 				</tr>
 				<tr>

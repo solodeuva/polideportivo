@@ -1,4 +1,4 @@
-<section>
+<section class="contenido">
 	<?= form_open()?>
 		<label for="">
 		Nombre: 				  <input type="text" id="nombres"><br>
@@ -27,5 +27,4 @@
 		<label for="">
 		Telefono del Responsable: <input type="text" id="telRes"><br>
 		</label>
-	<?= form_close()?>
 </section>

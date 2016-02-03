@@ -33,11 +33,11 @@
 
         <?php if ($_SESSION['user_id'] == 1) : #si logged_in no esta predefinido mostrara el formulario de login
         ?> 
-            <div class="div-menu-sidebar">
+            <a href="<?= base_url('Usuarios/gestionarUsuarios')?>"><div class="div-menu-sidebar">
                 <div class="div-menu-sidebar-in">
                     Gestionar Usuarios
                 </div>
-            </div>
+            </div></a>
             <a href="<?= base_url('Usuarios/logout')?>"><div class="div-menu-sidebar">
                 <div class="div-menu-sidebar-in">
                     Gestionar Niveles
@@ -45,6 +45,7 @@
             </div></a>
         <?php endif; #Las opciones anteriores solo se mostraran al administrador
         ?>
+        
             <a href="<?= base_url('Usuarios/logout')?>"><div class="div-menu-sidebar">
                 <div class="div-menu-sidebar-in">
                     Gestionar Alumnos

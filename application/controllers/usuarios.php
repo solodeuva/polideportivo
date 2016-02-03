@@ -7,15 +7,17 @@ class Usuarios extends CI_Controller {
 		parent::__construct();
 		$this->load->model('usuarios_model');
 	}
+
 	public function login()
 	{
 		$usuario = $this->input->post('usuario');
 		$contrasena = $this->input->post('contrasena');
 		if($this->usuarios_model->validar_credenciales($usuario,$contrasena)){
 			$user = $this->usuarios_model->getUser($usuario);
-			$_SESSION['user_id'] = (int)$user->id_usuario;
-			$_SESSION['nombre'] = (string)$user->nombres;
-			$_SESSION['logged_in']    = (bool)true;
+			
+			$_SESSION['user_id'] 		= (int)$user->id_usuario;
+			$_SESSION['nombre'] 		= (string)$user->nombres;
+			$_SESSION['logged_in']    	= (bool)true;
 			redirect(base_url());
 		}
 		else{
@@ -24,6 +26,7 @@ class Usuarios extends CI_Controller {
 			redirect(base_url());
 		}
 	}
+
 	public function logout() {
 		// Si la llave logged_in existe y es true la session sigue activa y se destruye manualmente
 		if (isset($_SESSION['logged_in'])) {
@@ -36,5 +39,12 @@ class Usuarios extends CI_Controller {
 			// por lo que ya no se puede destruir la sesion y se redirecciona a la pagina principal
 			redirect(base_url());
 		}
+	}
+
+	public function gestionarUsuarios(){
+		$this->load->view('plantillas/header');
+		$this->load->view('plantillas/sidebar');
+		$this->load->view('front_end/gestionar_usuarios');
+		$this->load->view('plantillas/footer');
 	}
 }

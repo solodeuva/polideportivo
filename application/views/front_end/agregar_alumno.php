@@ -21,50 +21,50 @@
 				</tr>
 				<tr>
 					<td>Dirección de Residencia:</td>
-					<td><?= form_input('dir')?></td>
+					<td>Telefono:</td>
 				</tr>
 				<tr>
-					<td>Telefono:</td>
+					<td><?= form_input('dir')?></td>
 					<td><?= form_input('tel')?></td>
 				</tr>
 				<tr>
 					<td>Nombre de la Madre:</td>
-					<td><?= form_input('madre')?></td>
+					<td>Documento Unico de identidad de la madre:</td>
 				</tr>
 				<tr>
-					<td>Documento Unico de identidad de la madre:</td>
+					<td><?= form_input('madre')?></td>
 					<td><?= form_input('duim')?></td>
 				</tr>
 				<tr>
 					<td>Profesión de la madre:</td>
-					<td><?= form_input('profm')?></td>
+					<td>Lugar de trabajo:</td>
 				</tr>
 				<tr>
-					<td>Lugar de trabajo:</td>
+					<td><?= form_input('profm')?></td>
 					<td><?= form_input('tbjm')?></td>
 				</tr>
 				<tr>
 					<td>Telefóno de la madre:</td>
-					<td><?= form_input('telm')?></td>
+					<td>Nombre del Padre:</td>
 				</tr>
 				<tr>
-					<td>Nombre del Padre:</td>
+					<td><?= form_input('telm')?></td>
 					<td><?= form_input('padre')?></td>
 				</tr>
 				<tr>
 					<td>Documento Unico de identidad del padre:</td>
-					<td><?= form_input('duip')?></td>
+					<td>Profesión del padre:</td>
 				</tr>
 				<tr>
-					<td>Profesión del padre:</td>
+					<td><?= form_input('duip')?></td>
 					<td><?= form_input('profp')?></td>
 				</tr>
 				<tr>
 					<td>Lugar de trabajo:</td>
-					<td><?= form_input('tbjp')?></td>
+					<td>Telefóno del padre:</td>
 				</tr>
 				<tr>
-					<td>Telefóno del padre:</td>
+					<td><?= form_input('tbjp')?></td>
 					<td><?= form_input('telp')?></td>
 				</tr>
 				<tr>
@@ -72,22 +72,24 @@
 				</tr>
 				<tr>
 					<td>Responsable:</td>
-					<td><?= form_input('resp')?></td>
+					<td>Documento Unico de Identidad del responsable:</td>
 				</tr>
 				<tr>
-					<td>Documento Unico de Identidad del responsable:</td>
+					<td><?= form_input('resp')?></td>
 					<td><?= form_input('duir')?></td>
 				</tr>
 				<tr>
 					<td>Telefono del Responsable:</td>
-					<td><?= form_input('telr')?></td>
+					<td>Padecimientos del inscrito:</td>
 				</tr>
 				<tr>
-					<td>Padecimientos del inscrito:</td>
+					<td><?= form_input('telr')?></td>
 					<td><?= form_textarea('padecimiento')?></td>
 				</tr>
 				<tr>
 					<td>Medicinas:</td>
+				</tr>
+				<tr>
 					<td><?= form_textarea('medic')?></td>
 				</tr>
 			</tbody>

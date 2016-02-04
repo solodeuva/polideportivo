@@ -20,4 +20,11 @@ class Alumnos extends CI_Controller {
 		$this->load->view('front_end/gestionar_alumnos');
 		$this->load->view('plantillas/footer');
 	}
+	public function buscarAlumno(){
+		$this->load->helper('form');
+		$this->load->view('plantillas/header');
+		$this->load->view('plantillas/sidebar');
+		$this->load->view('front_end/ficha_alumno');
+		$this->load->view('plantillas/footer');
+	}
 }

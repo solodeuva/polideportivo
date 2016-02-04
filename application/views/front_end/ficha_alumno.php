@@ -8,16 +8,16 @@
 					<td>Apellidos del alumno:</td>
 				</tr>
 				<tr>
-					<td><?= form_input('apellido')?></td>
-					<td><?= form_input('nombre')?></td>
+					<td>Juan Antonio</td>
+					<td>Pérez Reyes</td>
 				</tr>
 				<tr>
 					<td>Fecha de nacimiento:</td>
 					<td>Nivel:</td>
 				</tr>
 				<tr>
-					<td><?= form_input('fnacimiento')?></td>					
-					<td><select name="nivel" id=""></select></td>
+					<td>21/04/1998</td>					
+					<td>Nivel 2</select></td>
 				</tr>
 				<tr>
 					<td>Dirección de Residencia:</td>
@@ -32,7 +32,7 @@
 					<td><?= form_input('madre')?></td>
 				</tr>
 				<tr>
-					<td>Documento Unico de identidad de la madre:</td>
+					<td>DUI de la madre:</td>
 					<td><?= form_input('duim')?></td>
 				</tr>
 				<tr>

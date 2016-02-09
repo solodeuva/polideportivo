@@ -56,7 +56,7 @@
                     Ver Estadísticas
                 </div>
             </div></a>
-            <a href="<?= base_url('Usuarios/logout')?>"><div class="div-menu-sidebar">
+            <a onclick="salir()" href="#"><div class="div-menu-sidebar">
                 <div class="div-menu-sidebar-in">
                     Cerrar Sesion
                 </div>

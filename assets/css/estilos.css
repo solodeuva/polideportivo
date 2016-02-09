@@ -255,10 +255,30 @@ a:link
 .tabla
 {
     width: 80%;
-    margin-left: 10%;
+    margin-left: 20%;
     position: relative;
 }
 .tabla tr td
 {
     text-align: left;
+}
+.tabla-usuarios
+{
+    width: 80%;
+    margin-left: 10%;
+    position: relative;
+}
+.tabla-usuarios thead tr td
+{
+    text-align: left;
+}
+.div-usuarios
+{
+    height: 200px;
+    overflow: auto;
+}
+.tips{
+    color: blue;
+    font-size: 14px;
+    font-style: italic;
 }

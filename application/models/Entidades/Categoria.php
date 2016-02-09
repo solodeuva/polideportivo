@@ -2,30 +2,30 @@
 
 
 
-use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Mapping as ORM;
 
 /**
  * Categoria
  *
- * @ORM\Table(name="categoria")
- * @ORM\Entity
+ * @Table(name="categoria")
+ * @Entity
  */
 class Categoria
 {
     /**
      * @var integer
      *
-     * @ORM\Column(name="id_categoria", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="SEQUENCE")
-     * @ORM\SequenceGenerator(sequenceName="categoria_id_categoria_seq", allocationSize=1, initialValue=1)
+     * @Column(name="id_categoria", type="integer", nullable=false)
+     * @Id
+     * @GeneratedValue(strategy="SEQUENCE")
+     * @SequenceGenerator(sequenceName="categoria_id_categoria_seq", allocationSize=1, initialValue=1)
      */
     private $idCategoria;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="nombre", type="string", length=15, nullable=true)
+     * @Column(name="nombre", type="string", length=15, nullable=true)
      */
     private $nombre;
 

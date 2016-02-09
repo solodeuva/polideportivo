@@ -24,7 +24,7 @@
 					<td><p class="tips">*Esta contraseña se asignara al nuevo usuario.<p></td>
 				</tr>
 				<tr>
-					<td></td>
+					<td><input type="button" value="Volver atrás" name="volver atrás2" onclick="history.back()" /></td>
 					<td><center><?= form_submit('','Registrar Usuario')?></center></td>
 					<td><p class="tips">&nbsp;<p></td>
 				</tr>

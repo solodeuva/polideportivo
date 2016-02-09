@@ -27,6 +27,9 @@
 				</tr>
 			</tbody>
 		</table>
+		<form>
+			<input type="button" value="Volver atrás" name="volver atrás2" onclick="history.back()" />
+		</form>
 	</div><br>
 <?php else: ?>
 	<br><br>

@@ -38,7 +38,7 @@
                     Gestionar Usuarios
                 </div>
             </div></a>
-            <a href="<?= base_url('Usuarios/logout')?>"><div class="div-menu-sidebar">
+            <a href="<?= base_url('Niveles/gestionarNiveles')?>"><div class="div-menu-sidebar">
                 <div class="div-menu-sidebar-in">
                     Gestionar Niveles
                 </div>

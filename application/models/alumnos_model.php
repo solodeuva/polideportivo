@@ -37,8 +37,8 @@ class Alumnos_model extends CI_Model {
     $alumno->setExpPrevia($data['exp']);
     $alumno->setPadecimientos($data['padecimiento']);
     $alumno->setMedicamentos($data['medic']);
-    $alumno->setEstado($data['estado']);
-    $alumno->setIdNivel($this->nivel_model->getNivel($data('nivel')));//corroborar
+    $alumno->setEstado("A");
+    $alumno->setIdNivel($this->nivel_model->getNivel($data['nivel']));
     $this->em->persist($alumno);
     $this->em->flush();
   }
@@ -48,7 +48,7 @@ class Alumnos_model extends CI_Model {
   }
 
   function actualizarAlumno($data,$id){
-    $this->load->model('nivel_model');
+    $this->load->model('nivel_model')
     $alumno = $this->em->getRepository('Alumno')->find($id);
     $alumno->setNombres($data['nombre']);
     $alumno->setApellidos($data['apellido']);
@@ -74,7 +74,7 @@ class Alumnos_model extends CI_Model {
     $alumno->setPadecimientos($data['padecimiento']);
     $alumno->setMedicamentos($data['medic']);
     $alumno->setEstado($data['estado']);
-    $alumno->setIdNivel($this->nivel_model->getNivel($data('nivel')));//corroborar
+    $alumno->setIdNivel($this->nivel_model->getNivel($data['nivel']));
     $this->em->persist($alumno);
     $this->em->flush();
   }

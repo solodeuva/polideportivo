@@ -12,12 +12,25 @@ class Alumnos extends CI_Controller {
 	
 	public function registrarAlumno()
 	{
-		$data['nivel'] = $this->nivel_model->obtenerNiveles();
 		$this->load->model('nivel_model');
+		$data['nivel'] = $this->nivel_model->obtenerNiveles();
 		$this->load->helper('form');
 		$this->load->view('plantillas/header');
 		$this->load->view('plantillas/sidebar');
 		$this->load->view('front_end/agregar_alumno',$data);
+		$this->load->view('plantillas/footer');
+	}
+
+	public function editarAlumno($id)
+	{
+		$this->load->helper('form');
+		$this->load->model('nivel_model');
+		$data['nivel'] = $this->nivel_model->obtenerNiveles();
+		$data['alumno'] = $this->alumnos_model->getAlumno($id);
+		$this->load->helper('form');
+		$this->load->view('plantillas/header');
+		$this->load->view('plantillas/sidebar');
+		$this->load->view('front_end/editar_alumno',$data);
 		$this->load->view('plantillas/footer');
 	}
 
@@ -49,7 +62,7 @@ class Alumnos extends CI_Controller {
 			'nombre' => $this->input->post('nombre'),
 			'nivel' => $this->input->post('nivel')
 			);
-		$this->nivel_model->crearAlumno($data);
+		$this->alumnos_model->crearAlumno($data);
 		redirect(base_url('Alumnos/gestionarAlumnos'));
 	}
 
@@ -98,7 +111,7 @@ class Alumnos extends CI_Controller {
 			'nombre' => $this->input->post('nombre'),
 			'nivel' => $this->input->post('nivel')
 			);
-		$this->nivel_model->actualizarAlumno($data,$id);
+		$this->alumnos_model->actualizarAlumno($data,$id);
 		redirect(base_url('Alumnos/gestionarAlumnos'));
 	}
 }

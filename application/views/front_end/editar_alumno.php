@@ -1,7 +1,7 @@
 <section class="contenido">
 <?php if(isset($_SESSION['logged_in'])): #si ha iniciado sesion se mostrara el contenido sino el mensaje de error?>
 	<h1>Datos del alumno</h1>
-	<?= form_open('Alumnos/agregarAlumno')?>
+	<?= form_open('Alumnos/actualizarAlumno')?>
 		<table class="tabla">
 			<tbody>
 				<tr>
@@ -9,16 +9,16 @@
 					<td>Apellidos del alumno:</td>
 				</tr>
 				<tr>
-					<td><?= form_input('apellido')?></td>
-					<td><?= form_input('nombre')?></td>
+					<td><?= form_input('nombre',$alumno->getNombres())?></td>
+					<td><?= form_input('apellido',$alumno->getApellidos())?></td>
 				</tr>
 				<tr>
 					<td>Estatura:</td>
 					<td>Peso:</td>
 				</tr>
 				<tr>
-					<td><?= form_input('estatura')?></td>
-					<td><?= form_input('peso')?></td>
+					<td><?= form_input('estatura',$alumno->getEstatura();)?></td>
+					<td><?= form_input('peso',$alumno->getPeso())?></td>
 				</tr>
 				<tr>
 					<td>&nbsp;</td>
@@ -29,14 +29,18 @@
 					<td>Genero: Nivel:</td>
 				</tr>
 				<tr>
-					<td><?= form_input('fnacimiento')?></td>				
+					<td><?= form_input('fnacimiento',$alumno->getFechaNacimiento())?></td>				
 					<td>
 					<select name="genero" id="">
-						<option value="m">Masculino</option>
-						<option value="f">Femenino</option>
+						<?php if($alumno->getGenero()=="M")?>
+							<option selected value="M">Masculino</option>
+						<?php else?>
+							<option selected value="F">Femenino</option>
 					</select>
 					<select name="nivel" id="">
 					<?php foreach ($nivel as $n) { ?>
+						<?php if($n->getIdNivel()==$alumno->getIdNivel())?>
+							<option selected value="<?= $n->getIdNivel();?>"><?php echo $n->getNombre();?></option>
 						<option value="<?= $n->getIdNivel();?>"><?php echo $n->getNombre();?></option>
 					<?php } ?>
 					</select>
@@ -47,8 +51,8 @@
 					<td>Telefono:</td>
 				</tr>
 				<tr>
-					<td><?= form_input('dir')?></td>
-					<td><?= form_input('tel')?></td>
+					<td><?= form_input('dir',$alumno->getDireccion())?></td>
+					<td><?= form_input('tel',$alumno->getTelefono())?></td>
 				</tr>
 				<tr>
 					<td>&nbsp;</td>
@@ -59,16 +63,16 @@
 					<td>DUI de la madre:</td>
 				</tr>
 				<tr>
-					<td><?= form_input('madre')?></td>
-					<td><?= form_input('duim')?></td>
+					<td><?= form_input('madre',$alumno->getNombreMadre())?></td>
+					<td><?= form_input('duim',$alumno->getDuiMadre())?></td>
 				</tr>
 				<tr>
 					<td>Lugar de trabajo:</td>
 					<td>Telefóno de la madre:</td>
 				</tr>
 				<tr>
-					<td><?= form_input('tbjm')?></td>
-					<td><?= form_input('telm')?></td>
+					<td><?= form_input('tbjm',$alumno->getTrabajoMadre())?></td>
+					<td><?= form_input('telm',$alumno->getTelMadre())?></td>
 				</tr>
 				<tr>
 					<td>&nbsp;</td>
@@ -79,16 +83,16 @@
 					<td>DUI del padre:</td>
 				</tr>
 				<tr>
-					<td><?= form_input('padre')?></td>
-					<td><?= form_input('duip')?></td>
+					<td><?= form_input('padre',$alumno->getNombrePadre())?></td>
+					<td><?= form_input('duip',$alumno->getDuiPadre)?></td>
 				</tr>
 				<tr>
 					<td>Lugar de trabajo:</td>
 					<td>Telefóno del padre:</td>
 				</tr>
 				<tr>
-					<td><?= form_input('tbjp')?></td>
-					<td><?= form_input('telp')?></td>
+					<td><?= form_input('tbjp',$alumno->getTrabajoPadre())?></td>
+					<td><?= form_input('telp',$alumno->getTelPadre())?></td>
 				</tr>
 				<tr>
 					<td>&nbsp;</td>
@@ -96,9 +100,11 @@
 				</tr>
 				<tr>
 					<td>Experiencia previa:</td>
+					<td>Estado:</td>
 				</tr>
 				<tr>
-					<td><?= form_textarea('exp')?></td>
+					<td><?= form_textarea('exp',$alumno->getExpPrevia())?></td>
+					<td><?= form_input('estado',$alumno->getEstado())?></td>
 				</tr>
 				<tr>
 					<td colspan="2">En caso de no contar con los padres mencionar un responsable:</td>
@@ -108,28 +114,28 @@
 					<td>DUI del responsable:</td>
 				</tr>
 				<tr>
-					<td><?= form_input('resp')?></td>
-					<td><?= form_input('duir')?></td>
+					<td><?= form_input('resp',$alumno->getNombreResp())?></td>
+					<td><?= form_input('duir',$alumno->getDuiResp())?></td>
 				</tr>
 				<tr>
 					<td>Lugar de trabajo:</td>
 					<td>Telefono del Responsable:</td>
 				</tr>
 				<tr>
-					<td><?= form_input('tbjr')?></td>
-					<td><?= form_input('telr')?></td>
+					<td><?= form_input('tbjr',$alumno->getTrabajoResp())?></td>
+					<td><?= form_input('telr',$alumno->getTelResp())?></td>
 				</tr>
 				<tr>
 					<td>Padecimientos del inscrito:</td>
 					<td>Medicinas:</td>
 				</tr>
 				<tr>
-					<td><?= form_textarea('padecimiento')?></td>
-					<td><?= form_textarea('medic')?></td>
+					<td><?= form_textarea('padecimiento',$alumno->getPadecimientos())?></td>
+					<td><?= form_textarea('medic',$alumno->getMedicamentos())?></td>
 				</tr>
 				<tr>
 					<td><input type="button" value="Volver atrás" name="volver atrás2" onclick="history.back()" /></td>
-					<td><center><?= form_submit('','Ingresar Alumno')?></center></td>
+					<td><center><?= form_submit('','Actualizar Datos')?></center></td>
 					<td></td>
 				</tr>
 			</tbody>

@@ -1,6 +1,7 @@
 <?php #Programado por: Oscar René Merino 
 
 require_once(APPPATH."models/Entidades/Alumno.php");
+require_once(APPPATH."models/Entidades/Nivel.php");
 
 class Alumnos_model extends CI_Model {
 
@@ -14,14 +15,16 @@ class Alumnos_model extends CI_Model {
   function crearAlumno($data){
     $this->load->model('nivel_model');
     $alumno = new Alumno;
-    $alumno->setNombres($data['nombre']);
-    $alumno->setApellidos($data['apellido']);
-    $alumno->setGenero($data['genero']);
-    $alumno->setFechaNacimiento($data['fnacimiento']);
+    $alumno->setNombres($data['nombres']);
+    $alumno->setApellidos($data['apellidos']);
     $alumno->setEstatura($data['estatura']);
     $alumno->setPeso($data['peso']);
+    $alumno->setFechaNacimiento($data['fnacimiento']);
+    $alumno->setGenero($data['genero']);
     $alumno->setDireccion($data['dir']);
     $alumno->setTelefono($data['tel']);
+    $alumno->setExpPrevia($data['exp']);
+    $alumno->setIdNivel($this->nivel_model->getNivel($data['nivel']));
     $alumno->setNombreMadre($data['madre']);
     $alumno->setDuiMadre($data['duim']);
     $alumno->setTrabajoMadre($data['tbjm']);
@@ -34,21 +37,51 @@ class Alumnos_model extends CI_Model {
     $alumno->setDuiResp($data['duir']);
     $alumno->setTrabajoResp($data['tbjr']);
     $alumno->setTelResp($data['telr']);
-    $alumno->setExpPrevia($data['exp']);
     $alumno->setPadecimientos($data['padecimiento']);
     $alumno->setMedicamentos($data['medic']);
     $alumno->setEstado("A");
-    $alumno->setIdNivel($this->nivel_model->getNivel($data['nivel']));
     $this->em->persist($alumno);
     $this->em->flush();
+  }
+
+  function obtenerAlumnosNivel($nivel){
+    $query = $this->em->createQuery('SELECT a FROM Alumno a where a.idNivel = :nivel');
+    $query->setParameter('nivel', $nivel);
+    $alumnos = $query->getResult();
+    return $alumnos;
+  }
+
+  function obtenerAlumnosGenero($genero){
+    $query = $this->em->createQuery('SELECT a FROM Alumno a where a.genero = :genero');
+    $query->setParameter('genero', $genero);
+    $alumnos = $query->getResult();
+    return $alumnos;
+  }
+
+  function obtenerAlumnosNombres($nombres){ #obtiene alumnos por nombres o parte del nombre
+    $query = $this->em->createQuery('SELECT a FROM Alumno a where a.nombres like :nombres');
+    $query->setParameter('nombres', '%'.$nombres.'%');
+    $alumnos = $query->getResult();
+    return $alumnos;
+  }
+
+  function obtenerAlumnosApellidos($apellidos){ #obtenie alumnos por apellidos o parte del apellido
+    $query = $this->em->createQuery('SELECT a FROM Alumno a where a.apellidos like :apellidos');
+    $query->setParameter('apellidos', '%'.$apellidos.'%');
+    $alumnos = $query->getResult();
+    return $alumnos;
   }
 
   function obtenerAlumnos(){
     return $this->em->getRepository('Alumno')->findAll();
   }
 
+  function getAlumno($id){
+    return $this->em->getRepository('Alumno')->find($id);
+  }
+/*
   function actualizarAlumno($data,$id){
-    $this->load->model('nivel_model')
+    $this->load->model('nivel_model');
     $alumno = $this->em->getRepository('Alumno')->find($id);
     $alumno->setNombres($data['nombre']);
     $alumno->setApellidos($data['apellido']);
@@ -79,13 +112,10 @@ class Alumnos_model extends CI_Model {
     $this->em->flush();
   }
 
-  function getAlumno($id){
-    return $this->em->getRepository('Alumno')->find($id);
-  }
-
   function borrarAlumno($id){
     $alumno = $this->em->getRepository('Alumno')->find($id);
     $this->em->remove($nivel);
     $this->em->flush();
   }
+  */
 }

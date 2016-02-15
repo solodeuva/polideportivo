@@ -106,11 +106,20 @@ class Usuarios extends CI_Controller {
 			);
 		}
 		$this->usuarios_model->actualizarUsuario($data,$id);
-		redirect(base_url('Usuarios/gestionarUsuarios'));
+		redirect(base_url());
 	}
 
 	public function eliminarUsuario($id){
 		$this->usuarios_model->borrarUsuario($id);
 		redirect(base_url('Usuarios/gestionarUsuarios'));
+	}
+
+	public function perfil(){
+		$this->load->helper('form');
+		$data['usuario'] = $this->usuarios_model->getUsuario($_SESSION['user_id']);
+		$this->load->view('plantillas/header');
+		$this->load->view('plantillas/sidebar');
+		$this->load->view('front_end/editar_usuario',$data);
+		$this->load->view('plantillas/footer');
 	}
 }

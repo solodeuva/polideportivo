@@ -1,7 +1,7 @@
 function salir(){
       var respuesta=confirm("¿Desea salir del sistema?");
       if(respuesta==true)
-        window.location="Usuarios/logout";
+        window.location="../Usuarios/logout"; /* Obligamos a que vaya a la raiz del sitio y luego al controlador Usuario funcion logout*/
       else
         return 0;
 }

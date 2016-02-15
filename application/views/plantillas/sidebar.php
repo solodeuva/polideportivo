@@ -61,5 +61,10 @@
                     Cerrar Sesion
                 </div>
             </div></a>
+            <a href="<?= base_url('Usuarios/perfil')?>"><div class="div-menu-sidebar">
+                <div class="div-menu-sidebar-in">
+                    Mi Perfil
+                </div>
+            </div></a>
     <?php endif; ?>
 </aside>

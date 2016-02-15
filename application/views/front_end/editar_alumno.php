@@ -1,58 +1,91 @@
 <section class="contenido">
 <?php if(isset($_SESSION['logged_in'])): #si ha iniciado sesion se mostrara el contenido sino el mensaje de error?>
-	<h1>Datos del alumno</h1>
-	<?= form_open('Alumnos/actualizarAlumno')?>
+	<h1>Editar Alumno</h1>
+	<?= form_open('Alumnos/agregarAlumno')?>
 		<table class="tabla">
 			<tbody>
 				<tr>
-					<td style="{font-color:red;}">Nombre del alumno:</td>
+					<td>Nombre del alumno:</td>
 					<td>Apellidos del alumno:</td>
 				</tr>
 				<tr>
-					<td><?= form_input('nombre',$alumno->getNombres())?></td>
-					<td><?= form_input('apellido',$alumno->getApellidos())?></td>
+					<td><input name="nombres" maxlength="30" value="<?php echo $alumno->getNombres();?>" required/></td>
+					<td><input name="apellidos" maxlength="30" value="<?php echo $alumno->getApellidos();?>" required/></td>
 				</tr>
 				<tr>
 					<td>Estatura:</td>
 					<td>Peso:</td>
 				</tr>
 				<tr>
-					<td><?= form_input('estatura',$alumno->getEstatura();)?></td>
-					<td><?= form_input('peso',$alumno->getPeso())?></td>
+					<td><input name="estatura" maxlength="4" size="3" value="<?php echo $alumno->getEstatura();?>"/></td>
+					<td><input name="peso" maxlength="3" size="2" value="<?php echo $alumno->getPeso();?>"/></td>
+				</tr>
+				<tr>
+					<td style="vertical-align:top">Ingrese estatura en metros (solo numeros).</td>
+					<td style="vertical-align:top">Ingrese peso en libras (solo numeros).</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td><!-- Esto es para dejar un espacio entre filas-->
+					<td></td>
+				</tr>
+				<tr>
+					<td>Fecha de nacimiento:</td>
+					<td>Genero:</td>
+				</tr>
+				<tr>
+					<td><input name="fnacimiento" maxlength="10" size="10" value="<?php echo $alumno->getFechaNacimiento();?>"required/></td>				
+					<td>
+						<select name="genero">
+						<?php if($alumno->getGenero() == 'M'): ?>
+							<option value="M" selected="Masculino">Masculino</option>
+							<option value="F">Femenino</option>
+						<?php else: ?>
+							<option value="M">Masculino</option>
+							<option value="F" selected="Femenino">Femenino</option>
+						<?php endif;?>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td style="vertical-align:top">Utilice el formato: 17/02/2016</td>
 				</tr>
 				<tr>
 					<td>&nbsp;</td>
 					<td></td>
 				</tr>
 				<tr>
-					<td>Fecha de nacimiento:</td>
-					<td>Genero: Nivel:</td>
-				</tr>
-				<tr>
-					<td><?= form_input('fnacimiento',$alumno->getFechaNacimiento())?></td>				
-					<td>
-					<select name="genero" id="">
-						<?php if($alumno->getGenero()=="M")?>
-							<option selected value="M">Masculino</option>
-						<?php else?>
-							<option selected value="F">Femenino</option>
-					</select>
-					<select name="nivel" id="">
-					<?php foreach ($nivel as $n) { ?>
-						<?php if($n->getIdNivel()==$alumno->getIdNivel())?>
-							<option selected value="<?= $n->getIdNivel();?>"><?php echo $n->getNombre();?></option>
-						<option value="<?= $n->getIdNivel();?>"><?php echo $n->getNombre();?></option>
-					<?php } ?>
-					</select>
-					</td>
-				</tr>
-				<tr>
 					<td>Dirección de Residencia:</td>
 					<td>Telefono:</td>
 				</tr>
 				<tr>
-					<td><?= form_input('dir',$alumno->getDireccion())?></td>
-					<td><?= form_input('tel',$alumno->getTelefono())?></td>
+					<td><input name="dir" maxlength="100" value="<?php echo $alumno->getDireccion();?>" /></td>
+					<td><input name="tel" maxlength="9" value="<?php echo $alumno->getTelefono();?>" size="7"/></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td style="vertical-align:top">Utilice el formato: 2222-2222</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>Experiencia previa:</td>
+					<td>Nivel:</td>
+				</tr>
+				<tr>
+					<td><textarea name="exp" cols="40" rows="10" maxlength="250"><?php echo $alumno->getExpPrevia();?></textarea></td>
+					<td style="vertical-align:top">
+						<select name="nivel">
+						<?php foreach ($nivel as $n) { ?>
+							<?php if($alumno->getIdNivel()->getIdNivel() == $n->getIdNivel()): ?>
+								<option value="<?= $n->getIdNivel();?>" selected="<?php echo $n->getNombre();?>"><?php echo $n->getNombre();?></option>
+							<?php else: ?>
+								<option value="<?= $n->getIdNivel();?>"><?php echo $n->getNombre();?></option>
+							<?php endif;?>
+						<?php } ?>
+					</select>
+					</td>
 				</tr>
 				<tr>
 					<td>&nbsp;</td>
@@ -63,16 +96,28 @@
 					<td>DUI de la madre:</td>
 				</tr>
 				<tr>
-					<td><?= form_input('madre',$alumno->getNombreMadre())?></td>
-					<td><?= form_input('duim',$alumno->getDuiMadre())?></td>
+					<td><input name="madre" maxlength="60" value="<?php echo $alumno->getNombreMadre();?>" /></td>
+					<td><input name="duim" maxlength="10" size="7" value="<?php echo $alumno->getDuiMadre();?>"/></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td style="vertical-align:top">Utilice el formato: 22222222-2</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td></td>
 				</tr>
 				<tr>
 					<td>Lugar de trabajo:</td>
 					<td>Telefóno de la madre:</td>
 				</tr>
 				<tr>
-					<td><?= form_input('tbjm',$alumno->getTrabajoMadre())?></td>
-					<td><?= form_input('telm',$alumno->getTelMadre())?></td>
+					<td><input name="tbjm" maxlength="100" value="<?php echo $alumno->getTrabajoMadre();?>" /></td>
+					<td><input name="telm" maxlength="9" value="<?php echo $alumno->getTelMadre();?>" size="7"/></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td style="vertical-align:top">Utilice el formato: 2222-2222</td>
 				</tr>
 				<tr>
 					<td>&nbsp;</td>
@@ -83,63 +128,87 @@
 					<td>DUI del padre:</td>
 				</tr>
 				<tr>
-					<td><?= form_input('padre',$alumno->getNombrePadre())?></td>
-					<td><?= form_input('duip',$alumno->getDuiPadre)?></td>
+					<td><input name="padre" maxlength="60" value="<?php echo $alumno->getNombrePadre();?>" /></td>
+					<td><input name="duip" maxlength="10" size="7" value="<?php echo $alumno->getDuiPadre();?>"/></td>
 				</tr>
 				<tr>
-					<td>Lugar de trabajo:</td>
-					<td>Telefóno del padre:</td>
-				</tr>
-				<tr>
-					<td><?= form_input('tbjp',$alumno->getTrabajoPadre())?></td>
-					<td><?= form_input('telp',$alumno->getTelPadre())?></td>
+					<td></td>
+					<td style="vertical-align:top">Utilice el formato: 22222222-2</td>
 				</tr>
 				<tr>
 					<td>&nbsp;</td>
 					<td></td>
 				</tr>
 				<tr>
-					<td>Experiencia previa:</td>
-					<td>Estado:</td>
+					<td>Lugar de trabajo:</td>
+					<td>Telefóno del padre:</td>
 				</tr>
 				<tr>
-					<td><?= form_textarea('exp',$alumno->getExpPrevia())?></td>
-					<td><?= form_input('estado',$alumno->getEstado())?></td>
+					<td><input name="tbjp" maxlength="100" value="<?php echo $alumno->getTrabajoPadre();?>" /></td>
+					<td><input name="telp" maxlength="9" value="<?php echo $alumno->getTelPadre();?>" size="7"/></td>
 				</tr>
 				<tr>
-					<td colspan="2">En caso de no contar con los padres mencionar un responsable:</td>
+					<td></td>
+					<td style="vertical-align:top">Utilice el formato: 2222-2222</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td colspan="2">En caso de no contar con padres, registrar un responsable:</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td></td>
 				</tr>
 				<tr>
 					<td>Nombre del responsable:</td>
 					<td>DUI del responsable:</td>
 				</tr>
 				<tr>
-					<td><?= form_input('resp',$alumno->getNombreResp())?></td>
-					<td><?= form_input('duir',$alumno->getDuiResp())?></td>
+					<td><input name="resp" maxlength="60" value="<?php echo $alumno->getNombreResp();?>" /></td>
+					<td><input name="duir" maxlength="10" value="<?php echo $alumno->getDuiResp();?>" size="7"/></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td style="vertical-align:top">Utilice el formato: 22222222-2</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td></td>
 				</tr>
 				<tr>
 					<td>Lugar de trabajo:</td>
 					<td>Telefono del Responsable:</td>
 				</tr>
 				<tr>
-					<td><?= form_input('tbjr',$alumno->getTrabajoResp())?></td>
-					<td><?= form_input('telr',$alumno->getTelResp())?></td>
+					<td><input name="tbjr" maxlength="100" value="<?php echo $alumno->getTrabajoResp();?>" /></td>
+					<td><input name="telr" maxlength="9" value="<?php echo $alumno->getTelResp();?>" size="7"/></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td style="vertical-align:top">Utilice el formato: 2222-2222</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td></td>
 				</tr>
 				<tr>
 					<td>Padecimientos del inscrito:</td>
 					<td>Medicinas:</td>
 				</tr>
 				<tr>
-					<td><?= form_textarea('padecimiento',$alumno->getPadecimientos())?></td>
-					<td><?= form_textarea('medic',$alumno->getMedicamentos())?></td>
+					<td><textarea name="padecimiento" cols="40" rows="10" maxlength="200"><?php echo $alumno->getPadecimientos();?></textarea></td>
+					<td><textarea name="medic" cols="40" rows="10" maxlength="200"><?php echo $alumno->getMedicamentos();?></textarea></td>
 				</tr>
 				<tr>
 					<td><input type="button" value="Volver atrás" name="volver atrás2" onclick="history.back()" /></td>
-					<td><center><?= form_submit('','Actualizar Datos')?></center></td>
+					<td><center><?= form_submit('','Ingresar Alumno')?></center></td>
 					<td></td>
 				</tr>
 			</tbody>
-		</table>
+		</table><br><br>
 	<?= form_close()?>
 <?php else: ?>
 	<br><br>

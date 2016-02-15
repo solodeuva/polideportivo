@@ -27,7 +27,7 @@
 					<td><input type="hidden" name="anteriorcontrasena" value="<?php echo $usuario->getContrasena(); ?>"  />
 					<input type="hidden" name="id" value="<?php echo $usuario->getIdUsuario(); ?>"  />
 					</td>
-					<td><center><?= form_submit('','Actualizar Usuario')?></center></td>
+					<td><center><?= form_submit('','Actualizar')?></center></td>
 					<td><p class="tips">&nbsp;<p></td>
 				</tr>
 				<tr>

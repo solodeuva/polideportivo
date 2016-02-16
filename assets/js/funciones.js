@@ -21,3 +21,11 @@ function eliminarNivel(id){
       else
         return 0;      
 }
+
+function eliminarAlumno(id){
+      var respuesta=confirm("¿Realmente desea eliminar este Alumno?");
+      if(respuesta==true)
+        window.location="../alumnos/eliminarAlumno/"+id;
+      else
+        return 0;      
+}

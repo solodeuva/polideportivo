@@ -18,7 +18,8 @@
 					<td><?php echo $a->getApellidos(); ?></td>
 					<td><?php echo $a->getIdNivel()->getNombre(); ?></td>
 					<td><a href="<?php echo base_url('Alumnos/editarAlumno/'.$a->getIdAlumno()); ?>"><img src="<?php echo base_url(); ?>assets/img/edit.png" width="24" height="24" border="0"></a>
-					    <a onclick="eliminarNivel(<?php echo $a->getIdAlumno(); ?>)" href="#" ><img src="<?php echo base_url(); ?>assets/img/delete.png" width="24" height="24" border="0"></a>
+					    <a onclick="eliminarAlumno(<?php echo $a->getIdAlumno();?>)" href="#" ><img src="<?php echo base_url();?>assets/img/delete.png" width="24" height="24" border="0"></a>
+					    <?php echo $a->getIdAlumno(); ?>
 					</td>
 				</tr>
 			<?php } ?>

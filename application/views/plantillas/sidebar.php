@@ -51,7 +51,7 @@
                     Gestionar Alumnos
                 </div>
             </div></a>
-            <a href="<?= base_url('Usuarios/logout')?>"><div class="div-menu-sidebar">
+            <a href="<?= base_url('alumnos/verReporte')?>"><div class="div-menu-sidebar">
                 <div class="div-menu-sidebar-in">
                     Ver Estadísticas
                 </div>

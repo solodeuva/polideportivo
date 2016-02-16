@@ -77,9 +77,9 @@
 			</tr>
 		</thead>
 			<tr>
-				<?= form_open('alumnos/buscarTodos')?>
-				<td><?= form_submit('','Buscar')?></td>			
-				<?= form_close()?>
+				<form action="<?php echo base_url('alumnos/buscarTodos');?>" method="post" accept-charset="utf-8">
+				<td><input type="submit" value="Buscar"  /></td>			
+				</form>
 			</tr>
 		</table>
 	</center>

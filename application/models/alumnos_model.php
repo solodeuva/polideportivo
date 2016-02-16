@@ -79,6 +79,12 @@ class Alumnos_model extends CI_Model {
   function getAlumno($id){
     return $this->em->getRepository('Alumno')->find($id);
   }
+
+  function borrarAlumno($id){
+    $alum = $this->em->getRepository('Alumno')->find($id);
+    $this->em->remove($alum);
+    $this->em->flush();
+  }
 /*
   function actualizarAlumno($data,$id){
     $this->load->model('nivel_model');
@@ -111,11 +117,6 @@ class Alumnos_model extends CI_Model {
     $this->em->persist($alumno);
     $this->em->flush();
   }
-
-  function borrarAlumno($id){
-    $alumno = $this->em->getRepository('Alumno')->find($id);
-    $this->em->remove($nivel);
-    $this->em->flush();
-  }
-  */
+*/
+  
 }

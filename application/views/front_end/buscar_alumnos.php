@@ -7,6 +7,10 @@
 		<thead>
 			<tr>
 				<th colspan="2">Buscar Alumnos por nivel: </th>
+				<th colspan="2">Buscar Alumnos por Género: </th>
+				<th colspan="2">Buscar Alumnos por Nombres: </th>
+				<th colspan="2">Buscar Alumnos por Apellidos: </th>
+				<th colspan="2">Mostrar Todos los Alumnos:</th>
 			</tr>
 		</thead>
 			<tr>
@@ -20,15 +24,6 @@
 				</td>
 				<td><?= form_submit('','Buscar')?></td>			
 				<?= form_close()?>
-			</tr>
-		</table><br>
-		<table>
-		<thead>
-			<tr>
-				<th colspan="2">Buscar Alumnos por Género: </th>
-			</tr>
-		</thead>
-			<tr>
 				<?= form_open('alumnos/buscarPorGenero')?>
 				<td>
 					<select name="genero">
@@ -38,50 +33,50 @@
 				</td>
 				<td><?= form_submit('','Buscar')?></td>			
 				<?= form_close()?>
-			</tr>
-		</table><br>
-		<table>
-		<thead>
-			<tr>
-				<th colspan="2">Buscar Alumnos por Nombres: </th>
-			</tr>
-		</thead>
-			<tr>
 				<?= form_open('alumnos/buscarPorNombres')?>
 				<td>
 					<input name="nombres" required/>
 				</td>
 				<td><?= form_submit('','Buscar')?></td>			
 				<?= form_close()?>
-			</tr>
-		</table><br>
-		<table>
-		<thead>
-			<tr>
-				<th colspan="2">Buscar Alumnos por Apellidos: </th>
-			</tr>
-		</thead>
-			<tr>
 				<?= form_open('alumnos/buscarPorApellidos')?>
 				<td>
 					<input name="apellidos" required/>
 				</td>
 				<td><?= form_submit('','Buscar')?></td>			
 				<?= form_close()?>
-			</tr>
-		</table><br>
-		<table>
-		<thead>
-			<tr>
-				<th colspan="2">Mostrar Todos los Alumnos:</th>
-			</tr>
-		</thead>
-			<tr>
 				<form action="<?php echo base_url('alumnos/buscarTodos');?>" method="post" accept-charset="utf-8">
 				<td><input type="submit" value="Buscar"  /></td>			
 				</form>
 			</tr>
+		<br>
 		</table>
+		<div>
+			<table >
+				<thead>
+					<tr>
+						<th>Nombre</th>
+						<th>Apellido</th>
+						<th>Nivel</th>
+						<th>Estado</th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php foreach ($alumnos as $a) {?>
+						<tr>
+							<td><?= $a->getNombres();?></td>
+							<td><?= $a->getApellidos();?></td>
+							<td><?= $a->getIdNivel()->getNombre();?></td>
+							<?php if($a->getEstado()=="A"):?>
+							<td><?php echo "Activo";?></td>
+							<?php else: ?>
+							<td><?php echo "No Activo";?></td>
+							<?php endif;?>
+						</tr>
+					<?php } ?>
+				</tbody>
+			</table>
+		</div>
 	</center>
 	</div><br><br>
 

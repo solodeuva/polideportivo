@@ -1,7 +1,7 @@
 <section class="contenido">
 <?php if(isset($_SESSION['logged_in'])): #si ha iniciado sesion se mostrara el contenido sino el mensaje de error?>
 	<h1>Editar Alumno</h1>
-	<?= form_open('Alumnos/agregarAlumno')?>
+	<?= form_open('Alumnos/actualizarAlumno')?>
 		<table class="tabla">
 			<tbody>
 				<tr>
@@ -203,8 +203,11 @@
 					<td><textarea name="medic" cols="40" rows="10" maxlength="200"><?php echo $alumno->getMedicamentos();?></textarea></td>
 				</tr>
 				<tr>
+					<td><input type="hidden" value="<?php echo $alumno->getIdAlumno();?>" name="id"/></td>
+				</tr>
+				<tr>
 					<td><input type="button" value="Volver atrás" name="volver atrás2" onclick="history.back()" /></td>
-					<td><center><?= form_submit('','Ingresar Alumno')?></center></td>
+					<td><center><?= form_submit('','Actualizar Alumno')?></center></td>
 					<td></td>
 				</tr>
 			</tbody>

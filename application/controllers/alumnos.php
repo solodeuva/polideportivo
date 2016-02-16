@@ -137,40 +137,38 @@ class Alumnos extends CI_Controller {
 		$this->load->view('front_end/ficha_alumno');
 		$this->load->view('plantillas/footer');
 	}
-
+	*/
 	public function actualizarAlumno(){
 		$id = $this->input->post('id');
 		$data = array(
-			'nombre' => $this->input->post('nombre'),
-			'apellido' => $this->input->post('apellido'),
-			'genero' => $this->input->post('genero'),
-			'fnacimiento' => $this->input->post('fnacimiento'),
-			'estatura' => $this->input->post('estatura'),
-			'peso' => $this->input->post('peso'),
-			'dir' => $this->input->post('dir'),
-			'tel' => $this->input->post('tel'),
-			'madre' => $this->input->post('madre'),
-			'duim' => $this->input->post('duim'),
-			'tbjm' => $this->input->post('tbjm'),
-			'telm' => $this->input->post('telm'),
-			'padre' => $this->input->post('padre'),
-			'duip' => $this->input->post('duip'),
-			'tbjp' => $this->input->post('tbjp'),
-			'telp' => $this->input->post('telp'),
-			'resp' => $this->input->post('resp'),
-			'duir' => $this->input->post('duir'),
-			'tbjr' => $this->input->post('tbjr'),
-			'telr' => $this->input->post('telr'),
-			'exp' => $this->input->post('exp'),
-			'padecimiento' => $this->input->post('padecimiento'),
-			'medic' => $this->input->post('medic'),
-			'nombre' => $this->input->post('nombre'),
-			'nivel' => $this->input->post('nivel')
+			'nombres' 		=> $this->input->post('nombres'),
+			'apellidos' 	=> $this->input->post('apellidos'),
+			'estatura' 		=> $this->input->post('estatura'),
+			'peso' 			=> $this->input->post('peso'),
+			'fnacimiento' 	=> $this->input->post('fnacimiento'),
+			'genero' 		=> $this->input->post('genero'),		
+			'dir' 			=> $this->input->post('dir'),
+			'tel' 			=> $this->input->post('tel'),
+			'exp' 			=> $this->input->post('exp'),
+			'nivel' 		=> $this->input->post('nivel'),
+			'madre' 		=> $this->input->post('madre'),
+			'duim' 			=> $this->input->post('duim'),
+			'tbjm' 			=> $this->input->post('tbjm'),
+			'telm' 			=> $this->input->post('telm'),
+			'padre' 		=> $this->input->post('padre'),
+			'duip' 			=> $this->input->post('duip'),
+			'tbjp' 			=> $this->input->post('tbjp'),
+			'telp' 			=> $this->input->post('telp'),
+			'resp' 			=> $this->input->post('resp'),
+			'duir' 			=> $this->input->post('duir'),
+			'tbjr' 			=> $this->input->post('tbjr'),
+			'telr' 			=> $this->input->post('telr'),
+			'padecimiento' 	=> $this->input->post('padecimiento'),
+			'medic' 		=> $this->input->post('medic')
 			);
 		$this->alumnos_model->actualizarAlumno($data,$id);
 		redirect(base_url('Alumnos/gestionarAlumnos'));
 	}
-	*/
 	public function eliminarAlumno($id){
 		$this->alumnos_model->borrarAlumno($id);
 		redirect(base_url('Alumnos/gestionarAlumnos'));

@@ -272,7 +272,7 @@ a:link
 {
     text-align: left;
 }
-.div-usuarios
+#div-usuarios
 {
     height: 200px;
     overflow: auto;

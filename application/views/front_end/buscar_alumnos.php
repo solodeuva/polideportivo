@@ -51,7 +51,8 @@
 			</tr>
 		<br>
 		</table>
-		<div>
+		<br>
+		<div class="div-usuarios">
 			<table >
 				<thead>
 					<tr>
@@ -59,6 +60,7 @@
 						<th>Apellido</th>
 						<th>Nivel</th>
 						<th>Estado</th>
+						<th></th>
 					</tr>
 				</thead>
 				<tbody>
@@ -72,6 +74,9 @@
 							<?php else: ?>
 							<td><?php echo "No Activo";?></td>
 							<?php endif;?>
+							<td><a href="<?php echo base_url('Alumnos/editarAlumno/'.$a->getIdAlumno()); ?>"><img src="<?php echo base_url(); ?>assets/img/edit.png" width="24" height="24" border="0"></a>
+								
+							</td>
 						</tr>
 					<?php } ?>
 				</tbody>

@@ -85,18 +85,20 @@ class Alumnos_model extends CI_Model {
     $this->em->remove($alum);
     $this->em->flush();
   }
-/*
+
   function actualizarAlumno($data,$id){
     $this->load->model('nivel_model');
     $alumno = $this->em->getRepository('Alumno')->find($id);
-    $alumno->setNombres($data['nombre']);
-    $alumno->setApellidos($data['apellido']);
-    $alumno->setGenero($data['genero']);
-    $alumno->setFechaNacimiento($data['fnacimiento']);
+    $alumno->setNombres($data['nombres']);
+    $alumno->setApellidos($data['apellidos']);
     $alumno->setEstatura($data['estatura']);
     $alumno->setPeso($data['peso']);
+    $alumno->setFechaNacimiento($data['fnacimiento']);
+    $alumno->setGenero($data['genero']);
     $alumno->setDireccion($data['dir']);
     $alumno->setTelefono($data['tel']);
+    $alumno->setExpPrevia($data['exp']);
+    $alumno->setIdNivel($this->nivel_model->getNivel($data['nivel']));
     $alumno->setNombreMadre($data['madre']);
     $alumno->setDuiMadre($data['duim']);
     $alumno->setTrabajoMadre($data['tbjm']);
@@ -109,14 +111,11 @@ class Alumnos_model extends CI_Model {
     $alumno->setDuiResp($data['duir']);
     $alumno->setTrabajoResp($data['tbjr']);
     $alumno->setTelResp($data['telr']);
-    $alumno->setExpPrevia($data['exp']);
     $alumno->setPadecimientos($data['padecimiento']);
     $alumno->setMedicamentos($data['medic']);
-    $alumno->setEstado($data['estado']);
-    $alumno->setIdNivel($this->nivel_model->getNivel($data['nivel']));
+    $alumno->setEstado("A");
     $this->em->persist($alumno);
     $this->em->flush();
   }
-*/
   
 }

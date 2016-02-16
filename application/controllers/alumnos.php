@@ -62,6 +62,7 @@ class Alumnos extends CI_Controller {
 	public function buscarAlumnos(){ 				#esta funcion solo desplegara una vista con opciones de busqueda de alumnos
 		$this->load->model('nivel_model');
 		$data['nivel'] = $this->nivel_model->obtenerNiveles();
+		$data['alumnos'] = $this->alumnos_model->obtenerAlumnosNivel(1);
 		$this->load->view('plantillas/header');
 		$this->load->view('plantillas/sidebar');
 		$this->load->view('front_end/buscar_alumnos',$data);
@@ -69,42 +70,52 @@ class Alumnos extends CI_Controller {
 	}	
 
 	public function buscarPorNivel(){
+		$this->load->model('nivel_model');
+		$data['nivel'] = $this->nivel_model->obtenerNiveles();
 		$data['alumnos'] = $this->alumnos_model->obtenerAlumnosNivel($this->input->post('nivel'));
 		$this->load->view('plantillas/header');
 		$this->load->view('plantillas/sidebar');
-		$this->load->view('front_end/ver_alumnos',$data);
+		$this->load->view('front_end/buscar_alumnos',$data);
 		$this->load->view('plantillas/footer');
 	}
 
 	public function buscarPorGenero(){
+		$this->load->model('nivel_model');
+		$data['nivel'] = $this->nivel_model->obtenerNiveles();
 		$data['alumnos'] = $this->alumnos_model->obtenerAlumnosGenero($this->input->post('genero'));
 		$this->load->view('plantillas/header');
 		$this->load->view('plantillas/sidebar');
-		$this->load->view('front_end/ver_alumnos',$data);
+		$this->load->view('front_end/buscar_alumnos',$data);
 		$this->load->view('plantillas/footer');
 	}
 
 	public function buscarPorNombres(){
+		$this->load->model('nivel_model');
+		$data['nivel'] = $this->nivel_model->obtenerNiveles();
 		$data['alumnos'] = $this->alumnos_model->obtenerAlumnosNombres($this->input->post('nombres'));
 		$this->load->view('plantillas/header');
 		$this->load->view('plantillas/sidebar');
-		$this->load->view('front_end/ver_alumnos',$data);
+		$this->load->view('front_end/buscar_alumnos',$data);
 		$this->load->view('plantillas/footer');
 	}
 
 	public function buscarPorApellidos(){
+		$this->load->model('nivel_model');
+		$data['nivel'] = $this->nivel_model->obtenerNiveles();
 		$data['alumnos'] = $this->alumnos_model->obtenerAlumnosApellidos($this->input->post('apellidos'));
 		$this->load->view('plantillas/header');
 		$this->load->view('plantillas/sidebar');
-		$this->load->view('front_end/ver_alumnos',$data);
+		$this->load->view('front_end/buscar_alumnos',$data);
 		$this->load->view('plantillas/footer');
 	}
 
 	public function buscarTodos(){
+		$this->load->model('nivel_model');
+		$data['nivel'] = $this->nivel_model->obtenerNiveles();
 		$data['alumnos'] = $this->alumnos_model->obtenerAlumnos();
 		$this->load->view('plantillas/header');
 		$this->load->view('plantillas/sidebar');
-		$this->load->view('front_end/ver_alumnos',$data);
+		$this->load->view('front_end/buscar_alumnos',$data);
 		$this->load->view('plantillas/footer');
 	}
 

@@ -87,7 +87,7 @@
 					<td>DUI de la madre:</td>
 				</tr>
 				<tr>
-					<td><?= form_input('madre')?></td>
+					<td><input name="madre" maxlength="50" required/></td>
 					<td><input name="duim" maxlength="10" size="7"/></td>
 				</tr>
 				<tr>
@@ -103,7 +103,7 @@
 					<td>Telefóno de la madre:</td>
 				</tr>
 				<tr>
-					<td><?= form_input('tbjm')?></td>
+					<td><input name="tbjm" maxlength="30" required/></td>
 					<td><input name="telm" maxlength="9" size="7"/></td>
 				</tr>
 				<tr>
@@ -119,7 +119,7 @@
 					<td>DUI del padre:</td>
 				</tr>
 				<tr>
-					<td><?= form_input('padre')?></td>
+					<td><input name="padre" maxlength="50" required/></td>
 					<td><input name="duip" maxlength="10" size="7"/></td>
 				</tr>
 				<tr>
@@ -135,7 +135,7 @@
 					<td>Telefóno del padre:</td>
 				</tr>
 				<tr>
-					<td><?= form_input('tbjp')?></td>
+					<td><input name="tbjp" maxlength="30" required/></td>
 					<td><input name="telp" maxlength="9" size="7"/></td>
 				</tr>
 				<tr>
@@ -158,7 +158,7 @@
 					<td>DUI del responsable:</td>
 				</tr>
 				<tr>
-					<td><?= form_input('resp')?></td>
+					<td><input name="resp" maxlength="50" required/></td>
 					<td><input name="duir" maxlength="10" size="7"/></td>
 				</tr>
 				<tr>
@@ -174,7 +174,7 @@
 					<td>Telefono del Responsable:</td>
 				</tr>
 				<tr>
-					<td><?= form_input('tbjr')?></td>
+					<td><input name="tbjr" maxlength="30" required/></td>
 					<td><input name="telr" maxlength="9" size="7"/></td>
 				</tr>
 				<tr>

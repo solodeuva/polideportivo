@@ -40,14 +40,25 @@ class Nivel_model extends CI_Model {
     $this->em->remove($nivel);
     $this->em->flush();
   }
-
+  /*
   function contarNiveles(){ #funcion con query builder porque con doctrine me devolvia un array 
     $query = $this->db->query('select * from nivel');
     return $query->num_rows();
   }
-
+  */
   function alumnosPorNivel(){
-    $query = $this->db->query('select count(a.nombres) as cuenta,n.nombre from alumno a right join nivel n on a.id_nivel = n.id_nivel group by n.nombre');
-    return $query->num_rows();
+    $select =   array(
+                'nivel.nombre',
+                'count(alumno.nombres) as Total',
+                'nivel.instructor'
+            ); 
+    $this->db->select($select)
+              ->from('alumno')
+              ->join('nivel','alumno.id_nivel = nivel.id_nivel','right')
+              ->group_by('nivel.nombre,nivel.instructor')
+              ->order_by('nivel.nombre');
+    $query = $this->db->get();
+    if($query->num_rows() > 0) return $query;
+    else return false;
   }
 }

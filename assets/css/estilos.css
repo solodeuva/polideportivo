@@ -282,3 +282,11 @@ a:link
     font-size: 14px;
     font-style: italic;
 }
+.div-estadisticas{
+    display: table-cell;
+    text-align: center;
+}
+.div-estadisticas-in{
+    display:table;
+    text-align: center;
+}

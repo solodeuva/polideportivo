@@ -166,34 +166,49 @@ class Alumnos extends CI_Controller {
 	}
 
 	public function verReporte(){
-		$this->load->model('nivel_model');
-		$data['nivel'] = $this->nivel_model->contarNiveles();
-		$data['niveles'] = $this->nivel_model->alumnosPorNivel();
 		$this->load->view('plantillas/header');
 		$this->load->view('plantillas/sidebar');
-		$this->load->view('front_end/reporte_alumno',$data);
+		$this->load->view('front_end/reporte_alumno');
 		$this->load->view('plantillas/footer');
 	}
-	public function generarReporte(){
+
+	public function verReportePastel(){
 		$this->load->model('nivel_model');
-		$nivel = $this->nivel_model->obtenerNiveles();
+		$data['alumpornivel'] = $this->nivel_model->alumnosPorNivel();
+		$this->load->view('plantillas/header');
+		$this->load->view('plantillas/sidebar');
+		$this->load->view('front_end/reporte_alumno_pie',$data);
+		$this->load->view('plantillas/footer');
+	}
+	public function verReporteBarras(){
+		$this->load->model('nivel_model');
+		$data['alumpornivel'] = $this->nivel_model->alumnosPorNivel();
+		$this->load->view('plantillas/header');
+		$this->load->view('plantillas/sidebar');
+		$this->load->view('front_end/reporte_alumno_barras',$data);
+		$this->load->view('plantillas/footer');
+	}
+	
+	public function generarReportePastel(){
+		$this->load->model('nivel_model');
+		$alumPorNivel = $this->nivel_model->alumnosPorNivel();
 		require_once(APPPATH."libraries/jpgraph/jpgraph.php");
 		require_once(APPPATH."libraries/jpgraph/jpgraph_pie.php");
 		require_once(APPPATH."libraries/jpgraph/jpgraph_pie3d.php");
 
 
-		// Pasando el nombre de los niveles a un arreglo llamado nivel
-		$i = 1;
-		foreach ($nivel as $n) {
-			$dato[$i] = $n->getNombre();
+		// Pasando el nombre de los niveles a un arreglo llamado dato
+		$i = 0;
+		foreach ($alumPorNivel->result() as $a) {
+			$dato[$i] 	= $a->nombre;
+			$cuenta[] = $a->total;
+			$exp[$i] 	= 5;
 			$i++;
 		}
-		$data = array(20,27,45,75,90);
 
 		// Creando el Grafico de Pastel
 		$graph = new PieGraph(550,400);
 		$graph->SetShadow();
-
 
 		// Estableciendo el titulo
 		$graph->title->Set("Porcentaje de Alumnos por Nivel");
@@ -201,8 +216,8 @@ class Alumnos extends CI_Controller {
 		$graph->title->SetColor("darkblue");
 		$graph->legend->Pos(0.3,0.06);
 
-		// Create 3D pie plot
-		$p1 = new PiePlot3d($data);
+		// Crear 3D pie plot
+		$p1 = new PiePlot3d($cuenta);
 		$p1->SetTheme("sand");
 		$p1->SetCenter(0.5);
 		$p1->SetSize(0.5);
@@ -212,29 +227,70 @@ class Alumnos extends CI_Controller {
 		$p1->SetAngle(45);
 
 		// Distancia entre las partes del pastel
-		$p1->Explode(array(5,5,5,5,5));
-
-		// As a shortcut you can easily explode one numbered slice with
-		// $p1->ExplodeSlice(3);
+		$p1->Explode($exp);
 
 		$p1->value->SetFont(FF_ARIAL,FS_NORMAL,10);
-
 		$p1->SetLegends($dato);
-
-
 		$graph->Add($p1);
+
 		$gdImgHandler = $graph->Stroke(_IMG_HANDLER);
 		 
-		// Stroke image to a file and browser
-		 
-		// Default is PNG so use ".png" as suffix
+		// Guardando imagen como archivo por default es .png
 		$fileName = "assets/img/reportes/reporte.png";
 		$graph->img->Stream($fileName);
-		 
-		// Send it back to browser
-		//$graph->img->Headers();
-		//$graph->img->Stream();
 
-		redirect(base_url('Alumnos/gestionarAlumnos'));
+		redirect(base_url('Alumnos/verReportePastel'));
+	}
+
+	public function generarReporteBarras(){
+		$this->load->model('nivel_model');
+		$alumPorNivel = $this->nivel_model->alumnosPorNivel();
+		require_once(APPPATH."libraries/jpgraph/jpgraph.php");
+		require_once(APPPATH."libraries/jpgraph/jpgraph_line.php");
+		require_once(APPPATH."libraries/jpgraph/jpgraph_bar.php");
+
+		$i = 0;
+		foreach ($alumPorNivel->result() as $a) {
+			$niveles[$i] 	= $a->nombre;
+			$cuenta[] = $a->total;
+			$i++;
+		}
+		 
+		//Instancia del objeto del tipo Graph en donde como parametro
+		// se le pasan los valore de ancho y altura
+		$grafica = new Graph(700,440);
+		$grafica->SetScale("textlin");
+		 
+		$grafica->SetBox(false);
+		//Nombre de las columnas
+		$columnas = $niveles;
+		$grafica->xaxis->SetTickLabels($niveles);
+		 
+		//Objeto del tipo BarPlot que se le enviara a la grafica y el cual
+		//recibe como parametros los datos a graficar
+		$barras = new BarPlot($cuenta);
+		 
+		$grafica->Add($barras);
+		//Color de los bordes 
+		 
+		//Color de borde de las barras
+		$barras->SetColor("white");
+		//Color de relleno de las barras
+		$barras->SetFillColor("#653306");
+		//Ancho de las barras
+		$barras->SetWidth(45);
+		 
+		$grafica->title->Set("Número de Alumnos por Nivel");
+		$grafica->xaxis->title->Set("Niveles");
+		$grafica->yaxis->title->Set("Alumnos");
+		$grafica->title->SetFont(FF_TIMES,FS_ITALIC,18);
+		
+		$gdImgHandler = $grafica->Stroke(_IMG_HANDLER);
+		 
+		// Guardando imagen como archivo por default es .png
+		$fileName = "assets/img/reportes/reportebarra.png";
+		$grafica->img->Stream($fileName);
+
+		redirect(base_url('Alumnos/verReporteBarras'));
 	}
 }

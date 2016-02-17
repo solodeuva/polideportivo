@@ -246,6 +246,13 @@
 		</form>
 		<br>
 	<?= form_close()?>
+	<table>
+		<tbody>
+			<tr>
+				<center><input type="button" value="Eliminar Alumno" onclick="eliminarAlumno(<?php echo $alumno->getIdAlumno();?>)"></center>
+			</tr>
+		</tbody>
+	</table>
 <?php else: ?>
 	<br><br>
 	<h2>Tu sesión expiró o no has iniciado sesión, por favor inicia sesión para ver este contenido</h2>

@@ -1,7 +1,7 @@
 function salir(){
       var respuesta=confirm("¿Desea salir del sistema?");
       if(respuesta==true)
-        window.location="../Usuarios/logout"; /* Obligamos a que vaya a la raiz del sitio y luego al controlador Usuario funcion logout*/
+        window.location="../../Usuarios/logout"; /* Obligamos a que vaya a la raiz del sitio y luego al controlador Usuario funcion logout*/
       else
         return 0;
 }
@@ -25,7 +25,7 @@ function eliminarNivel(id){
 function eliminarAlumno(id){
       var respuesta=confirm("¿Realmente desea eliminar este Alumno?");
       if(respuesta==true)
-        window.location="eliminarAlumno/"+id;
+        window.location="../../alumnos/eliminarAlumno/"+id;
       else
         return 0;      
 }

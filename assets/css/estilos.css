@@ -262,16 +262,6 @@ a:link
 {
     text-align: left;
 }
-.tabla-usuarios
-{
-    width: 80%;
-    margin-left: 10%;
-    position: relative;
-}
-.tabla-usuarios thead tr td
-{
-    text-align: left;
-}
 .div-usuarios
 {
     height: 400px;
@@ -308,4 +298,21 @@ a:link
 }
 .tabla-alumnos tbody th {
    border: 0;
+}
+.tabla-usuarios
+{
+    width: 80%;
+    margin-left: 10%;
+    position: relative;
+   text-align: left;
+   border-collapse: collapse;
+   caption-side: top;
+}
+.tabla-usuarios thead
+{
+    text-align: left;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
 }

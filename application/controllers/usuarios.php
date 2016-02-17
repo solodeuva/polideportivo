@@ -76,12 +76,20 @@ class Usuarios extends CI_Controller {
 	}
 
 	public function editarUsuario($id){
+		if($_SESSION['user_id'] == 1){
 		$this->load->helper('form');
 		$data['usuario'] = $this->usuarios_model->getUsuario($id); 
 		$this->load->view('plantillas/header');
 		$this->load->view('plantillas/sidebar');
 		$this->load->view('front_end/editar_usuario',$data);
 		$this->load->view('plantillas/footer');
+		}
+		else{
+			$this->load->view('plantillas/header');
+			$this->load->view('plantillas/sidebar');
+			$this->load->view('front_end/gestionar_usuarios');
+			$this->load->view('plantillas/footer');
+		}
 	}
 
 	public function actualizarUsuario(){

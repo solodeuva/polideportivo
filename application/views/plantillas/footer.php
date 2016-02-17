@@ -1,7 +1,7 @@
         <footer>
             <section class="contenedor">
-                <p>Derechos reservados de Universidad de El Salvador</p>
-                <p>Hacia la libertad por la cultura</p>
+                <p>Derechos Reservados de Universidad de El Salvador</p>
+                <p>Hacia la Libertad por La Cultura</p>
             </section>
         </footer>
     </body>

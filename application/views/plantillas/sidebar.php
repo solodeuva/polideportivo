@@ -26,6 +26,7 @@
             <?php if (isset($_SESSION['msgError'])): ?>
                 <?= $this->session->flashdata('msgError'); ?>
             <?php endif; ?>
+            <br>
     </div>
     <?php else : #si logged_in esta predefinido muestra el saludo
     ?>
@@ -56,14 +57,14 @@
                     Ver Estadísticas
                 </div>
             </div></a>
-            <a onclick="salir()" href="#"><div class="div-menu-sidebar">
-                <div class="div-menu-sidebar-in">
-                    Cerrar Sesion
-                </div>
-            </div></a>
             <a href="<?= base_url('Usuarios/perfil')?>"><div class="div-menu-sidebar">
                 <div class="div-menu-sidebar-in">
                     Mi Perfil
+                </div>
+            </div></a>
+            <a onclick="salir()" href="#"><div class="div-menu-sidebar">
+                <div class="div-menu-sidebar-in">
+                    Cerrar Sesion
                 </div>
             </div></a>
     <?php endif; ?>

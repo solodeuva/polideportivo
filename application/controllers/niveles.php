@@ -8,8 +8,6 @@ class Niveles extends CI_Controller {
 		$this->load->model('nivel_model');
 	}
 
-	
-
 	public function gestionarNiveles(){
 		$this->load->view('plantillas/header');
 		$this->load->view('plantillas/sidebar');

@@ -240,12 +240,13 @@
 					<td></td>
 				</tr>
 			</tbody>
-		</table><br>
+		</table>
+	<?= form_close()?>
+	<br>
 		<form action="<?php echo base_url('alumnos/buscarAlumnos');?>">
 			<input type="submit" value="Regresar a Buscar"/>
 		</form>
-		<br>
-	<?= form_close()?>
+	<br>
 	<table>
 		<tbody>
 			<tr>
@@ -254,8 +255,8 @@
 		</tbody>
 	</table>
 <?php else: ?>
-	<br><br>
+	<br><br><br><br><br><br><br>
 	<h2>Tu sesión expiró o no has iniciado sesión, por favor inicia sesión para ver este contenido</h2>
-	<br><br>
+	<br><br><br><br><br><br><br>
 <?php endif; ?>
 </section>

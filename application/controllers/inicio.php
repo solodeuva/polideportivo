@@ -26,4 +26,11 @@ class Inicio extends CI_Controller {
 		$this->load->view('front_end/inicio_view');
 		$this->load->view('plantillas/footer');
 	}
+
+	public function errorContenido(){
+		$this->load->view('plantillas/header');
+		$this->load->view('plantillas/sidebar');
+		$this->load->view('front_end/error_contenido');
+		$this->load->view('plantillas/footer');
+	}
 }

@@ -25,7 +25,24 @@ function eliminarNivel(id){
 function eliminarAlumno(id){
       var respuesta=confirm("¿Realmente desea eliminar este Alumno?");
       if(respuesta==true)
-        window.location="../alumnos/eliminarAlumno/"+id;
+        window.location="eliminarAlumno/"+id;
       else
         return 0;      
+}
+
+function actualizarEstado(id){
+      var respuesta=confirm("¿Realmente desea cambiar el estado de este alumno?");
+      if(respuesta==true)
+        window.location="actualizarEstado/"+id;
+      else
+        return 0;      
+}
+
+function imprSelec(ficha){
+  var ficha=document.getElementById(ficha);
+  var ventimp=window.open(' ','popimpr');
+  ventimp.document.write(ficha.innerHTML);
+  ventimp.document.close();
+  ventimp.print();
+  ventimp.close();
 }

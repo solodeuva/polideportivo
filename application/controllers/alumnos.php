@@ -128,16 +128,16 @@ class Alumnos extends CI_Controller {
 		$this->load->view('front_end/editar_alumno',$data);
 		$this->load->view('plantillas/footer');
 	}
-	/*
-	public function verAlumno(){
-		//$data['alumno']=$this->alumno_model->obtenerAlumnos();
-		$this->load->helper('form');
+	
+	public function verAlumno($id){ #Funcion encargada de mostrar la ficha o perfil del alumno
+		$data['error'] = '';
+		$data['alumno'] = $this->alumnos_model->getAlumno($id);
 		$this->load->view('plantillas/header');
 		$this->load->view('plantillas/sidebar');
-		$this->load->view('front_end/ficha_alumno');
+		$this->load->view('front_end/ficha_alumno',$data);
 		$this->load->view('plantillas/footer');
 	}
-	*/
+
 	public function actualizarAlumno(){
 		$id = $this->input->post('id');
 		$data = array(
@@ -169,8 +169,18 @@ class Alumnos extends CI_Controller {
 		$this->alumnos_model->actualizarAlumno($data,$id);
 		redirect(base_url('Alumnos/gestionarAlumnos'));
 	}
+
+	public function actualizarEstado($id){
+		$this->alumnos_model->actualizarEstado($id);
+		redirect(base_url('Alumnos/buscarAlumnos'));
+	}
+
 	public function eliminarAlumno($id){
 		$this->alumnos_model->borrarAlumno($id);
+		$imagen = './assets/uploads/alumnos/'.$id.'.png';
+		if (file_exists($imagen)) {
+			unlink($imagen);
+        }
 		redirect(base_url('Alumnos/gestionarAlumnos'));
 	}
 
@@ -301,5 +311,49 @@ class Alumnos extends CI_Controller {
 		$grafica->img->Stream($fileName);
 
 		redirect(base_url('Alumnos/verReporteBarras'));
+	}
+
+	public function do_upload(){
+		$id = $this->input->post('id');
+		$config['upload_path']          = './assets/uploads/alumnos/';
+        $config['allowed_types']        = 'gif|jpg|png';
+        $config['file_name']			= $id.'.png';
+        $config['overwrite']			= TRUE;
+        $config['max_size']             = 0;
+        $config['max_width']            = 400;
+        $config['max_height']           = 533;
+
+        $this->load->library('upload', $config);
+
+        if ( ! $this->upload->do_upload('userfile'))
+                {
+                        $data['error'] 			= $this->upload->display_errors();
+                        $data['alumno'] = $this->alumnos_model->getAlumno($id);
+						$this->load->view('plantillas/header');
+						$this->load->view('plantillas/sidebar');
+						$this->load->view('front_end/ficha_alumno',$data);
+						$this->load->view('plantillas/footer');
+
+                }
+                else
+                {
+                        $data['error'] 			= '';
+						$data['alumno'] = $this->alumnos_model->getAlumno($id);
+						$this->load->view('plantillas/header');
+						$this->load->view('plantillas/sidebar');
+						$this->load->view('front_end/ficha_alumno',$data);
+						$this->load->view('plantillas/footer');
+                }
+	}
+
+	public function validarDir(){  //verifica si el directorio para el docente logueado existe
+		$dir = './assets/uploads/alumnos/1.png';
+		if (file_exists($dir)) {
+			unlink($dir);
+           	echo "Borrado";
+        }
+        else{
+        	echo "FALSE";
+        }
 	}
 }

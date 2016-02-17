@@ -1,3 +1,10 @@
+<?php function calcular_edad($fecha){
+		$dias = explode('/', $fecha, 3);
+		$dias = mktime(0,0,0,$dias[1],$dias[0],$dias[2]);
+		$edad = (int)((time()-$dias)/31556926 );
+		return $edad;						
+}
+?>
 <section class="contenido">
 <?php if(isset($_SESSION['logged_in'])): #si ha iniciado sesion se mostrara el contenido sino el mensaje de error?>
 	<h1>Editar Alumno</h1>
@@ -29,11 +36,33 @@
 					<td></td>
 				</tr>
 				<tr>
+					<td>Estado:</td>
+					<td>Edad:</td>
+				</tr>
+				<tr>
+					<td>
+						<select name="estado">
+						<?php if($alumno->getEstado() == 'A'): ?>
+							<option value="A" selected="Activo">Activo</option>
+							<option value="B">Inactivo</option>
+						<?php else: ?>
+							<option value="A">Activo</option>
+							<option value="B" selected="Inactivo">Inactivo</option>
+						<?php endif;?>
+						</select>
+					</td>
+					<td><?php echo calcular_edad($alumno->getFechaNacimiento());?></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td><!-- Esto es para dejar un espacio entre filas-->
+					<td></td>
+				</tr>
+				<tr>
 					<td>Fecha de nacimiento:</td>
 					<td>Genero:</td>
 				</tr>
 				<tr>
-					<td><input name="fnacimiento" maxlength="10" size="10" value="<?php echo $alumno->getFechaNacimiento();?>"required/></td>				
+					<td><input name="fnacimiento" maxlength="10" size="10" value="<?php echo $alumno->getFechaNacimiento();?>" required/></td>				
 					<td>
 						<select name="genero">
 						<?php if($alumno->getGenero() == 'M'): ?>

@@ -1,7 +1,7 @@
 header {
     background: url('../img/fondo1.jpg') no-repeat;
     color: #C59947;
-    height: 200px;
+    height: 150px;
     border: solid;
     border-color: #4F2601;
 
@@ -272,9 +272,9 @@ a:link
 {
     text-align: left;
 }
-#div-usuarios
+.div-usuarios
 {
-    height: 200px;
+    height: 400px;
     overflow: auto;
 }
 .tips{
@@ -289,4 +289,23 @@ a:link
 .div-estadisticas-in{
     display:table;
     text-align: center;
+}
+.tabla-alumnos {
+   width: 80%;
+   text-align: left;
+   border-collapse: collapse;
+   margin: 0 0 1em 0;
+   caption-side: top;
+}
+.tabla-alumnos td, th {
+   padding: 0.3em;
+}
+.tabla-alumnos thead, tbody {
+   border-top: 1px solid #000;
+   border-bottom: 1px solid #000;
+   border-left: 1px solid #000;
+   border-right: 1px solid #000;
+}
+.tabla-alumnos tbody th {
+   border: 0;
 }

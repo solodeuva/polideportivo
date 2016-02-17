@@ -45,36 +45,43 @@ class Alumnos_model extends CI_Model {
   }
 
   function obtenerAlumnosNivel($nivel){
-    $query = $this->em->createQuery('SELECT a FROM Alumno a where a.idNivel = :nivel');
+    $query = $this->em->createQuery('SELECT a FROM Alumno a where a.idNivel = :nivel ORDER BY a.idAlumno');
     $query->setParameter('nivel', $nivel);
     $alumnos = $query->getResult();
     return $alumnos;
   }
 
   function obtenerAlumnosGenero($genero){
-    $query = $this->em->createQuery('SELECT a FROM Alumno a where a.genero = :genero');
+    $query = $this->em->createQuery('SELECT a FROM Alumno a where a.genero = :genero ORDER BY a.idNivel');
     $query->setParameter('genero', $genero);
     $alumnos = $query->getResult();
     return $alumnos;
   }
 
   function obtenerAlumnosNombres($nombres){ #obtiene alumnos por nombres o parte del nombre
-    $query = $this->em->createQuery('SELECT a FROM Alumno a where a.nombres like :nombres');
+    $query = $this->em->createQuery('SELECT a FROM Alumno a where a.nombres like :nombres ORDER BY a.idNivel');
     $query->setParameter('nombres', '%'.$nombres.'%');
     $alumnos = $query->getResult();
     return $alumnos;
   }
 
   function obtenerAlumnosApellidos($apellidos){ #obtenie alumnos por apellidos o parte del apellido
-    $query = $this->em->createQuery('SELECT a FROM Alumno a where a.apellidos like :apellidos');
+    $query = $this->em->createQuery('SELECT a FROM Alumno a where a.apellidos like :apellidos ORDER BY a.idNivel');
     $query->setParameter('apellidos', '%'.$apellidos.'%');
     $alumnos = $query->getResult();
     return $alumnos;
   }
 
-  function obtenerAlumnos(){
-    return $this->em->getRepository('Alumno')->findAll();
+   function obtenerAlumnos(){ #obteniendo todos los alumnos ordenados por nivel
+    $query = $this->em->createQuery('SELECT a FROM Alumno a ORDER BY a.idNivel');
+    $alumnos = $query->getResult();
+    return $alumnos;
   }
+  /*
+  function obtenerAlumnos(){ #obteniendo todos los alumnos
+
+    return $this->em->getRepository('Alumno')->findAll();
+  }*/
 
   function getAlumno($id){
     return $this->em->getRepository('Alumno')->find($id);
@@ -118,4 +125,15 @@ class Alumnos_model extends CI_Model {
     $this->em->flush();
   }
   
+  function actualizarEstado($id){
+
+    $alumno = $this->em->getRepository('Alumno')->find($id);
+    if($alumno->getEstado() == 'A')
+    $alumno->setEstado("B");
+    else
+    $alumno->setEstado("A");
+
+    $this->em->persist($alumno);
+    $this->em->flush();
+  }
 }

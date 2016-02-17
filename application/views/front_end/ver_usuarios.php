@@ -27,10 +27,11 @@
 				</tr>
 			</tbody>
 		</table>
-		<form>
+	</div>
+	<form>
 			<input type="button" value="Volver atrás" name="volver atrás2" onclick="history.back()" />
-		</form>
-	</div><br>
+	</form>
+	<br>
 <?php else: ?>
 	<br><br>
 	<h2>Tu sesión expiró o no has iniciado sesión, por favor inicia sesión para ver este contenido</h2>

@@ -207,7 +207,9 @@
 </div>
 <input type="button" value="Imprimir Formato" onclick="javascript:imprSelec('ficha');function imprSelec(ficha)
 {var ficha=document.getElementById(ficha);var ventimp=window.open(' ','popimpr');ventimp.document.write(ficha.innerHTML);ventimp.document.close();ventimp.print();ventimp.close();};" /><br><br>
-<input type="button" value="Volver atrás" name="volver atrás2" onclick="history.back()" />
+<form action="<?php echo base_url('alumnos/buscarAlumnos');?>">
+	<input type="submit" value="Regresar a Buscar"/>
+</form>
 <br><br>
 <?php else: ?>
 	<br><br>

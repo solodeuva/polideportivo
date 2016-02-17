@@ -235,12 +235,16 @@
 					<td><input type="hidden" value="<?php echo $alumno->getIdAlumno();?>" name="id"/></td>
 				</tr>
 				<tr>
-					<td><input type="button" value="Volver atrás" name="volver atrás2" onclick="history.back()" /></td>
+					<td></td>
 					<td><center><?= form_submit('','Actualizar Alumno')?></center></td>
 					<td></td>
 				</tr>
 			</tbody>
-		</table><br><br>
+		</table><br>
+		<form action="<?php echo base_url('alumnos/buscarAlumnos');?>">
+			<input type="submit" value="Regresar a Buscar"/>
+		</form>
+		<br>
 	<?= form_close()?>
 <?php else: ?>
 	<br><br>

@@ -31,7 +31,7 @@
 							<?php } ?>
 					</select>
 				</td>
-				<td><input type="submit" value="Buscar"  /></td>			
+				<td><input type="submit" name="buscar" value="Buscar"  /></td>			
 				</form>
 				<form action="<?php echo base_url('alumnos/buscarPorGenero');?>" method="post" accept-charset="utf-8">
 				<td>
@@ -46,16 +46,16 @@
 				<td>
 					<input name="nombres" required/>
 				</td>
-				<td><input type="submit" value="Buscar"  /></td>			
+				<td><input type="submit" name="buscar" value="Buscar"  /></td>			
 				</form>
 				<form action="<?php echo base_url('alumnos/buscarPorApellidos');?>" method="post" accept-charset="utf-8">
 				<td>
 					<input name="apellidos" required/>
 				</td>
-				<td><input type="submit" value="Buscar"  /></td>			
+				<td><input type="submit" name="buscar" value="Buscar"  /></td>			
 				</form>
 				<form action="<?php echo base_url('alumnos/buscarTodos');?>" method="post" accept-charset="utf-8">
-				<td><input type="submit" value="Buscar"  /></td>			
+				<td><input type="submit" name="buscar" value="Buscar"  /></td>			
 				</form>
 			</tr>
 		<br>

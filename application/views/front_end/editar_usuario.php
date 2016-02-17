@@ -37,6 +37,9 @@
 			</tbody>
 		</table>
 	<?= form_close()?>
+	<form action="<?php echo base_url('usuarios/verUsuarios');?>">
+		<input type="submit" value="Regresar"/>
+	</form><br>
 <?php else: ?>
 	<br><br>
 	<h2>Tu sesión expiró o no has iniciado sesión, por favor inicia sesión para ver este contenido</h2>

@@ -194,13 +194,16 @@
 					<td><textarea name="medic" cols="40" rows="10" maxlength="200"></textarea></td>
 				</tr>
 				<tr>
-					<td><input type="button" value="Volver atrás" name="volver atrás2" onclick="history.back()" /></td>
+					<td></td>
 					<td><center><?= form_submit('','Ingresar Alumno')?></center></td>
 					<td></td>
 				</tr>
 			</tbody>
 		</table><br><br>
 	<?= form_close()?>
+	<form action="<?php echo base_url('alumnos/gestionarAlumnos');?>">
+		<input type="submit" value="Regresar a Buscar"/>
+	</form><br>
 <?php else: ?>
 	<br><br>
 	<h2>Tu sesión expiró o no has iniciado sesión, por favor inicia sesión para ver este contenido</h2>

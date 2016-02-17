@@ -164,7 +164,8 @@ class Alumnos extends CI_Controller {
 			'tbjr' 			=> $this->input->post('tbjr'),
 			'telr' 			=> $this->input->post('telr'),
 			'padecimiento' 	=> $this->input->post('padecimiento'),
-			'medic' 		=> $this->input->post('medic')
+			'medic' 		=> $this->input->post('medic'),
+			'estado'		=> $this->input->post('estado')
 			);
 		$this->alumnos_model->actualizarAlumno($data,$id);
 		redirect(base_url('Alumnos/gestionarAlumnos'));

@@ -120,7 +120,7 @@ class Alumnos_model extends CI_Model {
     $alumno->setTelResp($data['telr']);
     $alumno->setPadecimientos($data['padecimiento']);
     $alumno->setMedicamentos($data['medic']);
-    $alumno->setEstado("A");
+    $alumno->setEstado($data['estado']);
     $this->em->persist($alumno);
     $this->em->flush();
   }

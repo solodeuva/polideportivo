@@ -33,4 +33,12 @@ class Inicio extends CI_Controller {
 		$this->load->view('front_end/error_contenido');
 		$this->load->view('plantillas/footer');
 	}
+
+	public function ayuda(){
+		$this->load->helper('form');
+		$this->load->view('plantillas/header');
+		$this->load->view('plantillas/sidebar_ayuda');
+		$this->load->view('front_end/ayuda');
+		$this->load->view('plantillas/footer');
+	}
 }

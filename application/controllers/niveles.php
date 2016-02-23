@@ -60,7 +60,15 @@ class Niveles extends CI_Controller {
 	}
 
 	public function eliminarNivel($id){
-		$this->nivel_model->borrarNivel($id);
-		redirect(base_url('Niveles/gestionarNiveles'));
+		if($_SESSION['user_id'] == 1){
+			$this->nivel_model->borrarNivel($id);
+			redirect(base_url('Niveles/gestionarNiveles'));
+		}
+		else{
+			$this->load->view('plantillas/header');
+			$this->load->view('plantillas/sidebar');
+			$this->load->view('front_end/error_contenido');
+			$this->load->view('plantillas/footer');
+		}
 	}
 }

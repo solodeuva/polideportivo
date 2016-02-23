@@ -1,7 +1,7 @@
 header {
     background: url('../img/fondo1.jpg') no-repeat;
     color: #C59947;
-    height: 150px;
+    height: 200px;
     border: solid;
     border-color: #4F2601;
 
@@ -28,8 +28,11 @@ footer {
     clear: both;
     color: #C59947;
     padding: 20px 0;
+    height: 20%;
     font-size: 14px;
     margin-top: 10px;
+    bottom: 0;
+    left: 0;
 }
 footer p{
     text-align: center;
@@ -65,33 +68,10 @@ aside {
     margin-right: 20px;
     margin-left: 10px;
 }
-aside ul {
-    list-style: disc;
-    padding: 0;
+aside a {
+    color: #513621;
 }
-aside ul li {
-    font-size: 13px;
-    line-height: 25px;
-}
-aside li:not(:first-of-type):hover {
-    background: hsl(264,33%,90%);
-}
-aside ul li:first-of-type {
-    font-size: 15px;
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: hsl(264,34%,36%);
-    padding-left: 30px;
-}
-aside ul li a {
-    color: hsl(260,7%,45%);
-    text-decoration: none;
-    display: block;
-    padding-left: 50px;
-}
-aside ul li a:hover {
-    text-decoration: none;
-}
+
 .contenido {
     width: 75%;
     float: left;

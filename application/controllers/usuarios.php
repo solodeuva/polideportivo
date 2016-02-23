@@ -118,8 +118,16 @@ class Usuarios extends CI_Controller {
 	}
 
 	public function eliminarUsuario($id){
-		$this->usuarios_model->borrarUsuario($id);
-		redirect(base_url('Usuarios/gestionarUsuarios'));
+		if($_SESSION['user_id'] == 1){
+			$this->usuarios_model->borrarUsuario($id);
+			redirect(base_url('Usuarios/gestionarUsuarios'));
+		}
+		else{
+			$this->load->view('plantillas/header');
+			$this->load->view('plantillas/sidebar');
+			$this->load->view('front_end/error_contenido');
+			$this->load->view('plantillas/footer');
+		}
 	}
 
 	public function perfil(){

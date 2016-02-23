@@ -58,3 +58,7 @@ $route['Usuarios/editarUsuario'] = 'inicio/errorContenido';
 $route['usuarios/editarUsuario'] = 'inicio/errorContenido';
 $route['Alumnos/editarAlumno'] = 'inicio/errorContenido';
 $route['alumnos/editarAlumno'] = 'inicio/errorContenido';
+$route['usuarios/eliminarUsuario'] = 'inicio/errorContenido';
+$route['Usuarios/eliminarUsuario'] = 'inicio/errorContenido';
+$route['niveles/eliminarNivel'] = 'inicio/errorContenido';
+$route['Niveles/eliminarNivel'] = 'inicio/errorContenido';

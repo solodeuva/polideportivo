@@ -22,6 +22,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <nav>
     <ul class="menucito">
        <a style="color:black;" href="<?php echo base_url(); ?>"><li>Inicio</li></a>
-       <li>Ayuda</li>   
+       <a style="color:black;" href="<?php echo base_url('inicio/ayuda'); ?>"><li>Ayuda</li></a>  
     </ul>
   </nav>

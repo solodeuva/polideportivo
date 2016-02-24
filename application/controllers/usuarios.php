@@ -135,7 +135,7 @@ class Usuarios extends CI_Controller {
 		$data['usuario'] = $this->usuarios_model->getUsuario($_SESSION['user_id']);
 		$this->load->view('plantillas/header');
 		$this->load->view('plantillas/sidebar');
-		$this->load->view('front_end/editar_usuario',$data);
+		$this->load->view('front_end/perfil',$data);
 		$this->load->view('plantillas/footer');
 	}
 }

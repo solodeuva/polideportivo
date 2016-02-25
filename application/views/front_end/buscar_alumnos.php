@@ -3,7 +3,7 @@
 	<h2>Buscar Alumnos</h2>
 	<div style="text-align:center">
 	
-	<p><center>!A considerar¡<br>Esta búsqueda es sensible a mayúsculas, minúsculas y tíldes.</center></p>
+	<p><center>!A considerar¡<br>Esta búsqueda diferencia palabras con tildes de palabras sin tildes por lo que Hernandez y Hernández son 2 busquedas diferentes.</center></p>
 	<center>
 		<table>
 		<thead>

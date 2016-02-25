@@ -17,8 +17,8 @@
 					<td>Peso:</td>
 				</tr>
 				<tr>
-					<td><input name="estatura" maxlength="4" size="3" />m.</td>
-					<td><input name="peso" maxlength="3" size="2"/>lbs.</td>
+					<td><input name="estatura" maxlength="4" size="3" />m. (ingrese solo números)</td>
+					<td><input name="peso" maxlength="3" size="2"/>lbs. (ingrese solo números)</td>
 				</tr>
 				<tr>
 					<td style="vertical-align:top">Ingrese estatura en metros (solo números).</td>

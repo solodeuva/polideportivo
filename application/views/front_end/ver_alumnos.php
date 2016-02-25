@@ -58,7 +58,7 @@
 					<?php } ?>
 					<?php else: #si esta vacio no se encontraron resultados, imprime mensaje?>
 						<tr>
-							<td colspan="5">No se encontraron resultados en su busqueda</td>
+							<td colspan="5">No se encontraron resultados en su búsqueda</td>
 						</tr>
 					<?php endif;?>
 				</tbody>

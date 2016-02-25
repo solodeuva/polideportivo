@@ -15,7 +15,7 @@
 						<td><input name="apellidos" maxlength="25" required/></td>
 					</tr>
 					<tr>
-						<td>Nick o nombre para inicio de sesión:</td>
+						<td>Nombre para inicio de sesión:</td>
 						<td><input name="nick" maxlength="25" required/></td>
 						<td><p class="tips">*Este nombre se usará como credencial para que el usuario inicie sesión.<p></td>
 					</tr>

@@ -52,12 +52,12 @@
 					
 				</tr>
 				<tr>
-					<td><?php echo $alumno->getEstatura();?></td>
-					<td><?php echo $alumno->getPeso();?></td>
+					<td><?php echo $alumno->getEstatura();?> m.</td>
+					<td><?php echo $alumno->getPeso();?> lb.</td>
 				</tr>
 
 				<tr>
-					<td><b>Genero:</b></td>
+					<td><b>Género:</b></td>
 					<td><b>Estado:</b></td>
 				</tr>
 				<tr>
@@ -90,7 +90,7 @@
 					<td>&nbsp;</td>
 				</tr>
 				<tr>
-					<td><b>Telefono:</b></td>
+					<td><b>Teléfono:</b></td>
 					<td><b>Nivel:</b></td>
 				</tr>
 				<tr>
@@ -118,7 +118,7 @@
 				<tr>
 					<td><b>Nombre de la Madre:</b></td>
 					<td><b>DUI de la madre:</b></td>
-					<td><b>Telefóno de la madre:</b></td>
+					<td><b>Teléfono de la madre:</b></td>
 				</tr>
 				<tr>
 					<td><?php echo $alumno->getNombreMadre();?></td>
@@ -143,7 +143,7 @@
 				<tr>
 					<td><b>Nombre del Padre:</b></td>
 					<td><b>DUI del padre:</b></td>
-					<td><b>Telefóno del padre:</b></td>
+					<td><b>Teléfono del padre:</b></td>
 				</tr>
 				<tr>
 					<td><?php echo $alumno->getNombrePadre();?></td>
@@ -178,7 +178,7 @@
 				<tr>
 					<td><b>Nombre del responsable:</b></td>
 					<td><b>DUI del responsable:</b></td>
-					<td><b>Telefono del Responsable:</b></td>
+					<td><b>Teléfono del Responsable:</b></td>
 					<td>&nbsp;</td>
 				</tr>
 				<tr>

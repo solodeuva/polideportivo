@@ -8,7 +8,7 @@
 		           <tr>
 		             <th >Nombres</th>
 		             <th >Apellidos</th>
-		             <th >Nick/User</th>
+		             <th >Nombre de inicio de sesión</th>
 		             <th width="10%"></th>
 		           </tr>
 	        </thead>

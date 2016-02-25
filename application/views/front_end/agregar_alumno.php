@@ -193,14 +193,13 @@
 					<td><textarea name="padecimiento" cols="40" rows="10" maxlength="200"></textarea></td>
 					<td><textarea name="medic" cols="40" rows="10" maxlength="200"></textarea></td>
 				</tr>
-				<tr>
-					<td></td>
-					<td><center><?= form_submit('','Ingresar Alumno')?></center></td>
-					<td></td>
-				</tr>
+				<!--<tr>
+				</tr>-->
 			</tbody>
 		</table><br><br>
+	<?= form_submit('','Ingresar Alumno')?>
 	<?= form_close()?>
+	<br>
 	<form action="<?php echo base_url('alumnos/gestionarAlumnos');?>">
 		<input type="submit" value="Regresar"/>
 	</form><br>

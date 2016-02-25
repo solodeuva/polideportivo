@@ -55,8 +55,19 @@ class Alumnos extends CI_Controller {
 				'padecimiento' 	=> $this->input->post('padecimiento'),
 				'medic' 		=> $this->input->post('medic')
 				);
-			$this->alumnos_model->crearAlumno($data);
-			redirect(base_url('Alumnos/gestionarAlumnos'));
+			$validar=explode("/", $data['fnacimiento']);
+			if (checkdate($validar[1], $validar[0], $validar[2])) {
+				$this->alumnos_model->crearAlumno($data);
+				redirect(base_url('Alumnos/gestionarAlumnos'));
+			} else {
+				$this->load->model('nivel_model');
+				$data['niveles'] = $this->nivel_model->obtenerNiveles();
+				$this->load->view('plantillas/header');
+				$this->load->view('plantillas/sidebar');
+				$this->load->view('front_end/agregar_alumno2',$data);
+				$this->load->view('plantillas/footer');
+			}
+			
 		}
 
 		public function buscarAlumnos(){ 				#esta funcion solo desplegara una vista con opciones de busqueda de alumnos

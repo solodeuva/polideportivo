@@ -3,7 +3,7 @@
 	<h2>Buscar Alumnos</h2>
 	<div style="text-align:center">
 	
-	<p><center>!A Considerar¡<br>Esta Busqueda es Sensible a Mayúsculas, Minúsculas y Tíldes.</center></p>
+	<p><center>!A considerar¡<br>Esta búsqueda es sensible a mayúsculas, minúsculas y tíldes.</center></p>
 	<center>
 		<table>
 		<thead>

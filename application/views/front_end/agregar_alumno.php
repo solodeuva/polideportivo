@@ -21,8 +21,8 @@
 					<td><input name="peso" maxlength="3" size="2"/>lbs.</td>
 				</tr>
 				<tr>
-					<td style="vertical-align:top">Ingrese estatura en metros (solo numeros).</td>
-					<td style="vertical-align:top">Ingrese peso en libras (solo numeros).</td>
+					<td style="vertical-align:top">Ingrese estatura en metros (solo números).</td>
+					<td style="vertical-align:top">Ingrese peso en libras (solo números).</td>
 				</tr>
 				<tr>
 					<td>&nbsp;</td><!-- Esto es para dejar un espacio entre filas-->
@@ -30,7 +30,7 @@
 				</tr>
 				<tr>
 					<td>Fecha de nacimiento:</td>
-					<td>Genero:</td>
+					<td>Género:</td>
 				</tr>
 				<tr>
 					<td><input name="fnacimiento" maxlength="10" size="10" required/></td>				
@@ -50,7 +50,7 @@
 				</tr>
 				<tr>
 					<td>Dirección de Residencia:</td>
-					<td>Telefono:</td>
+					<td>Teléfono:</td>
 				</tr>
 				<tr>
 					<td><input name="dir" maxlength="100"/></td>
@@ -100,7 +100,7 @@
 				</tr>
 				<tr>
 					<td>Lugar de trabajo:</td>
-					<td>Telefóno de la madre:</td>
+					<td>Teléfono de la madre:</td>
 				</tr>
 				<tr>
 					<td><input name="tbjm" maxlength="30"/></td>
@@ -132,7 +132,7 @@
 				</tr>
 				<tr>
 					<td>Lugar de trabajo:</td>
-					<td>Telefóno del padre:</td>
+					<td>Teléfono del padre:</td>
 				</tr>
 				<tr>
 					<td><input name="tbjp" maxlength="30"/></td>
@@ -171,7 +171,7 @@
 				</tr>
 				<tr>
 					<td>Lugar de trabajo:</td>
-					<td>Telefono del Responsable:</td>
+					<td>Teléfono del Responsable:</td>
 				</tr>
 				<tr>
 					<td><input name="tbjr" maxlength="30"/></td>

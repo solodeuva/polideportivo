@@ -14,7 +14,7 @@
 						<td><input name="apellidos" maxlength="25" value="<?php echo $usuario->getApellidos();?>" /></td>
 					</tr>
 					<tr>
-						<td>Nick o nombre para inicio de sesión:</td>
+						<td>Nombre para inicio de sesión:</td>
 						<td><?php echo $usuario->getNick();?><input type="hidden" name="nick" maxlength="25" value="<?php echo $usuario->getNick();?>" /></td>
 						<td><p class="tips">*Este nombre es la credencial para el inicio de sesión.<p></td>
 					</tr>

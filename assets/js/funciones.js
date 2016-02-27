@@ -37,12 +37,3 @@ function actualizarEstado(id){
       else
         return 0;      
 }
-
-function imprSelec(ficha){
-  var ficha=document.getElementById(ficha);
-  var ventimp=window.open(' ','popimpr');
-  ventimp.document.write(ficha.innerHTML);
-  ventimp.document.close();
-  ventimp.print();
-  ventimp.close();
-}

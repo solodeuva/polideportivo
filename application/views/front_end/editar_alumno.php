@@ -62,7 +62,12 @@
 					<td>Género:</td>
 				</tr>
 				<tr>
-					<td><input name="fnacimiento" maxlength="10" size="10" value="<?php echo $alumno->getFechaNacimiento();?>" required/></td>				
+					<td>
+					<?php 
+						$fecha = explode('/',$alumno->getFechaNacimiento(), 3);
+						$fecha2 = $fecha[2]."-".$fecha[1]."-".$fecha[0];
+					?>
+					<input name="fnacimiento" type="date" value="<?php echo $fecha2;?>" required/></td>				
 					<td>
 						<select name="genero">
 						<?php if($alumno->getGenero() == 'M'): ?>
@@ -74,9 +79,6 @@
 						<?php endif;?>
 						</select>
 					</td>
-				</tr>
-				<tr>
-					<td style="vertical-align:top">Utilice el formato: 17/02/2016</td>
 				</tr>
 				<tr>
 					<td>&nbsp;</td>
@@ -238,22 +240,18 @@
 		</table>
 	<br>
 	<br>
-	<table>
-		<tbody>
-			<tr><?= form_submit('','Actualizar Alumno')?>
-				<?= form_close()?>
-				<form action="<?php echo base_url('alumnos/buscarAlumnos');?>">
-				<input type="submit" value="Regresar a Buscar"/>
-				</form>
-			</tr>
-			<tr>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
-				<center><input type="button" value="Eliminar Alumno" onclick="eliminarAlumno(<?php echo $alumno->getIdAlumno();?>)"></center>
-			</tr>
-		</tbody>
-	</table>
+	<center>
+		<?= form_submit('','Actualizar Alumno')?>
+		<?= form_close()?>
+	</center>
+	<br>
+	<center>
+		<form action="<?php echo base_url('alumnos/buscarAlumnos');?>">
+		<input type="submit" value="Regresar a Buscar"/>
+		</form>
+	</center>
+	<br>
+		<center><input type="button" value="Eliminar Alumno" onclick="eliminarAlumno(<?php echo $alumno->getIdAlumno();?>)"></center>
 <?php else: ?>
 	<br><br><br><br><br><br><br>
 	<h2>Tu sesión expiró o no has iniciado sesión, por favor inicia sesión para ver este contenido</h2>

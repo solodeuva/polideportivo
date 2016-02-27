@@ -29,45 +29,72 @@ class Alumnos extends CI_Controller {
 		}
 
 		public function agregarAlumno(){
-			$data = array(
-				'nombres' 		=> mb_strtoupper($this->input->post('nombres')),
-				'apellidos' 	=> mb_strtoupper($this->input->post('apellidos')),
-				'estatura' 		=> $this->input->post('estatura'),
-				'peso' 			=> $this->input->post('peso'),
-				'fnacimiento' 	=> $this->input->post('fnacimiento'),
-				'genero' 		=> $this->input->post('genero'),		
-				'dir' 			=> $this->input->post('dir'),
-				'tel' 			=> $this->input->post('tel'),
-				'exp' 			=> $this->input->post('exp'),
-				'nivel' 		=> $this->input->post('nivel'),
-				'madre' 		=> mb_strtoupper($this->input->post('madre')),
-				'duim' 			=> $this->input->post('duim'),
-				'tbjm' 			=> $this->input->post('tbjm'),
-				'telm' 			=> $this->input->post('telm'),
-				'padre' 		=> mb_strtoupper($this->input->post('padre')),
-				'duip' 			=> $this->input->post('duip'),
-				'tbjp' 			=> $this->input->post('tbjp'),
-				'telp' 			=> $this->input->post('telp'),
-				'resp' 			=> mb_strtoupper($this->input->post('resp')),
-				'duir' 			=> $this->input->post('duir'),
-				'tbjr' 			=> $this->input->post('tbjr'),
-				'telr' 			=> $this->input->post('telr'),
-				'padecimiento' 	=> $this->input->post('padecimiento'),
-				'medic' 		=> $this->input->post('medic')
-				);
-			$validar=explode("/", $data['fnacimiento']);
-			if (checkdate($validar[1], $validar[0], $validar[2])) {
-				$this->alumnos_model->crearAlumno($data);
-				redirect(base_url('Alumnos/gestionarAlumnos'));
-			} else {
+			$this->load->library('form_validation');
+
+			//definiendo etiquetas donde se mostraran los errores en la vista
+			$this->form_validation->set_error_delimiters('<div class="div-error">','</div>');
+
+			//A continuación se establecen las reglas de validación
+			$this->form_validation->set_rules('peso','Peso','numeric');
+			$this->form_validation->set_rules('tel','Telefono','numeric');
+			$this->form_validation->set_rules('tel2','Telefono','numeric');
+			$this->form_validation->set_rules('telm','Telefono','numeric');
+			$this->form_validation->set_rules('telm2','Telefono','numeric');
+			$this->form_validation->set_rules('telp','Telefono','numeric');
+			$this->form_validation->set_rules('telp2','Telefono','numeric');
+			$this->form_validation->set_rules('telr','Telefono','numeric');
+			$this->form_validation->set_rules('telr2','Telefono','numeric');
+			$this->form_validation->set_rules('dui','DUI','numeric');
+			$this->form_validation->set_rules('duim','DUI','numeric');
+			$this->form_validation->set_rules('duim2','DUI','numeric');
+			$this->form_validation->set_rules('duip','DUI','numeric');
+			$this->form_validation->set_rules('duip2','DUI','numeric');
+			$this->form_validation->set_rules('duir','DUI','numeric');
+			$this->form_validation->set_rules('duir2','DUI','numeric');
+
+
+			if($this->form_validation->run() == FALSE){
 				$this->load->model('nivel_model');
-				$data['niveles'] = $this->nivel_model->obtenerNiveles();
+				$data['nivel'] = $this->nivel_model->obtenerNiveles();
+				$this->load->helper('form');
 				$this->load->view('plantillas/header');
 				$this->load->view('plantillas/sidebar');
-				$this->load->view('front_end/agregar_alumno2',$data);
+				$this->load->view('front_end/agregar_alumno',$data);
 				$this->load->view('plantillas/footer');
 			}
-			
+			else{
+
+				$fecha = explode('-',$this->input->post('fnacimiento'), 3);
+				$fecha2 = $fecha[2]."/".$fecha[1]."/".$fecha[0];
+				$data = array(
+					'nombres' 		=> mb_strtoupper($this->input->post('nombres')),
+					'apellidos' 	=> mb_strtoupper($this->input->post('apellidos')),
+					'estatura' 		=> $this->input->post('estatura'),
+					'peso' 			=> $this->input->post('peso'),
+					'fnacimiento' 	=> $fecha2,
+					'genero' 		=> $this->input->post('genero'),
+					'dir' 			=> $this->input->post('dir'),
+					'tel' 			=> $this->input->post('tel')."-".$this->input->post('tel2'), //concatenando cadenas
+					'exp' 			=> $this->input->post('exp'),
+					'nivel' 		=> $this->input->post('nivel'),
+					'madre' 		=> mb_strtoupper($this->input->post('madre')),
+					'duim' 			=> $this->input->post('duim')."-".$this->input->post('duim2'), //concatenando cadenas
+					'tbjm' 			=> $this->input->post('tbjm'),
+					'telm' 			=> $this->input->post('telm')."-".$this->input->post('telm2'), //concatenando cadenas
+					'padre' 		=> mb_strtoupper($this->input->post('padre')),
+					'duip' 			=> $this->input->post('duip')."-".$this->input->post('duip2'), 
+					'tbjp' 			=> $this->input->post('tbjp'),
+					'telp' 			=> $this->input->post('telp')."-".$this->input->post('telp2'),
+					'resp' 			=> mb_strtoupper($this->input->post('resp')),
+					'duir' 			=> $this->input->post('duir')."-".$this->input->post('duir2'),
+					'tbjr' 			=> $this->input->post('tbjr'),
+					'telr' 			=> $this->input->post('telr')."-".$this->input->post('telr2'),
+					'padecimiento' 	=> $this->input->post('padecimiento'),
+					'medic' 		=> $this->input->post('medic')
+					);
+					$this->alumnos_model->crearAlumno($data);
+					redirect(base_url('Alumnos/gestionarAlumnos'));
+			}
 		}
 
 		public function buscarAlumnos(){ 				#esta funcion solo desplegara una vista con opciones de busqueda de alumnos
@@ -152,12 +179,14 @@ class Alumnos extends CI_Controller {
 
 		public function actualizarAlumno(){
 			$id = $this->input->post('id');
+			$fecha = explode('-',$this->input->post('fnacimiento'), 3);
+			$fecha2 = $fecha[2]."/".$fecha[1]."/".$fecha[0];
 			$data = array(
 				'nombres' 		=> strtoupper($this->input->post('nombres')),
 				'apellidos' 	=> strtoupper($this->input->post('apellidos')),
 				'estatura' 		=> $this->input->post('estatura'),
 				'peso' 			=> $this->input->post('peso'),
-				'fnacimiento' 	=> $this->input->post('fnacimiento'),
+				'fnacimiento' 	=> $fecha2,
 				'genero' 		=> $this->input->post('genero'),		
 				'dir' 			=> $this->input->post('dir'),
 				'tel' 			=> $this->input->post('tel'),
@@ -276,7 +305,7 @@ class Alumnos extends CI_Controller {
 			$gdImgHandler = $graph->Stroke(_IMG_HANDLER);
 			 
 			// Guardando imagen como archivo por default es .png
-			$fileName = "assets/img/reportes/reporte.png";
+			$fileName = "assets/img/reportes/reporte.jpg";
 			$graph->img->Stream($fileName);
 
 			redirect(base_url('Alumnos/verReportePastel'));
@@ -328,7 +357,7 @@ class Alumnos extends CI_Controller {
 			$gdImgHandler = $grafica->Stroke(_IMG_HANDLER);
 			 
 			// Guardando imagen como archivo por default es .png
-			$fileName = "assets/img/reportes/reportebarra.png";
+			$fileName = "assets/img/reportes/reportebarra.jpg";
 			$grafica->img->Stream($fileName);
 
 			redirect(base_url('Alumnos/verReporteBarras'));

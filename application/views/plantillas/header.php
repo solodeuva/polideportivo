@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
 <!DOCTYPE html>
-<html>
+<html id="principal-html">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <title>Complejo deportivo UES</title>
     <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/funciones.js"></script><!-- Incluyendo mi archivo de funciones javascript-->
   </head>
-  <body>
+  <body id="principal-body">
   <header>
       <section class="contenedor">
           <h1>Complejo Deportivo UES</h1>

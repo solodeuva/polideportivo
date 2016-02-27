@@ -1,6 +1,10 @@
+<script type="text/javascript">
+function imprSelec(muestra)
+{var ficha=document.getElementById(muestra).innerHTML;var ventimp=window.open(' ','popimpr');ventimp.document.write(ficha);ventimp.document.close();ventimp.print();ventimp.close();}
+</script> 
 <section class="contenido">
 <?php if(isset($_SESSION['logged_in'])): #si ha iniciado sesion se mostrara el contenido sino el mensaje de error?>
-		<div id="ficha">
+		<div id="muestra">
 			<h1>Reporte de Alumnos Inscritos</h1>
 			<center>
 			<table>
@@ -21,17 +25,18 @@
 					<?php } ?>
 				</tbody>
 			</table><br><br>
-			<img src="<?php echo base_url();?>/assets/img/reportes/reporte.png" alt="Graph"/>
+			<table>
+				<tr>
+					<td><img src="<?php echo base_url();?>/assets/img/reportes/reporte.jpg" alt="Grafico"></td>
+				</tr>
+			</table>
 			</center>
-			<br><br>
 		</div>
-		<input type="button" value="Imprimir Formato" onclick="javascript:imprSelec('ficha');function imprSelec(ficha)
-{var ficha=document.getElementById(ficha);var ventimp=window.open(' ','popimpr');ventimp.document.write(ficha.innerHTML);ventimp.document.close();ventimp.print();ventimp.close();};" />
+		<br><br>
+		<input type="button" value="Imprimir Formato" onclick="javascript:imprSelec('muestra');" >
 	<br><br>
-	<form action="<?php echo base_url('alumnos/verReporte');?>">
-			<input type="submit" value="Regresar"/>
-	</form>
-	<br>
+ 		<a href="<?php echo base_url(); ?>alumnos/verReporte"><input type="button" value="Regresar" /></a>
+	<br><br>
 <?php else: ?>
 	<br><br><br><br><br><br><br>
 	<h2>Tu sesión expiró o no has iniciado sesión, por favor inicia sesión para ver este contenido</h2>

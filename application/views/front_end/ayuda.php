@@ -77,8 +77,15 @@
 
 			<h3 id="registrar-alumno">4.1 Registrar Alumno </h3>
 			<p>Esta opción nos permite ingresar los datos de un alumno al sistema consistiendo de un formulario con los datos personales necesarios del participante.</p>
-			<center><img src="<?php echo base_url(); ?>assets/img/galeria/agregar-alumno.jpg"></center>
-			<p>Al finalizar de ingresar los datos damos clic en el botón Ingresar Alumno esto creará un registro en la base de datos. El botón Regresar nos lleva nuevamente al menú Gestionar Alumno sin registrar datos.</p>
+			<center><img src="<?php echo base_url(); ?>assets/img/galeria/agregar-alumno2.jpg" width="70%" height ="70%"></center>
+			<p>Cuando ingresemos la fecha de nacimiento daremos click a la flechita hacia abajo del input y nos mostrará el calendario siguiente:</p>
+			<center><img src="<?php echo base_url(); ?>assets/img/galeria/calendario.jpg"></center>
+			<p>En el calendario daremos click en la flechita hacia abajo que esta a la derecha de la fecha (marcada en rojo en la imagen) y nos mostrara la siguiente opción</p>
+			<center><img src="<?php echo base_url(); ?>assets/img/galeria/calendario2.jpg"></center>
+			<p>Utilizamos la barra de desplazamiento para subir y seleccionar el año, luego el mes y por ultimo el día.</p>
+			<p>Al finalizar de ingresar los datos damos clic en el botón Ingresar Alumno que se encuentra abajo de todo el formulario.</p>
+			<center><img src="<?php echo base_url(); ?>assets/img/galeria/ingresar-alumno.jpg"></center>
+			<p>Esto creará un registro en la base de datos. El botón Regresar nos lleva nuevamente al menú Gestionar Alumno sin registrar datos.</p>
 			<p>Si la operación de guardar los datos se ejecuta correctamente, el sistema volverá al menú Gestionar Alumno.</p>
 
 			<h3 id="buscar-alumno">4.2 Buscar alumno</h3>

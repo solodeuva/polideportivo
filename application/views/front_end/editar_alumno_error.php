@@ -16,8 +16,8 @@
 					<td>Apellidos del alumno:</td>
 				</tr>
 				<tr>
-					<td><input name="nombres" maxlength="30" value="<?php echo $alumno->getNombres();?>" required/></td>
-					<td><input name="apellidos" maxlength="30" value="<?php echo $alumno->getApellidos();?>" required/></td>
+					<td><input name="nombres" maxlength="30" value="<?php echo set_value('nombres');?>" required/></td>
+					<td><input name="apellidos" maxlength="30" value="<?php echo set_value('apellidos');?>" required/></td>
 				</tr>
 				<tr>
 					<td>&nbsp;</td><!-- Esto es para dejar un espacio entre filas-->
@@ -28,8 +28,8 @@
 					<td>Peso:</td>
 				</tr>
 				<tr>
-					<td><input name="estatura" maxlength="4" size="3" value="<?php echo $alumno->getEstatura();?>"/>m. (ingrese solo números Ej. 1.70)</td>
-					<td><input name="peso" maxlength="3" size="2" value="<?php echo $alumno->getPeso();?>"/>lbs. (ingrese solo números Ej. 145)</td>
+					<td><input name="estatura" maxlength="4" size="3" value="<?php echo set_value('estatura');?>"/>m. (ingrese solo números Ej. 1.70)</td>
+					<td><input name="peso" maxlength="3" size="2" value="<?php echo set_value('peso');?>"/>lbs. (ingrese solo números Ej. 145)</td>
 				</tr>
 				<tr>
 					<td><?php echo form_error('estatura'); ?></td>
@@ -93,18 +93,8 @@
 					<td>Teléfono:</td>
 				</tr>
 				<tr>
-					<td><input name="dir" maxlength="100" value="<?php echo $alumno->getDireccion();?>" /></td>
-					<td>
-					<?php
-							$tel = explode('-', $alumno->getTelefono());
-							$tel1 = $tel[0];
-						if(strcmp($tel1, "")==4):
-							$tel2 = $tel[1];?>
-							<input name="tel" style="width: 35px;" minlength="4" maxlength="4" value="<?php echo $tel1; ?>"/>-<input name="tel2" style="width: 35px;" minlength="4" maxlength="4" value="<?php echo $tel2; ?>"/></td>
-					<?php
-						else:?>
-							<input name="tel" style="width: 35px;" minlength="4" maxlength="4" value=""/>-<input name="tel2" style="width: 35px;" minlength="4" maxlength="4" value=""/></td>
-					<?php endif;?>
+					<td><input name="dir" maxlength="100" value="<?php echo set_value('dir');?>" /></td>
+					<td><input name="tel" style="width: 35px;" minlength="4" maxlength="4" value="<?php echo set_value('tel');?>"/>-<input name="tel2" style="width: 35px;" minlength="4" maxlength="4" value="<?php echo set_value('tel2');?>"/></td>
 				</tr>
 				<tr>
 					<td></td>
@@ -141,18 +131,8 @@
 					<td>DUI de la madre:</td>
 				</tr>
 				<tr>
-					<td><input name="madre" maxlength="60" value="<?php echo $alumno->getNombreMadre();?>" /></td>
-					<td>
-					<?php
-							$duim = explode('-', $alumno->getDuiMadre());
-							$duim1 = $duim[0];
-						if(strcmp($duim1, "")==8):
-							$duim2 = $duim[1];?>
-							<input name="duim" minlength="8" maxlength="8" value="<?php echo $duim1; ?>" size="5"/>-<input name="duim2" maxlength="1" value="<?php echo $duim2; ?>" style="width: 13px;"/></td>
-					<?php
-						else:?>
-							<input name="duim" minlength="8" maxlength="8" value="" size="5"/>-<input name="duim2" maxlength="1" value="" style="width: 13px;"/></td>
-					<?php endif;?>
+					<td><input name="madre" maxlength="60" value="<?php echo set_value('madre');?>" /></td>
+					<td><input name="duim" minlength="8" maxlength="8" value="<?php echo set_value('duim');?>" size="5"/>-<input name="duim2" maxlength="1" value="<?php echo set_value('duim2');?>" style="width: 13px;"/></td>
 				</tr>
 				<tr>
 					<td></td>
@@ -171,18 +151,8 @@
 					<td>Teléfono de la madre:</td>
 				</tr>
 				<tr>
-					<td><input name="tbjm" maxlength="100" value="<?php echo $alumno->getTrabajoMadre();?>" /></td>
-					<td>
-					<?php
-							$telm = explode('-', $alumno->getTelMadre());
-							$telm1 = $telm[0];
-						if(strcmp($telm1, "")==4):
-							$telm2 = $telm[1];?>
-							<input name="telm" style="width: 35px;" minlength="4" maxlength="4" value="<?php echo $telm1; ?>"/>-<input name="telm2" style="width: 35px;" minlength="4" maxlength="4" value="<?php echo $telm2; ?>"/></td>
-					<?php
-						else:?>
-							<input name="telm" style="width: 35px;" minlength="4" maxlength="4" value=""/>-<input name="telm2" style="width: 35px;" minlength="4" maxlength="4" value=""/></td>
-					<?php endif;?>
+					<td><input name="tbjm" maxlength="100" value="<?php echo set_value('tbjm');?>" /></td>
+					<td><input name="telm" style="width: 35px;" minlength="4" maxlength="4" value="<?php echo set_value('telm');?>"/>-<input name="telm2" style="width: 35px;" minlength="4" maxlength="4" value="<?php echo set_value('telm2');?>"/></td>
 				</tr>
 				<tr>
 					<td></td>
@@ -201,18 +171,8 @@
 					<td>DUI del padre:</td>
 				</tr>
 				<tr>
-					<td><input name="padre" maxlength="60" value="<?php echo $alumno->getNombrePadre();?>" /></td>
-					<td>
-					<?php
-							$duip = explode('-', $alumno->getDuiPadre());
-							$duip1 = $duip[0];
-						if(strcmp($duip1, "")==8):
-							$duip2 = $duip[1];?>
-							<input name="duip" minlength="8" maxlength="8" value="<?php echo $duip1; ?>" size="5"/>-<input name="duip2" maxlength="1" value="<?php echo $duip2; ?>" style="width: 13px;"/></td>
-					<?php
-						else:?>
-							<input name="duip" minlength="8" maxlength="8" value="" size="5"/>-<input name="duip2" maxlength="1" value="" style="width: 13px;"/></td>
-					<?php endif;?>
+					<td><input name="padre" maxlength="60" value="<?php echo set_value('padre');?>" /></td>
+					<td><input name="duip" minlength="8" maxlength="8" value="<?php echo set_value('duip');?>" size="5"/>-<input name="duip2" maxlength="1" value="<?php echo set_value('duip2');?>" style="width: 13px;"/></td>
 				</tr>
 				<tr>
 					<td></td>
@@ -231,18 +191,8 @@
 					<td>Teléfono del padre:</td>
 				</tr>
 				<tr>
-					<td><input name="tbjp" maxlength="100" value="<?php echo $alumno->getTrabajoPadre();?>" /></td>
-					<td>
-					<?php
-							$telp = explode('-', $alumno->getTelPadre());
-							$telp1 = $telp[0];
-						if (strcmp($telp1, "")==4):
-							$telp2 = $telp[1];?>
-							<input name="telp" style="width: 35px;" minlength="4" maxlength="4" value="<?php echo $telp1; ?>"/>-<input name="telp2" style="width: 35px;" minlength="4" maxlength="4" value="<?php echo $telp2; ?>"/></td>
-					<?php
-						else:?>
-							<input name="telp" style="width: 35px;" minlength="4" maxlength="4" value=""/>-<input name="telp2" style="width: 35px;" minlength="4" maxlength="4" value=""/></td>
-					<?php endif;?>
+					<td><input name="tbjp" maxlength="100" value="<?php echo set_value('tbjp');?>" /></td>
+					<td><input name="telp" style="width: 35px;" minlength="4" maxlength="4" value="<?php echo set_value('telp');?>"/>-<input name="telp2" style="width: 35px;" minlength="4" maxlength="4" value="<?php echo set_value('telp2');?>"/></td>
 				</tr>
 				<tr>
 					<td></td>
@@ -268,18 +218,8 @@
 					<td>DUI del responsable:</td>
 				</tr>
 				<tr>
-					<td><input name="resp" maxlength="60" value="<?php echo $alumno->getNombreResp();?>" /></td>
-					<td>
-						<?php
-								$duir = explode('-', $alumno->getDuiResp());
-								$duir1 = $duir[0];
-							if (strcmp($duir1, "")==8):
-								$duir2 = $duir[1];?>
-								<input name="duir" minlength="8" maxlength="8" value="<?php echo $duir1; ?>" size="5"/>-<input name="duir2" maxlength="1" value="<?php echo $duir2; ?>" style="width: 13px;"/>					</td>
-						<?php	
-							else:?>
-								<input name="duir" minlength="8" maxlength="8" value="" size="5"/>-<input name="duir2" maxlength="1" value="" style="width: 13px;"/>					</td>
-						<?php endif;?>
+					<td><input name="resp" maxlength="60" value="<?php echo set_value('resp');?>" /></td>
+					<td><input name="duir" minlength="8" maxlength="8" value="<?php echo set_value('duir');?>" size="5"/>-<input name="duir2" maxlength="1" value="<?php echo set_value('duir2');?>" style="width: 13px;"/></td>
 				</tr>
 				<tr>
 					<td></td>
@@ -298,18 +238,8 @@
 					<td>Teléfono del Responsable:</td>
 				</tr>
 				<tr>
-					<td><input name="tbjr" maxlength="100" value="<?php echo $alumno->getTrabajoResp();?>" /></td>
-					<td>
-						<?php
-								$telr = explode('-', $alumno->getTelResp());
-								$telr1 = $telr[0];
-							if (strcmp($telr1, "")==4):
-								$telr2 = $telr[1];?>
-								<input name="telr" style="width: 35px;" minlength="4" maxlength="4" value="<?php echo $telr1; ?>"/>-<input name="telr2" style="width: 35px;" minlength="4" maxlength="4" value="<?php echo $telr2; ?>"/></td>
-						<?php	
-							else:?> 
-								<input name="telr" style="width: 35px;" minlength="4" maxlength="4" value=""/>-<input name="telr2" style="width: 35px;" minlength="4" maxlength="4" value=""/></td>
-						<?php endif;?>
+					<td><input name="tbjr" maxlength="100" value="<?php echo set_value('tbjr');?>" /></td>
+					<td> <input name="telr" style="width: 35px;" minlength="4" maxlength="4" value="<?php echo set_value('telr');?>"/>-<input name="telr2" style="width: 35px;" minlength="4" maxlength="4" value="<?php echo set_value('telr2');?>"/></td>
 				</tr>
 				<tr>
 					<td></td>
@@ -328,8 +258,8 @@
 					<td>Medicinas:</td>
 				</tr>
 				<tr>
-					<td><textarea name="padecimiento" cols="40" rows="10" maxlength="200"><?php echo $alumno->getPadecimientos();?></textarea></td>
-					<td><textarea name="medic" cols="40" rows="10" maxlength="200"><?php echo $alumno->getMedicamentos();?></textarea></td>
+					<td><textarea name="padecimiento" cols="40" rows="10" maxlength="200"><?php echo set_value('padecimiento');?></textarea></td>
+					<td><textarea name="medic" cols="40" rows="10" maxlength="200"><?php echo set_value('medic');?></textarea></td>
 				</tr>
 				<tr>
 					<td><input type="hidden" value="<?php echo $alumno->getIdAlumno();?>" name="id"/></td>

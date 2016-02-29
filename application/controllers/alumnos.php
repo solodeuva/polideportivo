@@ -35,7 +35,7 @@ class Alumnos extends CI_Controller {
 			$this->form_validation->set_error_delimiters('<div class="div-error">','</div>');
 
 			//A continuación se establecen las reglas de validación
-			$this->form_validation->set_rules('peso','Peso','numeric');
+			/*$this->form_validation->set_rules('peso','Peso','numeric');
 			$this->form_validation->set_rules('tel','Telefono','numeric');
 			$this->form_validation->set_rules('tel2','Telefono','numeric');
 			$this->form_validation->set_rules('telm','Telefono','numeric');
@@ -50,7 +50,7 @@ class Alumnos extends CI_Controller {
 			$this->form_validation->set_rules('duip','DUI','numeric');
 			$this->form_validation->set_rules('duip2','DUI','numeric');
 			$this->form_validation->set_rules('duir','DUI','numeric');
-			$this->form_validation->set_rules('duir2','DUI','numeric');
+			$this->form_validation->set_rules('duir2','DUI','numeric');*/
 
 
 			if($this->form_validation->run() == FALSE){
@@ -178,7 +178,22 @@ class Alumnos extends CI_Controller {
 		}
 
 		public function actualizarAlumno(){
+			$this->load->library('form_validation');
 			$id = $this->input->post('id');
+
+			//definiendo etiquetas donde se mostraran los errores en la vista
+			$this->form_validation->set_error_delimiters('<div class="div-error">','</div>');
+
+			if($this->form_validation->run() == FALSE){
+				$this->load->model('nivel_model');
+				$data['nivel'] = $this->nivel_model->obtenerNiveles();
+				$data['alumno'] = $this->alumnos_model->getAlumno($id);
+				$this->load->view('plantillas/header');
+				$this->load->view('plantillas/sidebar');
+				$this->load->view('front_end/editar_alumno_error',$data);
+				$this->load->view('plantillas/footer');
+			}
+			else{
 			$fecha = explode('-',$this->input->post('fnacimiento'), 3);
 			$fecha2 = $fecha[2]."/".$fecha[1]."/".$fecha[0];
 			$data = array(
@@ -189,27 +204,28 @@ class Alumnos extends CI_Controller {
 				'fnacimiento' 	=> $fecha2,
 				'genero' 		=> $this->input->post('genero'),		
 				'dir' 			=> $this->input->post('dir'),
-				'tel' 			=> $this->input->post('tel'),
+				'tel' 			=> $this->input->post('tel')."-".$this->input->post('tel2'),
 				'exp' 			=> $this->input->post('exp'),
 				'nivel' 		=> $this->input->post('nivel'),
 				'madre' 		=> mb_strtoupper($this->input->post('madre')),
-				'duim' 			=> $this->input->post('duim'),
+				'duim' 			=> $this->input->post('duim')."-".$this->input->post('duim2'),
 				'tbjm' 			=> $this->input->post('tbjm'),
-				'telm' 			=> $this->input->post('telm'),
+				'telm' 			=> $this->input->post('telm')."-".$this->input->post('telm2'),
 				'padre' 		=> mb_strtoupper($this->input->post('padre')),
-				'duip' 			=> $this->input->post('duip'),
+				'duip' 			=> $this->input->post('duip')."-".$this->input->post('duip2'),
 				'tbjp' 			=> $this->input->post('tbjp'),
-				'telp' 			=> $this->input->post('telp'),
+				'telp' 			=> $this->input->post('telp')."-".$this->input->post('telp2'),
 				'resp' 			=> mb_strtoupper($this->input->post('resp')),
-				'duir' 			=> $this->input->post('duir'),
+				'duir' 			=> $this->input->post('duir')."-".$this->input->post('"duir2'),
 				'tbjr' 			=> $this->input->post('tbjr'),
-				'telr' 			=> $this->input->post('telr'),
+				'telr' 			=> $this->input->post('telr')."-".$this->input->post('telr2'),
 				'padecimiento' 	=> $this->input->post('padecimiento'),
 				'medic' 		=> $this->input->post('medic'),
 				'estado'		=> $this->input->post('estado')
 				);
 			$this->alumnos_model->actualizarAlumno($data,$id);
 			redirect(base_url('Alumnos/gestionarAlumnos'));
+			}
 		}
 
 		public function actualizarEstado($id){

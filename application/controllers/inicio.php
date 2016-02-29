@@ -42,35 +42,4 @@ class Inicio extends CI_Controller {
 		$this->load->view('plantillas/footer');
 	}
 
-	public function prueba(){
-		$this->load->helper('form');
-		$this->load->view('plantillas/header');
-		$this->load->view('plantillas/sidebar_ayuda');
-		$this->load->view('front_end/prueba');
-		$this->load->view('plantillas/footer');
-	}
-
-	public function otraPrueba(){
-		$this->load->library('form_validation');
-
-		$this->form_validation->set_rules('nombre','NOMBRE','numeric');
-
-		if($this->form_validation->run() == FALSE){
-			$this->load->helper('form');
-			$this->load->view('plantillas/header');
-			$this->load->view('plantillas/sidebar_ayuda');
-			$this->load->view('front_end/prueba');
-			$this->load->view('plantillas/footer');
-		}
-		else
-		{
-			$nombre = $this->input->post('nombre');
-			$nombre2 = $this->input->post('nombre2');
-			$instructor = $this->input->post('instructor');
-			echo $nombre."-".$nombre2;
-			//echo $instructor;
-		}
-		
-	}
-
 }

@@ -1,3 +1,4 @@
+
 <?php function calcular_edad($fecha){
 		$dias = explode('/', $fecha, 3);
 		$dias = mktime(0,0,0,$dias[1],$dias[0],$dias[2]);
@@ -5,6 +6,7 @@
 		return $edad;						
 }
 ?>
+
 <section class="contenido">
 <?php if(isset($_SESSION['logged_in'])): #si ha iniciado sesion se mostrara el contenido sino el mensaje de error?>
 	<h1>Resultados de Busqueda</h1>

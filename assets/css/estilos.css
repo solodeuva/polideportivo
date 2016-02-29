@@ -53,15 +53,7 @@ header p {
     margin-left: 10px;
     font-family: helvetica;
 }
-/*
-nav {
-    border: solid;
-    border-color: #4F2601;
-    background-color: #4F2601;
-    height: 49px;
-    margin-bottom: 30px;
-    width: 100%;
-}*/
+
 nav {
     background-color: #d4b15f;
     height: 49px;
@@ -84,35 +76,6 @@ nav {
     list-style: none;
 
 }
-/*
-.menucito li
-{
-    margin: 0 10px;
-    padding: 0;
-    list-style-type: none;
-    position: relative;
-    float: left;
-    width: 23%;
-    min-width: 57px;
-    height: 100%;
-    border: solid;
-    border-radius: 5px;
-    background-color: #d2b05e;
-}
-.menucito li:hover
-{
-    margin: 0 10px;
-    padding: 0;
-    list-style-type: none;
-    position: relative;
-    float: left;
-    width: 23%;
-    min-width: 56px;
-    height: 100%;
-    border: solid;
-    border-radius: 5px;
-    background-color: #41AFCE;
-}*/
 
 .menucito li
 {
@@ -127,6 +90,22 @@ nav {
     background-color: #591a15;
     text-align: center;
     color: #d4b15f;
+    font-family: helvetica;
+}
+
+.menucito li:hover
+{
+    margin: 0 5px;
+    list-style-type: none;
+    position: relative;
+    float: left;
+    width: 23%;
+    min-width: 57px;
+    height: 90%;
+    border-radius: 5px;
+    background-color: #722E2E;
+    text-align: center;
+    color: #C9A653;
     font-family: helvetica;
 }
 
@@ -154,7 +133,7 @@ header .contenedor {
     margin: auto;
 }
 
-#principal-body footer {
+footer {
     background: url('../img/fondo1.jpg') no-repeat;
     position: relative;
     margin-top: -50px;
@@ -165,10 +144,8 @@ header .contenedor {
     padding: 20px 0;
     height: 14%;
     font-size: 14px;
-    
     bottom: 0;
     left: 0;
-  
 }
 
 footer p{

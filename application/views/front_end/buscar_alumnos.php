@@ -16,7 +16,7 @@
 			</tr>
 		</thead>
 			<tr>
-				<form action="<?php echo base_url('alumnos/buscarPorNivel');?>" method="post" accept-charset="utf-8">
+				<form action="<?php echo base_url('alumnos/buscarPorNivel2');?>" method="post" accept-charset="utf-8">
 				<td>
 					<select name="nivel">
 							<?php foreach ($nivel as $n) { ?>
@@ -26,7 +26,7 @@
 				</td>
 				<td><input type="submit" name="buscar" value="Buscar"  /></td>			
 				</form>
-				<form action="<?php echo base_url('alumnos/buscarPorGenero');?>" method="post" accept-charset="utf-8">
+				<form action="<?php echo base_url('alumnos/buscarPorGenero2');?>" method="post" accept-charset="utf-8">
 				<td>
 					<select name="genero">
 						<option value="M">Masculino</option>
@@ -35,19 +35,19 @@
 				</td>
 				<td><input type="submit" value="Buscar"  /></td>			
 				</form>
-				<form action="<?php echo base_url('alumnos/buscarPorNombres');?>" method="post" accept-charset="utf-8">
+				<form action="<?php echo base_url('alumnos/buscarPorNombres2');?>" method="post" accept-charset="utf-8">
 				<td>
 					<input name="nombres" required/>
 				</td>
 				<td><input type="submit" name="buscar" value="Buscar"  /></td>			
 				</form>
-				<form action="<?php echo base_url('alumnos/buscarPorApellidos');?>" method="post" accept-charset="utf-8">
+				<form action="<?php echo base_url('alumnos/buscarPorApellidos2');?>" method="post" accept-charset="utf-8">
 				<td>
 					<input name="apellidos" required/>
 				</td>
 				<td><input type="submit" name="buscar" value="Buscar"  /></td>			
 				</form>
-				<form action="<?php echo base_url('alumnos/buscarTodos');?>" method="post" accept-charset="utf-8">
+				<form action="<?php echo base_url('alumnos/buscarTodos2');?>" method="post" accept-charset="utf-8">
 				<td><input type="submit" name="buscar" value="Buscar"  /></td>			
 				</form>
 			</tr>

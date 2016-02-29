@@ -34,25 +34,6 @@ class Alumnos extends CI_Controller {
 			//definiendo etiquetas donde se mostraran los errores en la vista
 			$this->form_validation->set_error_delimiters('<div class="div-error">','</div>');
 
-			//A continuación se establecen las reglas de validación
-			/*$this->form_validation->set_rules('peso','Peso','numeric');
-			$this->form_validation->set_rules('tel','Telefono','numeric');
-			$this->form_validation->set_rules('tel2','Telefono','numeric');
-			$this->form_validation->set_rules('telm','Telefono','numeric');
-			$this->form_validation->set_rules('telm2','Telefono','numeric');
-			$this->form_validation->set_rules('telp','Telefono','numeric');
-			$this->form_validation->set_rules('telp2','Telefono','numeric');
-			$this->form_validation->set_rules('telr','Telefono','numeric');
-			$this->form_validation->set_rules('telr2','Telefono','numeric');
-			$this->form_validation->set_rules('dui','DUI','numeric');
-			$this->form_validation->set_rules('duim','DUI','numeric');
-			$this->form_validation->set_rules('duim2','DUI','numeric');
-			$this->form_validation->set_rules('duip','DUI','numeric');
-			$this->form_validation->set_rules('duip2','DUI','numeric');
-			$this->form_validation->set_rules('duir','DUI','numeric');
-			$this->form_validation->set_rules('duir2','DUI','numeric');*/
-
-
 			if($this->form_validation->run() == FALSE){
 				$this->load->model('nivel_model');
 				$data['nivel'] = $this->nivel_model->obtenerNiveles();
@@ -107,48 +88,76 @@ class Alumnos extends CI_Controller {
 			$this->load->view('plantillas/footer');
 		}	
 
-		public function buscarPorNivel(){
-			$data['alumnos'] = $this->alumnos_model->obtenerAlumnosNivel($this->input->post('nivel'));
+		public function buscarPorNivel2(){
+			$nivel = $this->input->post('nivel');
+			redirect(base_url('alumnos/buscarPorNivel/'.$nivel));
+		}
+
+		public function buscarPorNivel($nivel){
+			$data['alumnos'] = $this->alumnos_model->obtenerAlumnosNivel($nivel);
 			$this->load->view('plantillas/header');
 			$this->load->view('plantillas/sidebar');
 			$this->load->view('front_end/ver_alumnos',$data);
 			$this->load->view('plantillas/footer');
 		}
 
-		public function buscarPorGenero(){
-			$data['alumnos'] = $this->alumnos_model->obtenerAlumnosGenero($this->input->post('genero'));
+		public function buscarPorGenero2(){
+			$genero = $this->input->post('genero');
+			if($genero == 'M'){
+				$gen = 1;
+			}
+			else
+			{
+				$gen = 2;
+			}
+			redirect(base_url('alumnos/buscarPorGenero/'.$gen));
+		}
+
+		public function buscarPorGenero($genero){
+			if($genero == 1){
+				$genero = 'M';
+			}
+			else{
+				$genero = 'F';
+			}
+			$data['alumnos'] = $this->alumnos_model->obtenerAlumnosGenero($genero);
 			$this->load->view('plantillas/header');
 			$this->load->view('plantillas/sidebar');
 			$this->load->view('front_end/ver_alumnos',$data);
 			$this->load->view('plantillas/footer');
+		}
+
+		public function buscarPorNombres2(){
+			$this->session->set_tempdata('name', mb_strtoupper($this->input->post('nombres')), 300);
+			redirect(base_url('alumnos/buscarPorNombres'));
 		}
 
 		public function buscarPorNombres(){
-			$data['alumnos'] = $this->alumnos_model->obtenerAlumnosNombres(mb_strtoupper($this->input->post('nombres')));
+			$nombres = $_SESSION['name'];
+			$data['alumnos'] = $this->alumnos_model->obtenerAlumnosNombres($nombres);
 			$this->load->view('plantillas/header');
 			$this->load->view('plantillas/sidebar');
 			$this->load->view('front_end/ver_alumnos',$data);
 			$this->load->view('plantillas/footer');
+		}
+
+		public function buscarPorApellidos2(){
+			$this->session->set_tempdata('last_name', mb_strtoupper($this->input->post('apellidos')), 300);
+			redirect(base_url('alumnos/buscarPorApellidos'));
 		}
 
 		public function buscarPorApellidos(){
-			$data['alumnos'] = $this->alumnos_model->obtenerAlumnosApellidos(mb_strtoupper($this->input->post('apellidos')));
+			$nombres = $_SESSION['last_name'];
+			$data['alumnos'] = $this->alumnos_model->obtenerAlumnosApellidos($nombres);
 			$this->load->view('plantillas/header');
 			$this->load->view('plantillas/sidebar');
 			$this->load->view('front_end/ver_alumnos',$data);
 			$this->load->view('plantillas/footer');
 		}
-	/*
-		public function buscarTodos(){
-			$this->load->model('nivel_model');
-			$data['nivel'] = $this->nivel_model->obtenerNiveles();
-			$data['alumnos'] = $this->alumnos_model->obtenerAlumnos();
-			$this->load->view('plantillas/header');
-			$this->load->view('plantillas/sidebar');
-			$this->load->view('front_end/buscar_alumnos',$data);
-			$this->load->view('plantillas/footer');
+
+		public function buscarTodos2(){
+			redirect(base_url('alumnos/buscarTodos'));
 		}
-		*/
 
 		public function buscarTodos(){
 			$data['alumnos'] = $this->alumnos_model->obtenerAlumnos();
@@ -157,7 +166,7 @@ class Alumnos extends CI_Controller {
 			$this->load->view('front_end/ver_alumnos',$data);
 			$this->load->view('plantillas/footer');
 		}
-
+		
 		public function editarAlumno($id){
 			$this->load->model('nivel_model');
 			$data['nivel'] = $this->nivel_model->obtenerNiveles();

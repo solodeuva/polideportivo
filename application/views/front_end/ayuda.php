@@ -149,6 +149,11 @@
 			<h3 id="reporte-barras">5.2 Reporte G. de Barras</h3>
 			<p>Esta funcionalidad es similar a la de Reporte G. de Pastel contando con las mismas opciones pero mostrando los resultados como en la siguiente imagen:</p>
 			<center><img src="<?php echo base_url(); ?>assets/img/galeria/g-barras.jpg"></center>
+
+			<br><br>
+			<h2 id="desarrolladores">Desarrolladores</h3>
+				<p style="text-align:center">Oscar René Merino Aquino, merino10_68@hotmail.com</p>
+				<p style="text-align:center">Luis Edgar Valladares Lemus, keepercito@gmail.com</p>
 		<?php endif; ?>
 	</div><br>
 </section>

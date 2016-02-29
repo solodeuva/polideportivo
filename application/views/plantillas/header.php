@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-?><!DOCTYPE html>
+?>
 <!DOCTYPE html>
 <html id="principal-html">
   <head>
@@ -15,10 +15,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <header>
       <section class="contenedor">
           <h1>Complejo Deportivo UES</h1>
-          <p>Escuelas de Iniciación de Fútbol Universidad de El Salvador</p>
+          <p>Escuela de Iniciación de Fútbol Universidad de El Salvador</p>
       </section>
   </header>
-
   <nav>
     <ul class="menucito">
        <a style="color:black;" href="<?php echo base_url(); ?>"><li>Inicio</li></a>

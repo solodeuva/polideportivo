@@ -1,74 +1,142 @@
-header {
-    background: url('../img/fondo1.jpg') no-repeat;
-    color: #C59947;
-    height: 200px;
-    border: solid;
-    border-color: #4F2601;
-
-}
-header .contenedor {
-    padding-top: 40px;
-    position: relative;
-}
-header h1 {
-    text-align: left;
-    font-size: 50px;
-    margin: 0;
-    font-weight: 500;
-    margin-left: 10px;
-}
-header p {
-    text-align: left;
-    font-size: 30px;
-    margin: 0;
-    margin-left: 10px;
-}
-footer {
-    background: url('../img/fondo1.jpg') no-repeat;
-    clear: both;
-    color: #C59947;
-    padding: 20px 0;
-    height: 20%;
-    font-size: 14px;
-    margin-top: 10px;
-    bottom: 0;
-    left: 0;
-}
-footer p{
-    text-align: center;
-}
-nav {
-    border: 10px;
-    background-color: #4F2601;
-    height: 49px;
-    margin-bottom: 30px;
-}
+@import url(imagenes.css);
 #principal-html{
     width: 100%;
     height: 100%;
     margin: 0px;
     background-color: #AE8A69;  
 }
+
 #principal-body{
-	width: 100%;
-	height: 100%;
-	margin: 0px;
-    background-color: #AE8A69;	
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    background-color: #AE8A69;  
 }
+
 body,td,th {
-	
-	text-align: center;
+    
+    text-align: center;
 }
-.img-edit{
-    background: url("../img/eedit.png") no-repeat;
+
+header {
+    background: url('../img/fondo1.jpg') no-repeat;
+    color: #C59947;
+    height: 200px;
+    max-height: auto;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: relative;
 }
-aside {
-    width: 280px;
-    float: left;
+
+header .contenedor {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);    
+    width: 98%;
+    margin: auto;
+}
+
+header h1 {
+    text-align: left;
+    font-size: 3em;
+    font-weight: normal;
+    margin: 0;
+    margin-left: 10px;
+    font-family: helvetica;
+}
+header p {
+    text-align: left;
+    font-size: 30px;
+    margin: 0;
+    margin-left: 10px;
+    font-family: helvetica;
+}
+/*
+nav {
     border: solid;
     border-color: #4F2601;
-    border-width: 5px;
-    background-color: #AEADAA;
+    background-color: #4F2601;
+    height: 49px;
+    margin-bottom: 30px;
+    width: 100%;
+}*/
+nav {
+    background-color: #d4b15f;
+    height: 49px;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.menucito
+{
+    width: 40%;
+    height: 80%;
+    position: relative;
+    font-family: helvetica;
+    font-size: 20px;
+    bottom: 0;
+    top: -1px;
+    margin: 0;
+    padding: 0;
+    padding-top: 10px;
+    list-style: none;
+
+}
+/*
+.menucito li
+{
+    margin: 0 10px;
+    padding: 0;
+    list-style-type: none;
+    position: relative;
+    float: left;
+    width: 23%;
+    min-width: 57px;
+    height: 100%;
+    border: solid;
+    border-radius: 5px;
+    background-color: #d2b05e;
+}
+.menucito li:hover
+{
+    margin: 0 10px;
+    padding: 0;
+    list-style-type: none;
+    position: relative;
+    float: left;
+    width: 23%;
+    min-width: 56px;
+    height: 100%;
+    border: solid;
+    border-radius: 5px;
+    background-color: #41AFCE;
+}*/
+
+.menucito li
+{
+    margin: 0 5px;
+    list-style-type: none;
+    position: relative;
+    float: left;
+    width: 23%;
+    min-width: 57px;
+    height: 90%;
+    border-radius: 5px;
+    background-color: #591a15;
+    text-align: center;
+    color: #d4b15f;
+    font-family: helvetica;
+}
+
+aside {
+    width: 21%;
+    min-height: 306px;
+    min-width: 272px;
+    float: left;
+    border: 1px solid #591a15;
+    
     border-radius: 5px;
     margin-right: 20px;
     margin-left: 10px;
@@ -77,12 +145,46 @@ aside a {
     color: #513621;
 }
 
+header .contenedor {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);    
+    width: 98%;
+    margin: auto;
+}
+
+#principal-body footer {
+    background: url('../img/fondo1.jpg') no-repeat;
+    position: relative;
+    margin-top: -50px;
+    margin-bottom: 0;
+    clear: both;
+    color: #C59947;
+    width: 100%;
+    padding: 20px 0;
+    height: 14%;
+    font-size: 14px;
+    
+    bottom: 0;
+    left: 0;
+  
+}
+
+footer p{
+    text-align: center;
+}
+/*
+.img-edit{
+    background: url("../img/eedit.png") no-repeat;
+}*/
+
 .contenido {
     width: 75%;
     float: left;
     background-color: #AEADAA;
     border: solid;
-    border-color: #4F2601;
+    border-color: #591a15;
     border-width: 5px;
     border-radius: 5px;
     margin-bottom: 10px;
@@ -91,18 +193,26 @@ aside a {
 .contenido h1{
     font-size: 50px;
     font-weight: bold;
+    font-family: helvetica;
 }
 .content-botones
 {
 	padding: 25px;
 }
 
+.contenido-inicio {
+    width: 75%;
+    float: left;
+    margin-bottom: 10px;
+    text-align: center;
+}
 
 p
 {
 	text-align: left;
     padding-left: 15px;
     font-size: larger;
+    font-family: helvetica;
 
 }
 
@@ -114,7 +224,7 @@ label
 {
 	margin-left: 15px;
 	height: 20px;
-	    border-radius: 2px;
+	border-radius: 2px;
 }
 .btn
 {
@@ -126,23 +236,37 @@ label
 
 .div-login
 {
-    width: 275px;
-    border: none;
+    width: 97%;
+    border: 1px solid #d4b15f;
     text-align: left;
+    margin-top: 10px;
     margin-left: 3px;
     margin-bottom: 5px;
     border-radius: 10px;
+    border-collapse: collapse;
+    background-color: #807F7F;
+    float: center;
 }
 .div-login h3
 {
     font-family: helvetica;
     text-align: center;
+    color: #591a15;
 }
 
 .div-login table tr td
 {
     text-align: left;
+    color: #591a15;
+    font-family: helvetica;
 }
+
+#tip-login{
+    font-family: helvetica;
+    text-align: left;
+    font-size: 13px;
+}
+
 .div-solicitudes
 {
     margin-left: 20%;
@@ -187,47 +311,6 @@ label
     font-family: verdana;
     font-weight: bold;
     text-align: center;
-}
-.menucito
-{
-	width: 30%;
-    height: 50%;
-    position: relative;
-    font-family: helvetica;
-    font-size: 20px;
-    float: left;
-    bottom: 0;
-    top: -1px;
-    margin: 0;
-    padding: 0;
-    padding-top: 10px;
-    list-style: none;
-}
-.menucito li
-{
-	margin: 0 10px;
-    padding: 0;
-    list-style-type: none;
-    position: relative;
-    float: left;
-    width: 23%;
-    height: 100%;
-    border: solid;
-    border-radius: 5px;
-    background-color: #d2b05e;
-}
-.menucito li:hover
-{
-    margin: 0 10px;
-    padding: 0;
-    list-style-type: none;
-    position: relative;
-    float: left;
-    width: 23%;
-    height: 100%;
-    border: solid;
-    border-radius: 5px;
-    background-color: #41AFCE;
 }
 .mensaje-error{
     color: red;

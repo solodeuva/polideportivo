@@ -12,10 +12,10 @@
                         );
                     ?>
                 <tr><td style="text-align:left"><?= form_label('Usuario : ','usuario')?></td>
-                    <td><?= form_input($car,set_value('usuario'))?></td>
+                    <td><input type="text" name="usuario" placeholder="Escriba su usuario" size="19"/></td>
                 </tr>
                 <tr><td style="text-align:left"><?= form_label('Contraseña : ','contraseña')?></td>
-                    <td><input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Ingresa la Contraseña">
+                    <td><input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Ingresa la Contraseña" size="19"/>
                     </td>
                 </tr>
                 <tr><td></td>
@@ -24,10 +24,12 @@
                 <?= form_close() ?>
             </table>
             <?php if (isset($_SESSION['msgError'])): ?>
-                <?= $this->session->flashdata('msgError'); ?>
+                <center><?= $this->session->flashdata('msgError'); ?></center>
             <?php endif; ?>
             <br>
     </div>
+    <h4>Nota:</h4>
+    <p id="tip-login">Necesita credenciales autorizadas por el administrador del sistema por lo que solo él puede registrar usuarios.</p>
     <?php else : #si logged_in esta predefinido muestra el saludo
     ?>
     <h4>Bienvenid@: <?php echo $this->session->userdata('nombre');?></h4>

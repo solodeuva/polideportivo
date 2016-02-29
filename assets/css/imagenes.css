@@ -1,0 +1,35 @@
+.contenedor-botones{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	text-align: center;
+}
+
+.botones{
+	margin-top: 10px;
+	margin-left: 10%;
+}
+.botones img{
+	width: 210px;
+	height: 210px;
+	border-radius: 50%;
+	border: 7px solid #4F2601;
+	background-color: #d4b15f;
+}
+.botones h2{
+	font-family: helvetica;
+}
+/*
+.botones2{
+	margin-top: 10px;
+	margin-left: 10%;
+}
+
+.botones2 img{
+	width: 210px;
+	height: 210px;
+	border-radius: 50%;
+	border: 7px solid #4F2601;
+	background-color: #AE8A69;
+}
+*/

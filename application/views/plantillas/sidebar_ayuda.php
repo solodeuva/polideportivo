@@ -32,9 +32,10 @@
         <ul>
             <a href="#reporte-pastel"><li>Reporte G. de Pastel</li></a>
             <a href="#reporte-barras"><li>Reporte G. de Barras</li></a>
-        </ul>
-    </ol>
+        </ul><br><br>
+        <a href="#desarrolladores"><li>Desarrolladores</li></a>
+    </ol><br>
             <a onclick="salir()" href="#">Cerrar Sesion</a>
-    <br><br>
+    <br>
     <?php endif; ?>
 </aside>

@@ -25,7 +25,7 @@
 					<td><input name="peso" maxlength="3" size="2" value="<?php echo set_value('peso'); ?>"/>lbs. (ingrese solo números Ej. 145)</td>
 				</tr>
 				<tr>
-					<td></td>
+					<td><?php echo form_error('estatura'); ?></td>
 					<td><?php echo form_error('peso'); ?></td>
 				</tr>
 				<tr>

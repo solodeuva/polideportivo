@@ -2,6 +2,7 @@
 <?php if(isset($_SESSION['logged_in'])): #si ha iniciado sesion se mostrara el contenido sino el mensaje de error?>
 	<h1>Datos del alumno</h1>
 	<?= form_open('Alumnos/agregarAlumno')?>
+	<div class="buscar-alumno">
 		<table class="tabla">
 			<tbody>
 				<tr>
@@ -224,7 +225,9 @@
 				<!--<tr>
 				</tr>-->
 			</tbody>
-		</table><br><br>
+		</table>
+		</div>
+		<br><br>
 	<?= form_submit('','Ingresar Alumno')?>
 	<?= form_close()?>
 	<br>

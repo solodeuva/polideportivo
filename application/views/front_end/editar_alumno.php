@@ -9,6 +9,7 @@
 <?php if(isset($_SESSION['logged_in'])): #si ha iniciado sesion se mostrara el contenido sino el mensaje de error?>
 	<h1>Editar Alumno</h1>
 	<?= form_open('Alumnos/actualizarAlumno')?>
+	<div class="buscar-alumno">
 		<table class="tabla">
 			<tbody>
 				<tr>
@@ -336,6 +337,7 @@
 				</tr>
 			</tbody>
 		</table>
+	</div>
 	<br>
 	<br>
 	<center>
@@ -350,6 +352,7 @@
 	</center>
 	<br>
 		<center><input type="button" value="Eliminar Alumno" onclick="eliminarAlumno(<?php echo $alumno->getIdAlumno();?>)"></center>
+		<br>
 <?php else: ?>
 	<br><br><br><br><br><br><br>
 	<h2>Tu sesión expiró o no has iniciado sesión, por favor inicia sesión para ver este contenido</h2>

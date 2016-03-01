@@ -57,14 +57,22 @@ class Usuarios extends CI_Controller {
 	}
 
 	public function agregarUsuario(){
-		$data = array(
-			'nombres' => $this->input->post('nombres'),
-			'apellidos' => $this->input->post('apellidos'),
-			'nick' => $this->input->post('nick'),
-			'contrasena' =>md5($this->input->post('contrasena'))
-			);
-		$this->usuarios_model->crearUsuario($data);
-		redirect(base_url('Usuarios/gestionarUsuarios'));
+		$this->load->library('form_validation');
+		$this->form_validation->set_error_delimiters('<div class="div-error">','</div>');
+		$this->form_validation->set_rules('nick','Nick','callback_validarNick');
+		if ($this->form_validation->run() == FALSE) {
+			$this->nuevoUsuario();
+		} else {
+			$data = array(
+				'nombres' => $this->input->post('nombres'),
+				'apellidos' => $this->input->post('apellidos'),
+				'nick' => $this->input->post('nick'),
+				'contrasena' =>md5($this->input->post('contrasena'))
+				);
+			$this->usuarios_model->crearUsuario($data);
+			redirect(base_url('Usuarios/gestionarUsuarios'));
+		}
+		
 	}
 
 	public function verUsuarios(){
@@ -137,5 +145,16 @@ class Usuarios extends CI_Controller {
 		$this->load->view('plantillas/sidebar');
 		$this->load->view('front_end/perfil',$data);
 		$this->load->view('plantillas/footer');
+	}
+	public function validarNick($nick)
+	{
+		$usuarios = $this->usuarios_model->obtenerUsuarios();
+		foreach ($usuarios as $u) {
+			if ($nick == $u->getNick()) {
+				$this->form_validation->set_message('validarNick','El nombre de inicio de sesión '.$nick.' ya esta registrado');
+				return FALSE;
+			}
+		}
+				return TRUE;
 	}
 }

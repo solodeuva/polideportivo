@@ -79,11 +79,6 @@
                      'field'   => 'duir2', 
                      'label'   => 'DUI', 
                      'rules'   => 'numeric'
-                  ),
-               array(
-                     'field'   => 'dui', 
-                     'label'   => 'DUI', 
-                     'rules'   => 'numeric'
                   )
             );
 ?>

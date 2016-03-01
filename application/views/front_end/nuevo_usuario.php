@@ -7,17 +7,20 @@
 				<tbody>
 					<tr>
 						<td width="30%">Nombres del usuario:</td>
-						<td><input name="nombres" maxlength="25" required/></td>
+						<td><input name="nombres" maxlength="25" value="<?php echo set_value('nombres');?>" required/></td>
 						<td><p class="tips">&nbsp;<p></td>
 					</tr>
 					<tr>
 						<td>Apellidos del usuario:</td>
-						<td><input name="apellidos" maxlength="25" required/></td>
+						<td><input name="apellidos" maxlength="25" value="<?php echo set_value('apellidos');?>" required/></td>
 					</tr>
 					<tr>
 						<td>Nombre para inicio de sesión:</td>
-						<td><input name="nick" maxlength="25" required/></td>
+						<td><input name="nick" maxlength="25" value="<?php echo set_value('nick');?>" required/></td>
 						<td><p class="tips">*Este nombre se usará como credencial para que el usuario inicie sesión.<p></td>
+					</tr>
+					<tr>
+						<td><?php echo form_error('nick'); ?></td>
 					</tr>
 					<tr>
 						<td>Contraseña:</td>

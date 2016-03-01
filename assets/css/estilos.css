@@ -157,7 +157,8 @@ footer p{
 }*/
 
 .contenido {
-    width: 75%;
+    width: 70%;
+    min-width: 200px;
     float: left;
     background-color: #AEADAA;
     border: solid;
@@ -179,6 +180,7 @@ footer p{
 
 .contenido-inicio {
     width: 75%;
+    min-width: 700px;
     float: left;
     margin-bottom: 10px;
     text-align: center;
@@ -213,11 +215,11 @@ label
 
 .div-login
 {
-    width: 97%;
+    width: 95%;
     border: 1px solid #d4b15f;
     text-align: left;
     margin-top: 10px;
-    margin-left: 3px;
+    margin-left: 2%;
     margin-bottom: 5px;
     border-radius: 10px;
     border-collapse: collapse;
@@ -226,8 +228,10 @@ label
 }
 .div-login h3
 {
+    margin-top: 10px;
     font-family: helvetica;
     text-align: center;
+    font-size: 20px;
     color: #591a15;
 }
 
@@ -241,9 +245,20 @@ label
 
 .div-login table tr td
 {
-    text-align: left;
+    text-align: center;
     color: #591a15;
     font-family: helvetica;
+}
+
+.div-login table
+{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.div-login tr
+{
+    height: 20px;
 }
 
 #tip-login{
@@ -321,10 +336,31 @@ a:link
 {
     height: 400px;
     overflow: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
+.tabla-usuarios
+{
+   width: 85%;
+   position: relative;
+   text-align: left;
+   border-collapse: collapse;
+   caption-side: top;
+   font-size: 14px;
+}
+.tabla-usuarios thead
+{
+    text-align: left;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+}
+
 .tips{
     color: blue;
-    font-size: 14px;
+    font-size: 12px;
     font-style: italic;
 }
 .div-estadisticas{
@@ -336,7 +372,7 @@ a:link
     text-align: center;
 }
 .tabla-alumnos {
-   width: 80%;
+   width: 85%;
    text-align: left;
    border-collapse: collapse;
    margin: 0 0 1em 0;
@@ -351,28 +387,17 @@ a:link
    border-left: 1px solid #000;
    border-right: 1px solid #000;
 }
-.tabla-alumnos tbody th {
-   border: 0;
-}
-.tabla-usuarios
-{
-    width: 80%;
-    margin-left: 10%;
-    position: relative;
-   text-align: left;
-   border-collapse: collapse;
-   caption-side: top;
-}
-.tabla-usuarios thead
-{
-    text-align: left;
-    border-top: 1px solid #000;
-    border-bottom: 1px solid #000;
-    border-left: 1px solid #000;
-    border-right: 1px solid #000;
-}
+
 .div-error{
     color: red;
+}
+.buscar-alumno{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.buscar{
+    margin: 20px;
 }
 
 @media(min-width: 1050px){
@@ -387,7 +412,10 @@ a:link
     margin-left: 10px;
     }
 
-
+    .div-login h3
+    {
+        margin-top: 10px;
+    }
     .div-login label
     {
         font-family: helvetica;
@@ -404,5 +432,68 @@ a:link
     .div-login table {
     position: relative;
     left: 20%;
+    }
+    .div-login tr {
+    height: 20px;
+    }
+
+    nav {
+    background-color: #d4b15f;
+    height: 49px;
+    margin-bottom: 30px;
+    width: 100%;
+    }
+
+    .menucito
+    {
+        width: 40%;
+        height: 80%;
+        position: relative;
+        font-family: helvetica;
+        font-size: 20px;
+        bottom: 0;
+        top: -1px;
+        margin: 0;
+        padding: 0;
+        padding-top: 10px;
+        list-style: none;
+
+    }
+
+    .menucito li
+    {
+        margin: 0 5px;
+        list-style-type: none;
+        position: relative;
+        float: left;
+        width: 23%;
+        min-width: 57px;
+        height: 90%;
+        border-radius: 5px;
+        background-color: #591a15;
+        text-align: center;
+        color: #d4b15f;
+        font-family: helvetica;
+    }
+
+    .menucito li:hover
+    {
+        margin: 0 5px;
+        list-style-type: none;
+        position: relative;
+        float: left;
+        width: 23%;
+        min-width: 57px;
+        height: 90%;
+        border-radius: 5px;
+        background-color: #722E2E;
+        text-align: center;
+        color: #C9A653;
+        font-family: helvetica;
+    }
+    .tips{
+    color: blue;
+    font-size: 14px;
+    font-style: italic;
     }
 }

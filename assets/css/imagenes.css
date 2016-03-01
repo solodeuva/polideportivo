@@ -3,6 +3,7 @@
 	flex-wrap: wrap;
 	justify-content: center;
 	text-align: center;
+	width: 100%;
 }
 
 .botones{
@@ -10,26 +11,28 @@
 	margin-left: 10%;
 }
 .botones img{
-	width: 210px;
-	height: 210px;
+	width: 200px;
+	height: 200px;
 	border-radius: 50%;
-	border: 7px solid #4F2601;
+	border: 7px solid #591a15;
 	background-color: #d4b15f;
 }
 .botones h2{
 	font-family: helvetica;
 }
-/*
-.botones2{
+@media(min-width: 1050px){
+	.botones{
 	margin-top: 10px;
 	margin-left: 10%;
+	}
+	.botones img{
+		width: 210px;
+		height: 210px;
+		border-radius: 50%;
+		border: 7px solid #591a15;
+		background-color: #d4b15f;
+	}
+	.botones h2{
+		font-family: helvetica;
+	}
 }
-
-.botones2 img{
-	width: 210px;
-	height: 210px;
-	border-radius: 50%;
-	border: 7px solid #4F2601;
-	background-color: #AE8A69;
-}
-*/

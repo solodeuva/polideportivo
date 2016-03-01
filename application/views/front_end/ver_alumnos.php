@@ -10,7 +10,9 @@
 <section class="contenido">
 <?php if(isset($_SESSION['logged_in'])): #si ha iniciado sesion se mostrara el contenido sino el mensaje de error?>
 	<h1>Resultados de Busqueda</h1>
+	<div class="div-usuarios">
 	<center>
+	<div>
 	<br><p style="text-align:center">Haga click directamente sobre el estado de un alumno para modificar el mismo.</p>
 		<table border="1" style="border-collapse: collapse;">
 				<tr>
@@ -26,8 +28,9 @@
 					<td>Alumno Inactivo</td>
 				</tr>
 			</table><br>
-		<div class="div-usuarios">
-			<table class="tabla-alumnos">
+		</div>
+		<div>
+			<table class="tabla-usuarios">
 				<thead>
 					<tr>
 						<th>Nombre</th>
@@ -65,6 +68,7 @@
 					<?php endif;?>
 				</tbody>
 			</table>
+			</div>
 		</div>
 	</center>
 	</div>

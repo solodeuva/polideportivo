@@ -23,12 +23,6 @@
 						</td>
 					</tr>
 				<?php } ?>
-					<tr>
-						<td>&nbsp;</td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
 				</tbody>
 			</table>
 		</div>

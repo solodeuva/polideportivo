@@ -11,15 +11,22 @@
                             'placeholder' => 'Escriba su usuario' 
                         );
                     ?>
-                <tr><td style="text-align:left"><?= form_label('Usuario : ','usuario')?></td>
-                    <td><input type="text" name="usuario" placeholder="Escriba su usuario" size="19"/></td>
+                <tr><td><?= form_label('Usuario : ','usuario')?></td>
+                    <td></td>
                 </tr>
-                <tr><td style="text-align:left"><?= form_label('Contraseña : ','contraseña')?></td>
-                    <td><input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Ingresa la Contraseña" size="19"/>
-                    </td>
+                    <td colspan="2"><input type="text" name="usuario" placeholder="Escriba su usuario" size="19"/></td>
                 </tr>
-                <tr><td></td>
-                    <td><?= form_submit('','Ingresar al sistema') ?></td>
+                <tr>
+                    <td colspan="2"><?= form_label('Contraseña : ','contraseña')?></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Ingresa la Contraseña" size="19"/></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td style="text-align:center;"colspan="2"><?= form_submit('','Ingresar al sistema') ?></td>
                 </tr> 
                 <?= form_close() ?>
             </table>

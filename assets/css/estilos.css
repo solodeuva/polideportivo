@@ -112,7 +112,7 @@ nav {
 aside {
     width: 21%;
     min-height: 306px;
-    min-width: 272px;
+    min-width: 185px;
     float: left;
     border: 1px solid #591a15;
     
@@ -121,7 +121,7 @@ aside {
     margin-left: 10px;
 }
 aside a {
-    color: #513621;
+    color: #000;
 }
 
 header .contenedor {
@@ -142,7 +142,7 @@ footer {
     color: #C59947;
     width: 100%;
     padding: 20px 0;
-    height: 14%;
+    height: 20%;
     font-size: 14px;
     bottom: 0;
     left: 0;
@@ -174,7 +174,7 @@ footer p{
 }
 .content-botones
 {
-	padding: 25px;
+    padding: 25px;
 }
 
 .contenido-inicio {
@@ -186,7 +186,7 @@ footer p{
 
 p
 {
-	text-align: left;
+    text-align: left;
     padding-left: 15px;
     font-size: larger;
     font-family: helvetica;
@@ -195,17 +195,17 @@ p
 
 label
 {
-	font-size: 17px;
+    font-size: 17px;
 }
 .campo-option
 {
-	margin-left: 15px;
-	height: 20px;
-	border-radius: 2px;
+    margin-left: 15px;
+    height: 20px;
+    border-radius: 2px;
 }
 .btn
 {
-	height: 30px;
+    height: 30px;
     border-radius: 5px;
     margin: 20px;
     width: 100px;
@@ -228,6 +228,14 @@ label
 {
     font-family: helvetica;
     text-align: center;
+    color: #591a15;
+}
+
+.div-login label
+{
+    font-family: helvetica;
+    font-size: 15px;
+    font-weight: bold;
     color: #591a15;
 }
 
@@ -256,7 +264,7 @@ label
 .div-menu-sidebar
 {
     margin-top: 3px;
-    width: 280px;
+    width: 100%;
     border: 1px;
     height: 30px;
     text-align: center;
@@ -264,6 +272,7 @@ label
 }
 .div-menu-sidebar-in
 {
+    width: 100%;
     display: table-cell;
     vertical-align: middle;
     font-family: verdana;
@@ -274,7 +283,7 @@ label
 .div-menu-sidebar:hover
 {
     margin-top: 3px;
-    width: 280px;
+    width: 100%;
     border: 1px;
     background-color: #537E9F;
     height: 30px;
@@ -283,6 +292,7 @@ label
 }
 .div-menu-sidebar-in:hover
 {
+    width: 100%;
     display: table-cell;
     vertical-align: middle;
     font-family: verdana;
@@ -363,4 +373,36 @@ a:link
 }
 .div-error{
     color: red;
+}
+
+@media(min-width: 1050px){
+    aside {
+    width: 21%;
+    min-height: 306px;
+    min-width: 272px;
+    float: left;
+    border: 1px solid #591a15;
+    border-radius: 5px;
+    margin-right: 20px;
+    margin-left: 10px;
+    }
+
+
+    .div-login label
+    {
+        font-family: helvetica;
+        font-weight: bold;
+        color: #591a15;
+    }
+
+    .div-login table tr td{
+    text-align: center;
+    color: #591a15;
+    font-family: helvetica;
+    }
+
+    .div-login table {
+    position: relative;
+    left: 20%;
+    }
 }

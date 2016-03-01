@@ -11,25 +11,34 @@
                             'placeholder' => 'Escriba su usuario' 
                         );
                     ?>
-                <tr><td style="text-align:left"><?= form_label('Usuario : ','usuario')?></td>
-                    <td><input type="text" name="usuario" placeholder="Escriba su usuario" size="19"/></td>
+                <tr><td colspan="2"><?= form_label('Usuario : ','usuario')?></td>
                 </tr>
-                <tr><td style="text-align:left"><?= form_label('Contraseña : ','contraseña')?></td>
-                    <td><input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Ingresa la Contraseña" size="19"/>
-                    </td>
+                    <td colspan="2"><input type="text" name="usuario" placeholder="Escriba su usuario" size="19"/></td>
                 </tr>
-                <tr><td></td>
-                    <td><?= form_submit('','Ingresar al sistema') ?></td>
+                <tr>
+                    <td colspan="2"><?= form_label('Contraseña : ','contraseña')?></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Ingrese la Contraseña" size="19"/></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td style="text-align:center;"colspan="2"><?= form_submit('','Ingresar al sistema') ?></td>
                 </tr> 
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
                 <?= form_close() ?>
             </table>
             <?php if (isset($_SESSION['msgError'])): ?>
                 <center><?= $this->session->flashdata('msgError'); ?></center>
             <?php endif; ?>
-            <br>
     </div>
     <h4>Nota:</h4>
     <p id="tip-login">Necesita credenciales autorizadas por el administrador del sistema por lo que solo él puede registrar usuarios.</p>
+    <br>
     <?php else : #si logged_in esta predefinido muestra el saludo
     ?>
     <h4>Bienvenid@: <?php echo $this->session->userdata('nombre');?></h4>
@@ -66,7 +75,7 @@
             </div></a>
             <a onclick="salir()" href="#"><div class="div-menu-sidebar">
                 <div class="div-menu-sidebar-in">
-                    Cerrar Sesion
+                    Cerrar Sesión
                 </div>
             </div></a>
     <?php endif; ?>

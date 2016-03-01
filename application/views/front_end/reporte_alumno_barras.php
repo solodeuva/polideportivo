@@ -27,7 +27,7 @@ function imprSelec(muestra)
 			</table><br><br>
 			<table>
 				<tr>
-					<td><img src="<?php echo base_url();?>/assets/img/reportes/reportebarra.jpg" alt="Grafico"></td>
+					<td><img src="<?php echo base_url();?>/assets/img/reportes/reportebarra.jpg" alt="Grafico" width="550" height="400"></td>
 				</tr>
 			</table>
 			</center>

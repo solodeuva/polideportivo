@@ -33,13 +33,16 @@
 
     <div class="fluid_container">
         <div class="camera_wrap camera_azure_skin" id="camera_wrap_1">
-            <div data-thumb="<?php echo base_url(); ?>assets/img/galeria/slider/thumbs/1.jpg" data-src="<?php echo base_url(); ?>assets/img/galeria/slider/1.jpg">
+            <div data-thumb="<?php echo base_url(); ?>assets/img/galeria/slider/thumbs/1.png" data-src="<?php echo base_url(); ?>assets/img/galeria/slider/1.png">
                 
             </div>
-            <div data-thumb="<?php echo base_url(); ?>assets/img/galeria/slider/thumbs/2.jpg" data-src="<?php echo base_url(); ?>assets/img/galeria/slider/2.jpg">
+            <div data-thumb="<?php echo base_url(); ?>assets/img/galeria/slider/thumbs/2.png" data-src="<?php echo base_url(); ?>assets/img/galeria/slider/2.png">
                
             </div>
             <div data-thumb="<?php echo base_url(); ?>assets/img/galeria/slider/thumbs/3.jpg" data-src="<?php echo base_url(); ?>assets/img/galeria/slider/3.jpg">
+               
+            </div>
+            <div data-thumb="<?php echo base_url(); ?>assets/img/galeria/slider/thumbs/4.jpg" data-src="<?php echo base_url(); ?>assets/img/galeria/slider/4.jpg">
                
             </div>
         </div><!-- #camera_wrap_1 -->

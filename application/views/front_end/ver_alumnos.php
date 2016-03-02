@@ -12,7 +12,7 @@
 	<h1>Resultados de Busqueda</h1>
 	<div class="div-usuarios">
 	<center>
-	<div>
+	<div class="div-alumnos">
 	<br><p style="text-align:center">Haga click directamente sobre el estado de un alumno para modificar el mismo.</p>
 		<table border="1" style="border-collapse: collapse;">
 				<tr>
@@ -28,7 +28,7 @@
 					<td>Alumno Inactivo</td>
 				</tr>
 			</table><br>
-		</div>
+	</div>
 		<div>
 			<table class="tabla-usuarios">
 				<thead>

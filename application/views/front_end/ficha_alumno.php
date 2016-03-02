@@ -18,7 +18,7 @@
 		<td>Foto de Perfil: <input type="file" name="userfile" size="20" /></td>
 	</tr>
 	<tr>
-		<td>
+		<td style="text-align:center">
 			<input type="submit" value="Subir Foto" />
 			<input type="hidden" value="<?php echo $alumno->getIdAlumno();?>" name="id"/>
 		</td>
@@ -30,6 +30,7 @@
 </table>
 </center>
 <div id="ficha">
+	<br>
 	<h1>Ficha Personal del Alumno</h1>
 	<center>
 		<table width="auto">

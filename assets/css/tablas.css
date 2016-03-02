@@ -1,0 +1,50 @@
+.div-tabla{
+    width: 100%;
+}
+.tabla{
+	font-size: 12px;
+}
+
+.tabla-usuarios
+{
+	width: 98%; 
+   border-collapse: collapse;
+   caption-side: top;
+   font-size: 12px;
+   text-align: center;
+}
+.tabla-usuarios th{
+	padding: 0.3em;
+} 
+.tabla-usuarios thead 
+{
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+}
+.tabla-usuarios tbody{
+	border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+}
+.ficha table th, td{
+	font-size: 12px;
+}
+
+@media(min-width: 1025px){
+	.tabla{
+		font-size: 14px;
+	}
+	.ficha table th, td{
+	font-size: 14px;
+	}
+	.tabla-usuarios{
+		font-size: 14px;
+		 text-align: left;
+	}
+	.tabla-usuarios th{
+		padding: 0;
+	}
+}

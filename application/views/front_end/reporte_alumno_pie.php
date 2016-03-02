@@ -5,6 +5,7 @@ function imprSelec(muestra)
 <section class="contenido">
 <?php if(isset($_SESSION['logged_in'])): #si ha iniciado sesion se mostrara el contenido sino el mensaje de error?>
 		<div id="muestra">
+			<br>
 			<h1>Reporte de Alumnos Inscritos</h1>
 			<center>
 			<table>
@@ -27,7 +28,7 @@ function imprSelec(muestra)
 			</table><br><br>
 			<table>
 				<tr>
-					<td><img src="<?php echo base_url();?>/assets/img/reportes/reporte.jpg" alt="Grafico"></td>
+					<td><img src="<?php echo base_url();?>/assets/img/reportes/reporte.jpg" alt="Grafico" width="98%"></td>
 				</tr>
 			</table>
 			</center>

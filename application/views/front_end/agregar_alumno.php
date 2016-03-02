@@ -1,5 +1,6 @@
 <section class="contenido">
 <?php if(isset($_SESSION['logged_in'])): #si ha iniciado sesion se mostrara el contenido sino el mensaje de error?>
+	<br>
 	<h1>Datos del alumno</h1>
 	<?= form_open('Alumnos/agregarAlumno')?>
 	<div class="buscar-alumno">
@@ -74,7 +75,7 @@
 					<td>Nivel:</td>
 				</tr>
 				<tr>
-					<td><textarea name="exp" cols="40" rows="10" maxlength="250"><?php echo set_value('exp'); ?></textarea></td>
+					<td><textarea name="exp" cols="35" rows="10" maxlength="250"><?php echo set_value('exp'); ?></textarea></td>
 					<td style="vertical-align:top">
 						<select name="nivel">
 						<?php foreach ($nivel as $n) { ?>
@@ -219,8 +220,8 @@
 					<td>Medicinas:</td>
 				</tr>
 				<tr>
-					<td><textarea name="padecimiento" cols="40" rows="10" maxlength="200"><?php echo set_value('padecimiento'); ?></textarea></td>
-					<td><textarea name="medic" cols="40" rows="10" maxlength="200"><?php echo set_value('medic'); ?></textarea></td>
+					<td><textarea name="padecimiento" cols="35" rows="10" maxlength="200"><?php echo set_value('padecimiento'); ?></textarea></td>
+					<td><textarea name="medic" cols="35" rows="10" maxlength="200"><?php echo set_value('medic'); ?></textarea></td>
 				</tr>
 				<!--<tr>
 				</tr>-->

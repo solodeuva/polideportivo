@@ -1,189 +1,45 @@
 @import url(imagenes.css);
-#principal-html{
-    width: 100%;
-    height: 100%;
-    margin: 0px;
-    background-color: #AE8A69;  
+@import url(nav.css);
+@import url(sidebar.css);
+@import url(section.css);
+@import url(footer.css);
+@import url(tablas.css);
+
+*{
+    margin: 0;
+    font-family: helvetica;
 }
 
-#principal-body{
-    width: 100%;
-    height: 100%;
-    margin: 0px;
+body{
     background-color: #AE8A69;  
 }
-
+/*
 body,td,th {
     
     text-align: center;
-}
+}*/
 
 header {
     background: url('../img/fondo1.jpg') no-repeat;
-    color: #C59947;
-    height: 200px;
-    max-height: auto;
+    height: 170px;
     width: 100%;
-    top: 0;
-    left: 0;
-    position: relative;
-}
-
-header .contenedor {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);    
-    width: 98%;
-    margin: auto;
+    color: #C59947;
 }
 
 header h1 {
     text-align: left;
-    font-size: 3em;
-    font-weight: normal;
-    margin: 0;
-    margin-left: 10px;
-    font-family: helvetica;
+    padding: 50px 0 10px 5px;
 }
 header p {
     text-align: left;
-    font-size: 30px;
-    margin: 0;
-    margin-left: 10px;
-    font-family: helvetica;
-}
-
-nav {
-    background-color: #d4b15f;
-    height: 49px;
-    margin-bottom: 30px;
-    width: 100%;
-}
-
-.menucito
-{
-    width: 40%;
-    height: 80%;
-    position: relative;
-    font-family: helvetica;
-    font-size: 20px;
-    bottom: 0;
-    top: -1px;
-    margin: 0;
-    padding: 0;
-    padding-top: 10px;
-    list-style: none;
-
-}
-
-.menucito li
-{
-    margin: 0 5px;
-    list-style-type: none;
-    position: relative;
-    float: left;
-    width: 23%;
-    min-width: 57px;
-    height: 90%;
-    border-radius: 5px;
-    background-color: #591a15;
-    text-align: center;
-    color: #d4b15f;
-    font-family: helvetica;
-}
-
-.menucito li:hover
-{
-    margin: 0 5px;
-    list-style-type: none;
-    position: relative;
-    float: left;
-    width: 23%;
-    min-width: 57px;
-    height: 90%;
-    border-radius: 5px;
-    background-color: #722E2E;
-    text-align: center;
-    color: #C9A653;
-    font-family: helvetica;
-}
-
-aside {
-    width: 21%;
-    min-height: 306px;
-    min-width: 185px;
-    float: left;
-    border: 1px solid #591a15;
-    
-    border-radius: 5px;
-    margin-right: 20px;
-    margin-left: 10px;
-}
-aside a {
-    color: #000;
-}
-
-header .contenedor {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);    
-    width: 98%;
-    margin: auto;
-}
-
-footer {
-    background: url('../img/fondo1.jpg') no-repeat;
-    position: relative;
-    margin-top: -50px;
-    margin-bottom: 0;
-    clear: both;
-    color: #C59947;
-    width: 100%;
-    padding: 20px 0;
-    height: 20%;
     font-size: 14px;
-    bottom: 0;
-    left: 0;
-}
-
-footer p{
-    text-align: center;
-}
-/*
-.img-edit{
-    background: url("../img/eedit.png") no-repeat;
-}*/
-
-.contenido {
-    width: 70%;
-    min-width: 200px;
-    float: left;
-    background-color: #AEADAA;
-    border: solid;
-    border-color: #591a15;
-    border-width: 5px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    text-align: center;
-}
-.contenido h1{
-    font-size: 50px;
     font-weight: bold;
-    font-family: helvetica;
+    padding: 0px 0 10px 5px;
 }
+
 .content-botones
 {
     padding: 25px;
-}
-
-.contenido-inicio {
-    width: 75%;
-    min-width: 700px;
-    float: left;
-    margin-bottom: 10px;
-    text-align: center;
 }
 
 p
@@ -191,8 +47,6 @@ p
     text-align: left;
     padding-left: 15px;
     font-size: larger;
-    font-family: helvetica;
-
 }
 
 label
@@ -213,107 +67,6 @@ label
     width: 100px;
 }
 
-.div-login
-{
-    width: 95%;
-    border: 1px solid #d4b15f;
-    text-align: left;
-    margin-top: 10px;
-    margin-left: 2%;
-    margin-bottom: 5px;
-    border-radius: 10px;
-    border-collapse: collapse;
-    background-color: #807F7F;
-    float: center;
-}
-.div-login h3
-{
-    margin-top: 10px;
-    font-family: helvetica;
-    text-align: center;
-    font-size: 20px;
-    color: #591a15;
-}
-
-.div-login label
-{
-    font-family: helvetica;
-    font-size: 15px;
-    font-weight: bold;
-    color: #591a15;
-}
-
-.div-login table tr td
-{
-    text-align: center;
-    color: #591a15;
-    font-family: helvetica;
-}
-
-.div-login table
-{
-    margin-left: 5%;
-    margin-right: 5%;
-}
-
-.div-login tr
-{
-    height: 20px;
-}
-
-#tip-login{
-    font-family: helvetica;
-    text-align: left;
-    font-size: 13px;
-}
-
-.div-solicitudes
-{
-    margin-left: 20%;
-    width: 50%;
-    border: groove;
-    padding: 10px 50px;
-    position: relative;
-
-}
-.div-menu-sidebar
-{
-    margin-top: 3px;
-    width: 100%;
-    border: 1px;
-    height: 30px;
-    text-align: center;
-    display: table;
-}
-.div-menu-sidebar-in
-{
-    width: 100%;
-    display: table-cell;
-    vertical-align: middle;
-    font-family: verdana;
-    font-weight: bold;
-    text-align: center;
-    color: black;
-}
-.div-menu-sidebar:hover
-{
-    margin-top: 3px;
-    width: 100%;
-    border: 1px;
-    background-color: #537E9F;
-    height: 30px;
-    text-align: center;
-    display: table;
-}
-.div-menu-sidebar-in:hover
-{
-    width: 100%;
-    display: table-cell;
-    vertical-align: middle;
-    font-family: verdana;
-    font-weight: bold;
-    text-align: center;
-}
 .mensaje-error{
     color: red;
 }
@@ -322,39 +75,11 @@ a:link
  text-decoration:none;
  color: black;
 } 
-.tabla
-{
-    width: 90%;
-    position: relative;
-}
-.tabla tr td
-{
-    text-align: left;
-}
+
 .div-usuarios
 {
     height: 400px;
     overflow: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-.tabla-usuarios
-{
-   width: 85%;
-   position: relative;
-   text-align: left;
-   border-collapse: collapse;
-   caption-side: top;
-   font-size: 14px;
-}
-.tabla-usuarios thead
-{
-    text-align: left;
-    border-top: 1px solid #000;
-    border-bottom: 1px solid #000;
-    border-left: 1px solid #000;
-    border-right: 1px solid #000;
 }
 
 .tips{
@@ -370,22 +95,6 @@ a:link
     display:table;
     text-align: center;
 }
-.tabla-alumnos {
-   width: 85%;
-   text-align: left;
-   border-collapse: collapse;
-   margin: 0 0 1em 0;
-   caption-side: top;
-}
-.tabla-alumnos td, th {
-   padding: 0.3em;
-}
-.tabla-alumnos thead, tbody {
-   border-top: 1px solid #000;
-   border-bottom: 1px solid #000;
-   border-left: 1px solid #000;
-   border-right: 1px solid #000;
-}
 
 .div-error{
     color: red;
@@ -398,101 +107,21 @@ a:link
 .buscar{
     margin: 20px;
 }
-
-@media(min-width: 1050px){
-    aside {
-    width: 21%;
-    min-height: 306px;
-    min-width: 272px;
-    float: left;
-    border: 1px solid #591a15;
-    border-radius: 5px;
-    margin-right: 20px;
-    margin-left: 10px;
+@media(min-width: 800px){
+    header h1 {
+        font-size: 30px;
     }
-
-    .div-login h3
-    {
-        margin-top: 10px;
-    }
-    .div-login label
-    {
-        font-family: helvetica;
-        font-weight: bold;
-        color: #591a15;
-    }
-
-    .div-login table tr td{
-    text-align: center;
-    color: #591a15;
-    font-family: helvetica;
-    }
-
-    .div-login table {
-    position: relative;
-    left: 20%;
-    }
-    .div-login tr {
-    height: 20px;
-    }
-
-    nav {
-    background-color: #d4b15f;
-    height: 49px;
-    margin-bottom: 30px;
-    width: 100%;
-    }
-
-    .menucito
-    {
-        width: 40%;
-        height: 80%;
-        position: relative;
-        font-family: helvetica;
+    header p {
         font-size: 20px;
-        bottom: 0;
-        top: -1px;
-        margin: 0;
-        padding: 0;
-        padding-top: 10px;
-        list-style: none;
-
-    }
-
-    .menucito li
-    {
-        margin: 0 5px;
-        list-style-type: none;
         position: relative;
-        float: left;
-        width: 23%;
-        min-width: 57px;
-        height: 90%;
-        border-radius: 5px;
-        background-color: #591a15;
-        text-align: center;
-        color: #d4b15f;
-        font-family: helvetica;
     }
-
-    .menucito li:hover
-    {
-        margin: 0 5px;
-        list-style-type: none;
-        position: relative;
-        float: left;
-        width: 23%;
-        min-width: 57px;
-        height: 90%;
-        border-radius: 5px;
-        background-color: #722E2E;
-        text-align: center;
-        color: #C9A653;
-        font-family: helvetica;
+}
+@media(min-width: 1025px){
+    header h1 {
+        font-size: 40px;
+        padding: 40px 0 10px 5px;
     }
-    .tips{
-    color: blue;
-    font-size: 14px;
-    font-style: italic;
+    header p {
+        font-size: 30px;
     }
 }

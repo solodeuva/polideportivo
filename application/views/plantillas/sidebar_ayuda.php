@@ -1,5 +1,7 @@
-<aside>              
-    <h3>Contenido</h3>
+<aside>
+    <center>              
+        <h3>Contenido</h3>
+    </center>
     <ol>
         <a href="#inicio-sesion"><li>Inicio de Sesión</li></a>
         <?php if(isset($_SESSION['logged_in'])): #si ha iniciado sesion se mostrara el contenido sino el mensaje de error?>

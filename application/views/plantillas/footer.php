@@ -1,3 +1,4 @@
+        </section>
         <footer>
             <section class="contenedor">
                 <p>Derechos Reservados, Universidad de El Salvador 2016</p>

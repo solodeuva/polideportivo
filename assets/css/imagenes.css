@@ -8,21 +8,29 @@
 
 .botones{
 	margin-top: 10px;
-	margin-left: 10%;
+	margin-left: 5%;
 }
 .botones img{
-	width: 200px;
-	height: 200px;
+	width: 190px;
+	height: 190px;
 	border-radius: 50%;
 	border: 7px solid #591a15;
 	background-color: #d4b15f;
 }
-.botones h2{
-	font-family: helvetica;
+
+#img-1{
+	width: 98%;
+	height: 98%;
 }
-@media(min-width: 1050px){
+#img-2{
+	width: 175px;
+}
+
+@media(min-width: 800px){
+	.contenedor-botones{
+		margin-bottom: 10px;
+	}
 	.botones{
-	margin-top: 10px;
 	margin-left: 10%;
 	}
 	.botones img{
@@ -32,7 +40,27 @@
 		border: 7px solid #591a15;
 		background-color: #d4b15f;
 	}
-	.botones h2{
-		font-family: helvetica;
+	#img-1{
+		width: auto;
+		max-width: 550px;
+	}
+	#img-2{
+		width: auto;
+		height: auto;
+	}
+}
+@media(min-width: 1025px){
+	.botones img{
+		width: 230px;
+		height: 230px;
+	}
+	.botones{
+		margin-bottom: 10px;
+	}
+	.botones a h2{
+		font-size: 20px;
+	}
+	#img-1{
+		max-width: auto;
 	}
 }

@@ -1,0 +1,44 @@
+nav {
+    background-color: #d4b15f;
+    height: 50px;
+    width: 100%;
+}
+nav .contenedor{
+    height: 100%;
+    width: 98%;
+    margin: auto;
+}
+.menucito
+{
+    width: 60%;
+    height: 35px;
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.menucito li
+{
+    margin: 5px 5px 0 5px;
+    padding: 5px 5px 0 5px;
+    float: left;
+    width: 57px;
+    height: 90%;
+    border-radius: 5px;
+    background-color: #591a15;
+    text-align: center;
+    color: #d4b15f;
+    font-family: helvetica;
+}
+.menucito li:hover{
+    background-color: #B41212;
+}
+
+@media(min-width: 1025px){
+    .menucito li{
+        margin: 5px 5px 0 5px;
+        padding: 2px 5px 0 5px;
+        height: 100%;
+        width: 70px;
+    }
+}

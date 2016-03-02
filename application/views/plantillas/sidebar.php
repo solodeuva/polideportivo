@@ -35,13 +35,18 @@
             <?php if (isset($_SESSION['msgError'])): ?>
                 <center><?= $this->session->flashdata('msgError'); ?></center>
             <?php endif; ?>
-    </div>
-    <h4>Nota:</h4>
+    </div><br>
+    <center>
+        <h4>Nota:</h4>
+    </center>
     <p id="tip-login">Necesita credenciales autorizadas por el administrador del sistema por lo que solo él puede registrar usuarios.</p>
     <br>
     <?php else : #si logged_in esta predefinido muestra el saludo
     ?>
-    <h4>Bienvenid@: <?php echo $this->session->userdata('nombre');?></h4>
+    <br>
+    <center>
+        <h4>Bienvenid@: <?php echo $this->session->userdata('nombre');?></h4>
+    </center><br><br>
 
         <?php if ($_SESSION['user_id'] == 1) : #si logged_in no esta predefinido mostrara el formulario de login
         ?> 

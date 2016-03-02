@@ -3,6 +3,7 @@
 	<?php if($_SESSION['user_id'] == 1):?>
 		<br><br>
 		<h2>Editar Nivel</h2>
+		<div class="div-tabla">
 		<?= form_open('niveles/actualizarNivel')?>
 			<table class="tabla">
 				<tbody>
@@ -30,6 +31,7 @@
 				</tbody>
 			</table><br><br>
 		<?= form_close()?>
+		</div>
 	<?php else: ?>
 		<br><br><br><br><br><br><br>
 			<h2>No tienes los permisos suficientes para ver este contenido.</h2>

@@ -1,6 +1,7 @@
 <section class="contenido">
 <?php if(isset($_SESSION['logged_in'])): #si ha iniciado sesion se mostrara el contenido sino el mensaje de error?>
 	<?php if($_SESSION['user_id'] == 1):?>
+		<br>
 		<h2>Crear un nuevo Usuario</h2>
 		<?= form_open('usuarios/agregarUsuario')?>
 			<table class="tabla">

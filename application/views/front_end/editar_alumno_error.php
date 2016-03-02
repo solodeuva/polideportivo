@@ -109,7 +109,7 @@
 					<td>Nivel:</td>
 				</tr>
 				<tr>
-					<td><textarea name="exp" cols="40" rows="10" maxlength="250"><?php echo $alumno->getExpPrevia();?></textarea></td>
+					<td><textarea name="exp" cols="35" rows="10" maxlength="250"><?php echo $alumno->getExpPrevia();?></textarea></td>
 					<td style="vertical-align:top">
 						<select name="nivel">
 						<?php foreach ($nivel as $n) { ?>
@@ -258,8 +258,8 @@
 					<td>Medicinas:</td>
 				</tr>
 				<tr>
-					<td><textarea name="padecimiento" cols="40" rows="10" maxlength="200"><?php echo set_value('padecimiento');?></textarea></td>
-					<td><textarea name="medic" cols="40" rows="10" maxlength="200"><?php echo set_value('medic');?></textarea></td>
+					<td><textarea name="padecimiento" cols="35" rows="10" maxlength="200"><?php echo set_value('padecimiento');?></textarea></td>
+					<td><textarea name="medic" cols="35" rows="10" maxlength="200"><?php echo set_value('medic');?></textarea></td>
 				</tr>
 				<tr>
 					<td><input type="hidden" value="<?php echo $alumno->getIdAlumno();?>" name="id"/></td>

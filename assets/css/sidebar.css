@@ -1,0 +1,162 @@
+aside{
+    width: 21%;
+    min-width: 230px;
+    min-height: 397px;
+    max-height: 616px;
+    border: 1px solid #591a15;
+    border-radius: 5px;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+aside a {
+    color: #000;
+}
+aside li{
+    font-size: 14px;
+}
+.div-login
+{
+    width: 95%;
+    border: 1px solid #d4b15f;
+    text-align: left;
+    margin-top: 10px;
+    margin-left: 2%;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    border-collapse: collapse;
+    background-color: #807F7F;
+    float: center;
+}
+.div-login h3
+{
+    margin-top: 10px;
+    font-family: helvetica;
+    text-align: center;
+    font-size: 20px;
+    color: #591a15;
+}
+
+.div-login label
+{
+    font-family: helvetica;
+    font-size: 15px;
+    font-weight: bold;
+    color: #591a15;
+}
+
+.div-login table tr td
+{
+    text-align: center;
+    color: #591a15;
+    font-family: helvetica;
+}
+
+.div-login table
+{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.div-login tr
+{
+    height: 20px;
+}
+
+#tip-login{
+    font-family: helvetica;
+    text-align: left;
+    font-size: 13px;
+}
+.div-menu-sidebar
+{
+    margin-top: 3px;
+    width: 100%;
+    border: 1px;
+    height: 30px;
+    text-align: center;
+    display: table;
+}
+.div-menu-sidebar-in
+{
+    width: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    font-family: verdana;
+    font-weight: bold;
+    text-align: center;
+    color: black;
+}
+.div-menu-sidebar:hover
+{
+    margin-top: 3px;
+    width: 100%;
+    border: 1px;
+    background-color: #537E9F;
+    height: 30px;
+    text-align: center;
+    display: table;
+}
+.div-menu-sidebar-in:hover
+{
+    width: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    font-family: verdana;
+    font-weight: bold;
+    text-align: center;
+}
+
+@media(min-width: 800px){
+    aside{
+        min-width: 20px;
+        float: left;
+    }
+    aside ol{
+        padding: 0 0 0 20px;
+
+    }
+    .div-menu-sidebar-in{
+        font-size: 14px;
+    }
+}
+@media(min-width: 1025px){
+    aside {
+    width: 21%;
+    min-height: 306px;
+    min-width: 200px;
+    margin-top: 25px;
+    }
+
+    .div-login h3
+    {
+        margin-top: 10px;
+    }
+    .div-login label
+    {
+        font-weight: bold;
+        color: #591a15;
+    }
+
+    .div-login table tr td{
+    text-align: center;
+    color: #591a15;
+    font-family: helvetica;
+    }
+
+    .div-login table {
+    position: relative;
+    left: 20%;
+    }
+    .div-login tr {
+    height: 20px;
+    }
+    .tips{
+    color: blue;
+    font-size: 14px;
+    font-style: italic;
+    }
+    .div-menu-sidebar-in{
+        font-size: 16px;
+    }
+}

@@ -7,6 +7,7 @@
 ?>
 <section class="contenido">
 <?php if(isset($_SESSION['logged_in'])): #si ha iniciado sesion se mostrara el contenido sino el mensaje de error?>
+	<br>
 	<h1>Editar Alumno</h1>
 	<?= form_open('Alumnos/actualizarAlumno')?>
 	<div class="buscar-alumno">
@@ -29,8 +30,12 @@
 					<td>Peso:</td>
 				</tr>
 				<tr>
-					<td><input name="estatura" maxlength="4" size="3" value="<?php echo $alumno->getEstatura();?>"/>m. (ingrese solo números Ej. 1.70)</td>
-					<td><input name="peso" maxlength="3" size="2" value="<?php echo $alumno->getPeso();?>"/>lbs. (ingrese solo números Ej. 145)</td>
+					<td><input name="estatura" maxlength="4" size="3" value="<?php echo $alumno->getEstatura();?>"/>m.</td>
+					<td><input name="peso" maxlength="3" size="2" value="<?php echo $alumno->getPeso();?>"/>lbs.</td>
+				</tr>
+				<tr>
+					<td>(ingrese solo números Ej. 1.70)</td>
+					<td>(ingrese solo números Ej. 145)</td>
 				</tr>
 				<tr>
 					<td><?php echo form_error('estatura'); ?></td>
@@ -120,7 +125,7 @@
 					<td>Nivel:</td>
 				</tr>
 				<tr>
-					<td><textarea name="exp" cols="40" rows="10" maxlength="250"><?php echo $alumno->getExpPrevia();?></textarea></td>
+					<td><textarea name="exp" cols="35" rows="10" maxlength="250"><?php echo $alumno->getExpPrevia();?></textarea></td>
 					<td style="vertical-align:top">
 						<select name="nivel">
 						<?php foreach ($nivel as $n) { ?>
@@ -329,8 +334,8 @@
 					<td>Medicinas:</td>
 				</tr>
 				<tr>
-					<td><textarea name="padecimiento" cols="40" rows="10" maxlength="200"><?php echo $alumno->getPadecimientos();?></textarea></td>
-					<td><textarea name="medic" cols="40" rows="10" maxlength="200"><?php echo $alumno->getMedicamentos();?></textarea></td>
+					<td><textarea name="padecimiento" cols="35" rows="10" maxlength="200"><?php echo $alumno->getPadecimientos();?></textarea></td>
+					<td><textarea name="medic" cols="35" rows="10" maxlength="200"><?php echo $alumno->getMedicamentos();?></textarea></td>
 				</tr>
 				<tr>
 					<td><input type="hidden" value="<?php echo $alumno->getIdAlumno();?>" name="id"/></td>

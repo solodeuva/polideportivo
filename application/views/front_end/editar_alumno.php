@@ -101,7 +101,8 @@
 				<tr>
 					<td><input name="dir" maxlength="100" value="<?php echo $alumno->getDireccion();?>" /></td>
 					<td>
-					<?php
+					<?php/*el siguiente codigo, verifica que explode() haya hecho su trabajo en una cadena de caracteres
+							y no sobre una cadena de espacios en blanco. Es aplicado en cada campo telefono y dui.*/
 							$tel = explode('-', $alumno->getTelefono());
 							$tel1 = $tel[0];
 						if(strcmp($tel1, "")==4):

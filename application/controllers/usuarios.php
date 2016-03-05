@@ -59,7 +59,7 @@ class Usuarios extends CI_Controller {
 	public function agregarUsuario(){
 		$this->load->library('form_validation');
 		$this->form_validation->set_error_delimiters('<div class="div-error">','</div>');
-		$this->form_validation->set_rules('nick','Nick','callback_validarNick');
+		$this->form_validation->set_rules('nick','Nick','callback_validarNick');//tercer argumento, es el llamado a la funcion validar usuario
 		if ($this->form_validation->run() == FALSE) {
 			$this->nuevoUsuario();
 		} else {
@@ -146,7 +146,7 @@ class Usuarios extends CI_Controller {
 		$this->load->view('front_end/perfil',$data);
 		$this->load->view('plantillas/footer');
 	}
-	public function validarNick($nick)
+	public function validarNick($nick)//funcion que valida si el nombre de usuario que esta ingresando ya ha sido utilizado o no
 	{
 		$usuarios = $this->usuarios_model->obtenerUsuarios();
 		foreach ($usuarios as $u) {

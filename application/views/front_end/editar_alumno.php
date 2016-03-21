@@ -8,7 +8,7 @@
 <section class="contenido">
 <?php if(isset($_SESSION['logged_in'])): #si ha iniciado sesion se mostrara el contenido sino el mensaje de error?>
 	<br>
-	<h1>Editar Alumno</h1>
+	<center><h1>Editar Alumno</h1></center>
 	<?= form_open('Alumnos/actualizarAlumno')?>
 	<div class="buscar-alumno">
 		<table class="tabla">
@@ -101,8 +101,7 @@
 				<tr>
 					<td><input name="dir" maxlength="100" value="<?php echo $alumno->getDireccion();?>" /></td>
 					<td>
-					<?php/*el siguiente codigo, verifica que explode() haya hecho su trabajo en una cadena de caracteres
-							y no sobre una cadena de espacios en blanco. Es aplicado en cada campo telefono y dui.*/
+					<?php
 							$tel = explode('-', $alumno->getTelefono());
 							$tel1 = $tel[0];
 						if(strcmp($tel1, "")==4):
@@ -353,7 +352,7 @@
 	<br>
 	<center>
 		<form action="<?php echo base_url('alumnos/buscarAlumnos');?>">
-		<input type="submit" value="Regresar a Buscar"/>
+			<input type="button" value="Regresar" onclick="history.back()"/>
 		</form>
 	</center>
 	<br>

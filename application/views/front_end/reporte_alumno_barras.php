@@ -6,7 +6,8 @@ function imprSelec(muestra)
 <?php if(isset($_SESSION['logged_in'])): #si ha iniciado sesion se mostrara el contenido sino el mensaje de error?>
 		<div class="muestra">
 			<br>
-			<h1>Reporte de Alumnos Inscritos</h1>
+			<center><h1>Reporte de Alumnos Inscritos</h1></center>
+			<br>
 			<center>
 			<table>
 				<thead>
@@ -34,9 +35,11 @@ function imprSelec(muestra)
 			</center>
 		</div>
 		<br><br>
-		<input type="button" value="Imprimir Formato" onclick="javascript:imprSelec('muestra');" >
-	<br><br>
-		<a href="<?php echo base_url(); ?>alumnos/verReporte"><input type="button" value="Regresar" /></a>
+		<center>
+			<input type="button" value="Imprimir Formato" onclick="javascript:imprSelec('muestra');" >
+			<br><br>
+			<a href="<?php echo base_url(); ?>alumnos/verReporte"><input type="button" value="Regresar" /></a>
+		</center>
 	<br><br>
 <?php else: ?>
 	<br><br><br><br><br><br><br>

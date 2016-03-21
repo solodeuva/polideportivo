@@ -1,7 +1,8 @@
 <section class="contenido">
 <?php if(isset($_SESSION['logged_in'])): #si ha iniciado sesion se mostrara el contenido sino el mensaje de error?>
 	<br>
-	<h1>Datos del alumno</h1>
+	<center><h1>Datos del alumno</h1></center>
+	<br>
 	<?= form_open('Alumnos/agregarAlumno')?>
 	<div class="buscar-alumno">
 		<table class="tabla">
@@ -229,12 +230,15 @@
 		</table>
 		</div>
 		<br><br>
+	<center>
 	<?= form_submit('','Ingresar Alumno')?>
 	<?= form_close()?>
-	<br>
+	<br><br>
 	<form action="<?php echo base_url('alumnos/gestionarAlumnos');?>">
 		<input type="submit" value="Regresar"/>
-	</form><br>
+	</form>
+	</center>
+	<br>
 <?php else: ?>
 	<br><br><br><br><br><br><br>
 	<h2>Tu sesión expiró o no has iniciado sesión, por favor inicia sesión para ver este contenido</h2>

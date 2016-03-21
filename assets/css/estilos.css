@@ -78,6 +78,7 @@ a:link
 
 .div-usuarios
 {
+    margin-left: 2%;
     height: 400px;
     overflow: auto;
 }

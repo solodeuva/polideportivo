@@ -1,7 +1,8 @@
 <section class="contenido">
 <?php if(isset($_SESSION['logged_in'])): #si ha iniciado sesion se mostrara el contenido sino el mensaje de error?>
 	<?php if($_SESSION['user_id'] == 1):?>
-		<h1>Ver usuarios</h1>
+		<center><h1>Ver usuarios</h1></center>
+		<br>
 		<div class="div-usuarios">
 			<table class="tabla-usuarios">
 				<thead align="left">

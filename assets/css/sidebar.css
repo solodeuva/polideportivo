@@ -68,6 +68,9 @@ aside li{
     text-align: left;
     font-size: 13px;
 }
+#btn-inicarsesion{
+    cursor: pointer;
+}
 .div-menu-sidebar
 {
     margin-top: 3px;

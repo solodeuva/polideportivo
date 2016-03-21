@@ -25,7 +25,7 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td style="text-align:center;"colspan="2"><?= form_submit('','Ingresar al sistema') ?></td>
+                    <td style="text-align:center;"colspan="2"><?= form_submit(array('id'=>'btn-inicarsesion','value'=>'Ingresar al sistema')) ?></td>
                 </tr> 
                 <tr>
                     <td>&nbsp;</td>

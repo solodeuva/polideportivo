@@ -31,7 +31,8 @@
 </center>
 <div id="ficha">
 	<br>
-	<h1>Ficha Personal del Alumno</h1>
+	<center><h1>Ficha Personal del Alumno</h1></center>
+	<br>
 	<center>
 		<table width="auto">
 			<tbody>
@@ -206,11 +207,13 @@
 	</center>
 	<br><br>
 </div>
+<center>
 <input type="button" value="Imprimir Formato" onclick="javascript:imprSelec('ficha');function imprSelec(ficha)
 {var ficha=document.getElementById(ficha);var ventimp=window.open(' ','popimpr');ventimp.document.write(ficha.innerHTML);ventimp.document.close();ventimp.print();ventimp.close();};" /><br><br>
 <form action="<?php echo base_url('alumnos/buscarAlumnos');?>">
-	<input type="submit" value="Regresar a Buscar"/>
+	<input type="button" value="Regresar" onclick="history.back()"/>
 </form>
+</center>
 <br><br>
 <?php else: ?>
 	<br><br>

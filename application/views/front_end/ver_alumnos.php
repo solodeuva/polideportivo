@@ -9,11 +9,12 @@
 
 <section class="contenido">
 <?php if(isset($_SESSION['logged_in'])): #si ha iniciado sesion se mostrara el contenido sino el mensaje de error?>
-	<h1>Resultados de Busqueda</h1>
+	<br>
+	<center><h1>Resultados de Busqueda</h1></center>
 	<div class="div-usuarios">
 	<center>
 	<div class="div-alumnos">
-	<br><p style="text-align:center">Haga click directamente sobre el estado de un alumno para modificar el mismo.</p>
+	<br><p style="text-align:center">Haga click directamente sobre el estado de un alumno para modificar el mismo.</p><br>
 		<table border="1" style="border-collapse: collapse;">
 				<tr>
 					<th>Estado</th>
@@ -75,7 +76,7 @@
 	<br><br>
 
 	<form>
-			<input type="button" value="Regresar" name="volver atrás2" onclick="history.back()" />
+			<center><input type="button" value="Regresar" name="volver atrás2" onclick="history.back()" /></center>
 	</form>
 	<br>
 <?php else: ?>

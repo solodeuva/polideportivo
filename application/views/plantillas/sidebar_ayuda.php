@@ -37,7 +37,9 @@
         </ul><br><br>
         <a href="#desarrolladores"><li>Desarrolladores</li></a>
     </ol><br>
-            <a onclick="salir()" href="#">Cerrar Sesion</a>
+    <center>
+        <a onclick="salir()" href="#">Cerrar Sesion</a>
+    </center>
     <br>
     <?php endif; ?>
 </aside>
